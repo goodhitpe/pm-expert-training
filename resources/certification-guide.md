@@ -941,5 +941,5 @@ Good luck with your certification journey!
 
 ---
 
-*Last Updated: 2024*
+*Last Updated: January 2025*
 *This guide is for informational purposes. Always verify current requirements, costs, and content with official certification bodies as they may change.*

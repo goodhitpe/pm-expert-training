@@ -934,6 +934,6 @@ The PM landscape offers abundant resources for learning and growth. Start with a
 
 ---
 
-*Last Updated: 2024*
+*Last Updated: January 2025*
 
 *Have a resource to add? This is a living document. Resources may change over time—always verify current availability and pricing.*

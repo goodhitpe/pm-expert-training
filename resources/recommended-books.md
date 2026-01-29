@@ -426,5 +426,5 @@ Include: #24-26 (Korean PM books) along with international fundamentals
 
 ---
 
-*Last Updated: 2024*
+*Last Updated: January 2025*
 *This list is curated based on industry recommendations, bestseller lists, and practical experience. Adjust based on your specific role, industry, and career goals.*
