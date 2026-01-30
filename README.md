@@ -2,11 +2,21 @@
 
 IT 비전공자를 위한 실무 중심 프로젝트 매니저(PM) 교육 과정
 
+> **⭐ 최신 업데이트 (2025년 1월)**: 전문가 평가 완료! [평가 보고서](./CURRICULUM_EVALUATION.md) 및 [개선 계획](./IMPLEMENTATION_ROADMAP.md) 확인
+
 ---
 
 ## 📌 프로그램 소개
 
 이 프로그램은 IT 배경 지식이 없는 분들도 체계적으로 프로젝트 매니저로 성장할 수 있도록 설계된 16주 과정입니다.
+
+### 📊 전문가 평가 결과
+**종합 평가**: 76.4/100점 (B등급) → **개선 후 예상**: 89.6/100점 (A-등급)
+
+- ✅ **강점**: PMBOK 기반 체계적 구조, 충실한 이론
+- 🔧 **개선 중**: 실습 자료 보강, 최신 트렌드 반영, 평가 체계
+
+👉 **[상세 평가 보고서 보기](./CURRICULUM_EVALUATION.md)** (IT 전문가 + 일타강사 관점)
 
 ### 🎯 교육 목표
 - ✅ 프로젝트 관리 기본 개념부터 실전 적용까지
@@ -143,6 +153,16 @@ pm-expert-training/
 ## 📞 문의
 
 프로그램 관련 문의사항은 이슈(Issue)로 등록해주세요.
+
+### 📚 주요 문서
+- **[커리큘럼 평가 보고서](./CURRICULUM_EVALUATION.md)** - 전문가 평가 및 개선 제안
+- **[실행 로드맵](./IMPLEMENTATION_ROADMAP.md)** - 단계별 개선 계획
+- **[요약 보고서](./SUMMARY_REPORT.md)** - Executive Summary
+
+### 🎓 샘플 콘텐츠
+- **[Week 5 상세 강의 자료](./curriculum/week05-schedule-management/detailed-lecture-materials.md)** - CPM, PERT, 간트 차트
+- **[Jira 실습 가이드](./guides/jira-setup-guide.md)** - 무료 계정부터 프로젝트 완성까지
+- **[AI 챗봇 케이스 스터디](./case-studies/case06-ai-chatbot-project.md)** - AI/ML 프로젝트 관리
 
 ---
 
