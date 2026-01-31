@@ -155,6 +155,8 @@ pm-expert-training/
 프로그램 관련 문의사항은 이슈(Issue)로 등록해주세요.
 
 ### 📚 주요 문서
+- **[잔여 작업 현황](./잔여작업_요약.md)** ⭐ 신규 - 남은 작업 요약 및 우선순위
+- **[잔여 작업 상세](./REMAINING_TASKS.md)** ⭐ 신규 - 전체 작업 목록 및 실행 가이드
 - **[커리큘럼 평가 보고서](./CURRICULUM_EVALUATION.md)** - 전문가 평가 및 개선 제안
 - **[실행 로드맵](./IMPLEMENTATION_ROADMAP.md)** - 단계별 개선 계획
 - **[요약 보고서](./SUMMARY_REPORT.md)** - Executive Summary
