@@ -1,0 +1,137 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .header-cell { fill: #2C3E50; stroke: #1A252F; stroke-width: 2; }
+      .group-cell { fill: #3498DB; stroke: #2980B9; stroke-width: 1.5; }
+      .area-cell { fill: #ECF0F1; stroke: #BDC3C7; stroke-width: 1; }
+      .active-cell { fill: #27AE60; stroke: #229954; stroke-width: 1.5; }
+      .text-white { font-family: Arial, sans-serif; font-size: 13px; fill: white; font-weight: bold; }
+      .text-dark { font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; }
+      .text-header { font-family: Arial, sans-serif; font-size: 10px; fill: white; font-weight: bold; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="25" text-anchor="middle" style="font-family: Arial; font-size: 24px; font-weight: bold; fill: #2C3E50;">PMBOK 프로세스 그룹과 지식영역 매트릭스</text>
+  
+  <!-- Column Headers (Process Groups) -->
+  <rect x="200" y="50" width="130" height="40" class="header-cell"/>
+  <text x="265" y="70" text-anchor="middle" class="text-white">착수</text>
+  <text x="265" y="83" text-anchor="middle" class="text-header">(Initiating)</text>
+  
+  <rect x="335" y="50" width="130" height="40" class="header-cell"/>
+  <text x="400" y="70" text-anchor="middle" class="text-white">계획</text>
+  <text x="400" y="83" text-anchor="middle" class="text-header">(Planning)</text>
+  
+  <rect x="470" y="50" width="130" height="40" class="header-cell"/>
+  <text x="535" y="70" text-anchor="middle" class="text-white">실행</text>
+  <text x="535" y="83" text-anchor="middle" class="text-header">(Executing)</text>
+  
+  <rect x="605" y="50" width="130" height="40" class="header-cell"/>
+  <text x="670" y="66" text-anchor="middle" class="text-white">감시/통제</text>
+  <text x="670" y="83" text-anchor="middle" class="text-header">(M&amp;C)</text>
+  
+  <rect x="740" y="50" width="130" height="40" class="header-cell"/>
+  <text x="805" y="70" text-anchor="middle" class="text-white">종료</text>
+  <text x="805" y="83" text-anchor="middle" class="text-header">(Closing)</text>
+  
+  <!-- Row 1: Integration Management -->
+  <rect x="20" y="95" width="175" height="35" class="group-cell"/>
+  <text x="107" y="118" text-anchor="middle" class="text-white">통합 관리</text>
+  <rect x="200" y="95" width="130" height="35" class="active-cell"/>
+  <rect x="335" y="95" width="130" height="35" class="active-cell"/>
+  <rect x="470" y="95" width="130" height="35" class="active-cell"/>
+  <rect x="605" y="95" width="130" height="35" class="active-cell"/>
+  <rect x="740" y="95" width="130" height="35" class="active-cell"/>
+  
+  <!-- Row 2: Scope Management -->
+  <rect x="20" y="133" width="175" height="35" class="group-cell"/>
+  <text x="107" y="156" text-anchor="middle" class="text-white">범위 관리</text>
+  <rect x="200" y="133" width="130" height="35" class="area-cell"/>
+  <rect x="335" y="133" width="130" height="35" class="active-cell"/>
+  <rect x="470" y="133" width="130" height="35" class="area-cell"/>
+  <rect x="605" y="133" width="130" height="35" class="active-cell"/>
+  <rect x="740" y="133" width="130" height="35" class="area-cell"/>
+  
+  <!-- Row 3: Schedule Management -->
+  <rect x="20" y="171" width="175" height="35" class="group-cell"/>
+  <text x="107" y="194" text-anchor="middle" class="text-white">일정 관리</text>
+  <rect x="200" y="171" width="130" height="35" class="area-cell"/>
+  <rect x="335" y="171" width="130" height="35" class="active-cell"/>
+  <rect x="470" y="171" width="130" height="35" class="area-cell"/>
+  <rect x="605" y="171" width="130" height="35" class="active-cell"/>
+  <rect x="740" y="171" width="130" height="35" class="area-cell"/>
+  
+  <!-- Row 4: Cost Management -->
+  <rect x="20" y="209" width="175" height="35" class="group-cell"/>
+  <text x="107" y="232" text-anchor="middle" class="text-white">원가 관리</text>
+  <rect x="200" y="209" width="130" height="35" class="area-cell"/>
+  <rect x="335" y="209" width="130" height="35" class="active-cell"/>
+  <rect x="470" y="209" width="130" height="35" class="area-cell"/>
+  <rect x="605" y="209" width="130" height="35" class="active-cell"/>
+  <rect x="740" y="209" width="130" height="35" class="area-cell"/>
+  
+  <!-- Row 5: Quality Management -->
+  <rect x="20" y="247" width="175" height="35" class="group-cell"/>
+  <text x="107" y="270" text-anchor="middle" class="text-white">품질 관리</text>
+  <rect x="200" y="247" width="130" height="35" class="area-cell"/>
+  <rect x="335" y="247" width="130" height="35" class="active-cell"/>
+  <rect x="470" y="247" width="130" height="35" class="active-cell"/>
+  <rect x="605" y="247" width="130" height="35" class="active-cell"/>
+  <rect x="740" y="247" width="130" height="35" class="area-cell"/>
+  
+  <!-- Row 6: Resource Management -->
+  <rect x="20" y="285" width="175" height="35" class="group-cell"/>
+  <text x="107" y="308" text-anchor="middle" class="text-white">자원 관리</text>
+  <rect x="200" y="285" width="130" height="35" class="area-cell"/>
+  <rect x="335" y="285" width="130" height="35" class="active-cell"/>
+  <rect x="470" y="285" width="130" height="35" class="active-cell"/>
+  <rect x="605" y="285" width="130" height="35" class="active-cell"/>
+  <rect x="740" y="285" width="130" height="35" class="area-cell"/>
+  
+  <!-- Row 7: Communications Management -->
+  <rect x="20" y="323" width="175" height="35" class="group-cell"/>
+  <text x="107" y="346" text-anchor="middle" class="text-white">의사소통 관리</text>
+  <rect x="200" y="323" width="130" height="35" class="area-cell"/>
+  <rect x="335" y="323" width="130" height="35" class="active-cell"/>
+  <rect x="470" y="323" width="130" height="35" class="active-cell"/>
+  <rect x="605" y="323" width="130" height="35" class="active-cell"/>
+  <rect x="740" y="323" width="130" height="35" class="area-cell"/>
+  
+  <!-- Row 8: Risk Management -->
+  <rect x="20" y="361" width="175" height="35" class="group-cell"/>
+  <text x="107" y="384" text-anchor="middle" class="text-white">리스크 관리</text>
+  <rect x="200" y="361" width="130" height="35" class="area-cell"/>
+  <rect x="335" y="361" width="130" height="35" class="active-cell"/>
+  <rect x="470" y="361" width="130" height="35" class="area-cell"/>
+  <rect x="605" y="361" width="130" height="35" class="active-cell"/>
+  <rect x="740" y="361" width="130" height="35" class="area-cell"/>
+  
+  <!-- Row 9: Procurement Management -->
+  <rect x="20" y="399" width="175" height="35" class="group-cell"/>
+  <text x="107" y="422" text-anchor="middle" class="text-white">조달 관리</text>
+  <rect x="200" y="399" width="130" height="35" class="area-cell"/>
+  <rect x="335" y="399" width="130" height="35" class="active-cell"/>
+  <rect x="470" y="399" width="130" height="35" class="active-cell"/>
+  <rect x="605" y="399" width="130" height="35" class="active-cell"/>
+  <rect x="740" y="399" width="130" height="35" class="area-cell"/>
+  
+  <!-- Row 10: Stakeholder Management -->
+  <rect x="20" y="437" width="175" height="35" class="group-cell"/>
+  <text x="107" y="460" text-anchor="middle" class="text-white">이해관계자 관리</text>
+  <rect x="200" y="437" width="130" height="35" class="active-cell"/>
+  <rect x="335" y="437" width="130" height="35" class="active-cell"/>
+  <rect x="470" y="437" width="130" height="35" class="active-cell"/>
+  <rect x="605" y="437" width="130" height="35" class="active-cell"/>
+  <rect x="740" y="437" width="130" height="35" class="area-cell"/>
+  
+  <!-- Legend -->
+  <rect x="300" y="500" width="30" height="20" class="active-cell"/>
+  <text x="340" y="515" style="font-family: Arial; font-size: 13px; fill: #2C3E50;">해당 프로세스 존재</text>
+  
+  <rect x="500" y="500" width="30" height="20" class="area-cell"/>
+  <text x="540" y="515" style="font-family: Arial; font-size: 13px; fill: #2C3E50;">프로세스 없음</text>
+  
+  <!-- Footer -->
+  <text x="450" y="550" text-anchor="middle" style="font-family: Arial; font-size: 12px; fill: #7F8C8D;">PMBOK Guide 기준으로 총 49개의 프로세스가 10개 지식영역과 5개 프로세스 그룹에 분포되어 있습니다</text>
+</svg>

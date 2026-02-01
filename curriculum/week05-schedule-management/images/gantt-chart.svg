@@ -1,0 +1,125 @@
+<svg width="900" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .gantt-header { fill: #34495E; stroke: #2C3E50; stroke-width: 2; }
+      .gantt-row { fill: #ECF0F1; stroke: #BDC3C7; stroke-width: 1; }
+      .task-bar { fill: #3498DB; stroke: #2980B9; stroke-width: 2; }
+      .critical-bar { fill: #E74C3C; stroke: #C0392B; stroke-width: 2; }
+      .milestone { fill: #F39C12; }
+      .today-line { stroke: #27AE60; stroke-width: 2; stroke-dasharray: 5,5; }
+      .text-white { font-family: Arial, sans-serif; font-size: 12px; fill: white; font-weight: bold; }
+      .text-dark { font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; }
+      .text-small { font-family: Arial, sans-serif; font-size: 10px; fill: white; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="25" text-anchor="middle" style="font-family: Arial; font-size: 22px; font-weight: bold; fill: #2C3E50;">간트 차트 (Gantt Chart)</text>
+  <text x="450" y="45" text-anchor="middle" style="font-family: Arial; font-size: 14px; fill: #7F8C8D;">프로젝트 일정 시각화 예시</text>
+  
+  <!-- Header Row -->
+  <rect x="50" y="70" width="200" height="30" class="gantt-header"/>
+  <text x="150" y="90" text-anchor="middle" class="text-white">작업명</text>
+  
+  <rect x="250" y="70" width="50" height="30" class="gantt-header"/>
+  <text x="275" y="90" text-anchor="middle" class="text-white">기간</text>
+  
+  <!-- Timeline Header -->
+  <rect x="300" y="70" width="80" height="30" class="gantt-header"/>
+  <text x="340" y="90" text-anchor="middle" class="text-white">Week 1</text>
+  
+  <rect x="380" y="70" width="80" height="30" class="gantt-header"/>
+  <text x="420" y="90" text-anchor="middle" class="text-white">Week 2</text>
+  
+  <rect x="460" y="70" width="80" height="30" class="gantt-header"/>
+  <text x="500" y="90" text-anchor="middle" class="text-white">Week 3</text>
+  
+  <rect x="540" y="70" width="80" height="30" class="gantt-header"/>
+  <text x="580" y="90" text-anchor="middle" class="text-white">Week 4</text>
+  
+  <rect x="620" y="70" width="80" height="30" class="gantt-header"/>
+  <text x="660" y="90" text-anchor="middle" class="text-white">Week 5</text>
+  
+  <rect x="700" y="70" width="80" height="30" class="gantt-header"/>
+  <text x="740" y="90" text-anchor="middle" class="text-white">Week 6</text>
+  
+  <rect x="780" y="70" width="80" height="30" class="gantt-header"/>
+  <text x="820" y="90" text-anchor="middle" class="text-white">Week 7</text>
+  
+  <!-- Task 1: Requirements -->
+  <rect x="50" y="100" width="200" height="35" class="gantt-row"/>
+  <text x="60" y="122" class="text-dark">요구사항 분석</text>
+  <rect x="250" y="100" width="50" height="35" class="gantt-row"/>
+  <text x="275" y="122" text-anchor="middle" class="text-dark">2주</text>
+  <rect x="300" y="105" width="160" height="25" rx="5" class="critical-bar"/>
+  <text x="380" y="122" text-anchor="middle" class="text-small">요구사항 분석</text>
+  
+  <!-- Task 2: Design -->
+  <rect x="50" y="135" width="200" height="35" class="gantt-row"/>
+  <text x="60" y="157" class="text-dark">UI/UX 설계</text>
+  <rect x="250" y="135" width="50" height="35" class="gantt-row"/>
+  <text x="275" y="157" text-anchor="middle" class="text-dark">2주</text>
+  <rect x="380" y="140" width="160" height="25" rx="5" class="critical-bar"/>
+  <text x="460" y="157" text-anchor="middle" class="text-small">UI/UX 설계</text>
+  
+  <!-- Task 3: Backend Development -->
+  <rect x="50" y="170" width="200" height="35" class="gantt-row"/>
+  <text x="60" y="192" class="text-dark">백엔드 개발</text>
+  <rect x="250" y="170" width="50" height="35" class="gantt-row"/>
+  <text x="275" y="192" text-anchor="middle" class="text-dark">3주</text>
+  <rect x="460" y="175" width="240" height="25" rx="5" class="critical-bar"/>
+  <text x="580" y="192" text-anchor="middle" class="text-small">백엔드 개발</text>
+  
+  <!-- Task 4: Frontend Development -->
+  <rect x="50" y="205" width="200" height="35" class="gantt-row"/>
+  <text x="60" y="227" class="text-dark">프론트엔드 개발</text>
+  <rect x="250" y="205" width="50" height="35" class="gantt-row"/>
+  <text x="275" y="227" text-anchor="middle" class="text-dark">2주</text>
+  <rect x="540" y="210" width="160" height="25" rx="5" class="task-bar"/>
+  <text x="620" y="227" text-anchor="middle" class="text-small">프론트엔드 개발</text>
+  
+  <!-- Task 5: Integration Testing -->
+  <rect x="50" y="240" width="200" height="35" class="gantt-row"/>
+  <text x="60" y="262" class="text-dark">통합 테스트</text>
+  <rect x="250" y="240" width="50" height="35" class="gantt-row"/>
+  <text x="275" y="262" text-anchor="middle" class="text-dark">1.5주</text>
+  <rect x="700" y="245" width="120" height="25" rx="5" class="critical-bar"/>
+  <text x="760" y="262" text-anchor="middle" class="text-small">통합 테스트</text>
+  
+  <!-- Task 6: Deployment -->
+  <rect x="50" y="275" width="200" height="35" class="gantt-row"/>
+  <text x="60" y="297" class="text-dark">배포</text>
+  <rect x="250" y="275" width="50" height="35" class="gantt-row"/>
+  <text x="275" y="297" text-anchor="middle" class="text-dark">0.5주</text>
+  <rect x="820" y="280" width="40" height="25" rx="5" class="critical-bar"/>
+  <text x="840" y="297" text-anchor="middle" class="text-small" style="font-size: 9px;">배포</text>
+  
+  <!-- Milestone: Project Kickoff -->
+  <polygon points="300,330 310,320 320,330 310,340" class="milestone"/>
+  <text x="330" y="332" class="text-dark" style="font-size: 10px;">프로젝트 시작</text>
+  
+  <!-- Milestone: Design Complete -->
+  <polygon points="540,330 550,320 560,330 550,340" class="milestone"/>
+  <text x="570" y="332" class="text-dark" style="font-size: 10px;">설계 완료</text>
+  
+  <!-- Milestone: Launch -->
+  <polygon points="860,330 870,320 880,330 870,340" class="milestone"/>
+  <text x="820" y="332" class="text-dark" style="font-size: 10px;">런치</text>
+  
+  <!-- Today Line (example at Week 3) -->
+  <line x1="500" y1="70" x2="500" y2="310" class="today-line"/>
+  <text x="500" y="360" text-anchor="middle" style="font-family: Arial; font-size: 11px; fill: #27AE60; font-weight: bold;">오늘</text>
+  
+  <!-- Legend -->
+  <rect x="100" y="370" width="60" height="15" rx="3" class="critical-bar"/>
+  <text x="170" y="382" style="font-family: Arial; font-size: 11px; fill: #2C3E50;">크리티컬 패스</text>
+  
+  <rect x="300" y="370" width="60" height="15" rx="3" class="task-bar"/>
+  <text x="370" y="382" style="font-family: Arial; font-size: 11px; fill: #2C3E50;">일반 작업</text>
+  
+  <polygon points="500,370 510,365 520,370 510,375" class="milestone"/>
+  <text x="530" y="380" style="font-family: Arial; font-size: 11px; fill: #2C3E50;">마일스톤</text>
+  
+  <line x1="650" y1="377" x2="710" y2="377" class="today-line"/>
+  <text x="720" y="382" style="font-family: Arial; font-size: 11px; fill: #2C3E50;">현재 진행 위치</text>
+</svg>

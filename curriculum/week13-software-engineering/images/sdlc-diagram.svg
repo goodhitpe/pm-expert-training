@@ -1,0 +1,94 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .phase-box { fill: white; stroke: #2C3E50; stroke-width: 2; }
+      .planning { fill: #E74C3C; }
+      .design { fill: #3498DB; }
+      .implementation { fill: #27AE60; }
+      .testing { fill: #F39C12; }
+      .deployment { fill: #9B59B6; }
+      .maintenance { fill: #34495E; }
+      .arrow { stroke: #2C3E50; stroke-width: 2; fill: none; }
+      .text-white { font-family: Arial, sans-serif; font-size: 12px; fill: white; font-weight: bold; text-anchor: middle; }
+      .text-label { font-family: Arial, sans-serif; font-size: 10px; fill: white; text-anchor: middle; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2C3E50" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2C3E50;">소프트웨어 개발 생명주기 (SDLC)</text>
+  <text x="400" y="50" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 14px; fill: #7F8C8D;">Software Development Life Cycle</text>
+  
+  <!-- Phase 1: Requirements & Planning -->
+  <rect x="250" y="90" width="300" height="70" rx="10" class="phase-box planning"/>
+  <text x="400" y="115" class="text-white" style="font-size: 16px;">1. 요구사항 분석 및 계획</text>
+  <text x="400" y="135" class="text-label">(Requirements & Planning)</text>
+  <text x="400" y="150" class="text-label">비즈니스 요구사항, 기능 명세, 프로젝트 계획</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="400" y1="160" x2="400" y2="185" class="arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Phase 2: System Design -->
+  <rect x="250" y="190" width="300" height="70" rx="10" class="phase-box design"/>
+  <text x="400" y="215" class="text-white" style="font-size: 16px;">2. 시스템 설계</text>
+  <text x="400" y="235" class="text-label">(System Design)</text>
+  <text x="400" y="250" class="text-label">아키텍처, 데이터베이스, UI/UX 설계</text>
+  
+  <!-- Arrow 2 -->
+  <line x1="400" y1="260" x2="400" y2="285" class="arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Phase 3: Implementation -->
+  <rect x="250" y="290" width="300" height="70" rx="10" class="phase-box implementation"/>
+  <text x="400" y="315" class="text-white" style="font-size: 16px;">3. 구현 (개발)</text>
+  <text x="400" y="335" class="text-label">(Implementation)</text>
+  <text x="400" y="350" class="text-label">코딩, 단위 테스트, 코드 리뷰</text>
+  
+  <!-- Arrow 3 -->
+  <line x1="400" y1="360" x2="400" y2="385" class="arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Phase 4: Testing -->
+  <rect x="250" y="390" width="300" height="70" rx="10" class="phase-box testing"/>
+  <text x="400" y="415" class="text-white" style="font-size: 16px;">4. 테스트</text>
+  <text x="400" y="435" class="text-label">(Testing)</text>
+  <text x="400" y="450" class="text-label">통합 테스트, 시스템 테스트, UAT</text>
+  
+  <!-- Arrow 4 -->
+  <line x1="400" y1="460" x2="400" y2="485" class="arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Phase 5: Deployment -->
+  <rect x="450" y="490" width="200" height="70" rx="10" class="phase-box deployment"/>
+  <text x="550" y="515" class="text-white" style="font-size: 14px;">5. 배포</text>
+  <text x="550" y="535" class="text-label">(Deployment)</text>
+  <text x="550" y="550" class="text-label">운영 환경 배포</text>
+  
+  <!-- Phase 6: Maintenance -->
+  <rect x="150" y="490" width="200" height="70" rx="10" class="phase-box maintenance"/>
+  <text x="250" y="515" class="text-white" style="font-size: 14px;">6. 유지보수</text>
+  <text x="250" y="535" class="text-label">(Maintenance)</text>
+  <text x="250" y="550" class="text-label">버그 수정, 개선</text>
+  
+  <!-- Arrows for deployment and maintenance -->
+  <line x1="450" y1="525" x2="355" y2="525" class="arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Feedback loop -->
+  <path d="M 150 525 Q 50 525, 50 125 Q 50 90, 245 90" class="arrow" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  <text x="50" y="315" text-anchor="middle" transform="rotate(-90 50 315)" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">피드백 &amp; 개선</text>
+  
+  <!-- Side Notes -->
+  <text x="680" y="140" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">산출물:</text>
+  <text x="680" y="155" style="font-family: Arial, sans-serif; font-size: 9px; fill: #7F8C8D;">• 요구사항 명세서</text>
+  
+  <text x="680" y="240" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">산출물:</text>
+  <text x="680" y="255" style="font-family: Arial, sans-serif; font-size: 9px; fill: #7F8C8D;">• 설계 문서</text>
+  
+  <text x="680" y="340" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">산출물:</text>
+  <text x="680" y="355" style="font-family: Arial, sans-serif; font-size: 9px; fill: #7F8C8D;">• 소스 코드</text>
+  
+  <text x="680" y="440" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">산출물:</text>
+  <text x="680" y="455" style="font-family: Arial, sans-serif; font-size: 9px; fill: #7F8C8D;">• 테스트 보고서</text>
+  
+  <!-- Bottom note -->
+  <text x="400" y="585" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 11px; fill: #7F8C8D;">대표적인 SDLC 모델: 폭포수(Waterfall), 애자일(Agile), V-모델, 나선형(Spiral)</text>
+</svg>

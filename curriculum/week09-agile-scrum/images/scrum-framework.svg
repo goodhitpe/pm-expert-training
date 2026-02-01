@@ -1,0 +1,101 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .sprint-box { fill: #3498DB; stroke: #2980B9; stroke-width: 2; }
+      .ceremony-box { fill: #E74C3C; stroke: #C0392B; stroke-width: 2; }
+      .artifact-box { fill: #27AE60; stroke: #229954; stroke-width: 2; }
+      .role-box { fill: #F39C12; stroke: #E67E22; stroke-width: 2; }
+      .arrow { stroke: #2C3E50; stroke-width: 2; fill: none; }
+      .text-white { font-family: Arial, sans-serif; font-size: 12px; fill: white; font-weight: bold; text-anchor: middle; }
+      .text-label { font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2C3E50" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2C3E50;">스크럼 프레임워크 (Scrum Framework)</text>
+  
+  <!-- Product Backlog -->
+  <rect x="50" y="100" width="150" height="80" rx="10" class="artifact-box"/>
+  <text x="125" y="135" class="text-white">제품 백로그</text>
+  <text x="125" y="153" class="text-white" style="font-size: 11px;">(Product Backlog)</text>
+  
+  <!-- Sprint Planning -->
+  <rect x="250" y="100" width="150" height="80" rx="10" class="ceremony-box"/>
+  <text x="325" y="135" class="text-white">스프린트 계획</text>
+  <text x="325" y="153" class="text-white" style="font-size: 11px;">(Sprint Planning)</text>
+  
+  <!-- Sprint Backlog -->
+  <rect x="450" y="100" width="150" height="80" rx="10" class="artifact-box"/>
+  <text x="525" y="135" class="text-white">스프린트 백로그</text>
+  <text x="525" y="153" class="text-white" style="font-size: 11px;">(Sprint Backlog)</text>
+  
+  <!-- Sprint (Center) -->
+  <ellipse cx="525" cy="300" rx="140" ry="100" class="sprint-box"/>
+  <text x="525" y="285" class="text-white" style="font-size: 16px;">스프린트</text>
+  <text x="525" y="305" class="text-white" style="font-size: 14px;">(Sprint)</text>
+  <text x="525" y="325" class="text-white" style="font-size: 11px;">1-4주</text>
+  
+  <!-- Daily Scrum -->
+  <rect x="700" y="180" width="150" height="60" rx="10" class="ceremony-box"/>
+  <text x="775" y="207" class="text-white">데일리 스크럼</text>
+  <text x="775" y="225" class="text-white" style="font-size: 10px;">(Daily Scrum)</text>
+  
+  <!-- Sprint Review -->
+  <rect x="700" y="260" width="150" height="60" rx="10" class="ceremony-box"/>
+  <text x="775" y="287" class="text-white">스프린트 리뷰</text>
+  <text x="775" y="305" class="text-white" style="font-size: 10px;">(Sprint Review)</text>
+  
+  <!-- Sprint Retrospective -->
+  <rect x="700" y="340" width="150" height="60" rx="10" class="ceremony-box"/>
+  <text x="775" y="367" class="text-white">스프린트 회고</text>
+  <text x="775" y="385" class="text-white" style="font-size: 10px;">(Retrospective)</text>
+  
+  <!-- Increment -->
+  <rect x="450" y="450" width="150" height="80" rx="10" class="artifact-box"/>
+  <text x="525" y="485" class="text-white">제품 증분</text>
+  <text x="525" y="503" class="text-white" style="font-size: 11px;">(Increment)</text>
+  
+  <!-- Arrows -->
+  <line x1="200" y1="140" x2="245" y2="140" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="140" x2="445" y2="140" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="525" y1="180" x2="525" y2="195" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="525" y1="400" x2="525" y2="445" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="665" y1="210" x2="695" y2="210" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="665" y1="290" x2="695" y2="290" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="665" y1="370" x2="695" y2="370" class="arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Feedback Arrow -->
+  <path d="M 450 490 Q 250 490, 125 185" class="arrow" marker-end="url(#arrowhead)"/>
+  <text x="300" y="520" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">피드백 &amp; 개선</text>
+  
+  <!-- Roles Section -->
+  <text x="100" y="70" style="font-family: Arial, sans-serif; font-size: 14px; fill: #2C3E50; font-weight: bold;">스크럼 역할:</text>
+  
+  <rect x="50" y="480" width="130" height="50" rx="8" class="role-box"/>
+  <text x="115" y="502" class="text-white" style="font-size: 11px;">제품 책임자</text>
+  <text x="115" y="518" class="text-white" style="font-size: 10px;">(Product Owner)</text>
+  
+  <rect x="190" y="480" width="130" height="50" rx="8" class="role-box"/>
+  <text x="255" y="502" class="text-white" style="font-size: 11px;">스크럼 마스터</text>
+  <text x="255" y="518" class="text-white" style="font-size: 10px;">(Scrum Master)</text>
+  
+  <rect x="330" y="480" width="130" height="50" rx="8" class="role-box"/>
+  <text x="395" y="502" class="text-white" style="font-size: 11px;">개발 팀</text>
+  <text x="395" y="518" class="text-white" style="font-size: 10px;">(Development Team)</text>
+  
+  <!-- Legend -->
+  <rect x="50" y="550" width="80" height="25" rx="5" class="artifact-box"/>
+  <text x="140" y="567" class="text-label">산출물 (Artifacts)</text>
+  
+  <rect x="250" y="550" width="80" height="25" rx="5" class="ceremony-box"/>
+  <text x="340" y="567" class="text-label">이벤트 (Events)</text>
+  
+  <rect x="450" y="550" width="80" height="25" rx="5" class="role-box"/>
+  <text x="540" y="567" class="text-label">역할 (Roles)</text>
+  
+  <rect x="650" y="550" width="80" height="25" rx="5" class="sprint-box"/>
+  <text x="740" y="567" class="text-label">스프린트</text>
+</svg>

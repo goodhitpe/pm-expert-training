@@ -1,0 +1,54 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .pm-circle { fill: #E74C3C; stroke: #C0392B; stroke-width: 3; }
+      .role-box { fill: #3498DB; stroke: #2980B9; stroke-width: 2; }
+      .line { stroke: #34495E; stroke-width: 2; }
+      .text-center { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: white; text-anchor: middle; }
+      .text-role { font-family: Arial, sans-serif; font-size: 12px; fill: white; text-anchor: middle; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" style="font-family: Arial; font-size: 22px; font-weight: bold; fill: #2C3E50;">PM의 핵심 역할</text>
+  
+  <!-- Central PM Circle -->
+  <circle cx="350" cy="150" r="60" class="pm-circle"/>
+  <text x="350" y="145" class="text-center" style="font-size: 16px;">프로젝트</text>
+  <text x="350" y="165" class="text-center" style="font-size: 16px;">매니저</text>
+  
+  <!-- Top Left: Planning -->
+  <line x1="310" y1="110" x2="150" y2="60" class="line"/>
+  <rect x="70" y="40" width="160" height="40" rx="8" class="role-box"/>
+  <text x="150" y="65" class="text-role">계획 수립 및 실행</text>
+  
+  <!-- Top Right: Communication -->
+  <line x1="390" y1="110" x2="550" y2="60" class="line"/>
+  <rect x="470" y="40" width="160" height="40" rx="8" class="role-box"/>
+  <text x="550" y="65" class="text-role">팀 조율 및 의사소통</text>
+  
+  <!-- Left: Schedule/Budget -->
+  <line x1="290" y1="150" x2="140" y2="150" class="line"/>
+  <rect x="20" y="130" width="120" height="40" rx="8" class="role-box"/>
+  <text x="80" y="155" class="text-role">일정/예산/</text>
+  <text x="80" y="168" class="text-role">범위 관리</text>
+  
+  <!-- Right: Risk -->
+  <line x1="410" y1="150" x2="560" y2="150" class="line"/>
+  <rect x="560" y="130" width="120" height="40" rx="8" class="role-box"/>
+  <text x="620" y="155" class="text-role">리스크 식별</text>
+  <text x="620" y="168" class="text-role">및 대응</text>
+  
+  <!-- Bottom Left: Stakeholder -->
+  <line x1="310" y1="190" x2="180" y2="240" class="line"/>
+  <rect x="100" y="220" width="160" height="40" rx="8" class="role-box"/>
+  <text x="180" y="245" class="text-role">이해관계자 관리</text>
+  
+  <!-- Bottom Right: Quality -->
+  <line x1="390" y1="190" x2="520" y2="240" class="line"/>
+  <rect x="440" y="220" width="160" height="40" rx="8" class="role-box"/>
+  <text x="520" y="245" class="text-role">품질 보증 및 통제</text>
+  
+  <!-- Footer -->
+  <text x="350" y="290" text-anchor="middle" style="font-family: Arial; font-size: 11px; fill: #7F8C8D;">프로젝트 매니저는 프로젝트의 성공을 위해 다양한 영역을 관리하는 리더입니다</text>
+</svg>

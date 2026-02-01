@@ -1,0 +1,70 @@
+<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .phase-box { fill: #4A90E2; stroke: #2E5C8A; stroke-width: 2; }
+      .arrow { fill: none; stroke: #333; stroke-width: 2; marker-end: url(#arrowhead); }
+      .text-large { font-family: Arial, sans-serif; font-size: 16px; fill: white; font-weight: bold; }
+      .text-small { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" style="font-family: Arial; font-size: 20px; font-weight: bold; fill: #333;">프로젝트 생명주기 (Project Lifecycle)</text>
+  
+  <!-- Phase 1: Initiating -->
+  <rect x="20" y="60" width="120" height="80" rx="10" class="phase-box"/>
+  <text x="80" y="95" text-anchor="middle" class="text-large">착수</text>
+  <text x="80" y="115" text-anchor="middle" class="text-large">(Initiating)</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="145" y1="100" x2="175" y2="100" class="arrow"/>
+  
+  <!-- Phase 2: Planning -->
+  <rect x="180" y="60" width="120" height="80" rx="10" class="phase-box"/>
+  <text x="240" y="95" text-anchor="middle" class="text-large">계획</text>
+  <text x="240" y="115" text-anchor="middle" class="text-large">(Planning)</text>
+  
+  <!-- Arrow 2 -->
+  <line x1="305" y1="100" x2="335" y2="100" class="arrow"/>
+  
+  <!-- Phase 3: Executing -->
+  <rect x="340" y="60" width="120" height="80" rx="10" class="phase-box"/>
+  <text x="400" y="95" text-anchor="middle" class="text-large">실행</text>
+  <text x="400" y="115" text-anchor="middle" class="text-large">(Executing)</text>
+  
+  <!-- Arrow 3 -->
+  <line x1="465" y1="100" x2="495" y2="100" class="arrow"/>
+  
+  <!-- Phase 4: Monitoring -->
+  <rect x="500" y="60" width="120" height="80" rx="10" class="phase-box"/>
+  <text x="560" y="90" text-anchor="middle" style="font-family: Arial; font-size: 14px; fill: white; font-weight: bold;">감시/통제</text>
+  <text x="560" y="110" text-anchor="middle" style="font-family: Arial; font-size: 13px; fill: white;">(Monitoring &amp;</text>
+  <text x="560" y="125" text-anchor="middle" style="font-family: Arial; font-size: 13px; fill: white;">Controlling)</text>
+  
+  <!-- Arrow 4 -->
+  <line x1="625" y1="100" x2="655" y2="100" class="arrow"/>
+  
+  <!-- Phase 5: Closing -->
+  <rect x="660" y="60" width="120" height="80" rx="10" class="phase-box"/>
+  <text x="720" y="95" text-anchor="middle" class="text-large">종료</text>
+  <text x="720" y="115" text-anchor="middle" class="text-large">(Closing)</text>
+  
+  <!-- Bottom descriptions -->
+  <text x="80" y="165" text-anchor="middle" class="text-small">프로젝트 헌장</text>
+  <text x="80" y="180" text-anchor="middle" class="text-small">이해관계자 식별</text>
+  
+  <text x="240" y="165" text-anchor="middle" class="text-small">상세 계획</text>
+  <text x="240" y="180" text-anchor="middle" class="text-small">일정/예산 수립</text>
+  
+  <text x="400" y="165" text-anchor="middle" class="text-small">팀 관리</text>
+  <text x="400" y="180" text-anchor="middle" class="text-small">작업 수행</text>
+  
+  <text x="560" y="165" text-anchor="middle" class="text-small">진척도 추적</text>
+  <text x="560" y="180" text-anchor="middle" class="text-small">변경 관리</text>
+  
+  <text x="720" y="165" text-anchor="middle" class="text-small">최종 인도</text>
+  <text x="720" y="180" text-anchor="middle" class="text-small">교훈 정리</text>
+</svg>
