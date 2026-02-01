@@ -1,0 +1,187 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .gantt-header { fill: #34495E; stroke: #2C3E50; stroke-width: 2; }
+      .gantt-row { fill: #ECF0F1; stroke: #BDC3C7; stroke-width: 1; }
+      .resource-bar { fill: #3498DB; stroke: #2980B9; stroke-width: 2; }
+      .over-allocated { fill: #E74C3C; stroke: #C0392B; stroke-width: 2; }
+      .available { fill: #27AE60; stroke: #229954; stroke-width: 2; }
+      .text-white { font-family: Arial, sans-serif; font-size: 12px; fill: white; font-weight: bold; }
+      .text-dark { font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; }
+      .text-center { font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; text-anchor: middle; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2C3E50;">자원 할당 차트 (Resource Allocation)</text>
+  <text x="450" y="50" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 14px; fill: #7F8C8D;">팀원별 작업 할당 및 가용성 관리</text>
+  
+  <!-- Header Row -->
+  <rect x="50" y="80" width="200" height="40" class="gantt-header"/>
+  <text x="150" y="105" text-anchor="middle" class="text-white">자원 (Resource)</text>
+  
+  <rect x="250" y="80" width="80" height="40" class="gantt-header"/>
+  <text x="290" y="105" text-anchor="middle" class="text-white">역할</text>
+  
+  <rect x="330" y="80" width="80" height="40" class="gantt-header"/>
+  <text x="370" y="105" text-anchor="middle" class="text-white">Week 1</text>
+  
+  <rect x="410" y="80" width="80" height="40" class="gantt-header"/>
+  <text x="450" y="105" text-anchor="middle" class="text-white">Week 2</text>
+  
+  <rect x="490" y="80" width="80" height="40" class="gantt-header"/>
+  <text x="530" y="105" text-anchor="middle" class="text-white">Week 3</text>
+  
+  <rect x="570" y="80" width="80" height="40" class="gantt-header"/>
+  <text x="610" y="105" text-anchor="middle" class="text-white">Week 4</text>
+  
+  <rect x="650" y="80" width="80" height="40" class="gantt-header"/>
+  <text x="690" y="105" text-anchor="middle" class="text-white">가용률</text>
+  
+  <rect x="730" y="80" width="80" height="40" class="gantt-header"/>
+  <text x="770" y="105" text-anchor="middle" class="text-white">상태</text>
+  
+  <!-- Resource 1: 김철수 (PM) -->
+  <rect x="50" y="120" width="200" height="50" class="gantt-row"/>
+  <text x="60" y="150" class="text-dark">김철수 (Kim)</text>
+  
+  <rect x="250" y="120" width="80" height="50" class="gantt-row"/>
+  <text x="290" y="150" text-anchor="middle" class="text-dark">PM</text>
+  
+  <rect x="335" y="127" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="370" y="148" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">100%</text>
+  
+  <rect x="415" y="127" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="450" y="148" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">100%</text>
+  
+  <rect x="495" y="127" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="530" y="148" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">80%</text>
+  
+  <rect x="575" y="127" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="610" y="148" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">60%</text>
+  
+  <rect x="650" y="120" width="80" height="50" class="gantt-row"/>
+  <text x="690" y="150" text-anchor="middle" class="text-dark">85%</text>
+  
+  <rect x="730" y="120" width="80" height="50" class="gantt-row"/>
+  <text x="770" y="150" text-anchor="middle" class="text-dark" style="fill: #27AE60; font-weight: bold;">정상</text>
+  
+  <!-- Resource 2: 박영희 (개발자) -->
+  <rect x="50" y="170" width="200" height="50" class="gantt-row"/>
+  <text x="60" y="200" class="text-dark">박영희 (Park)</text>
+  
+  <rect x="250" y="170" width="80" height="50" class="gantt-row"/>
+  <text x="290" y="200" text-anchor="middle" class="text-dark">개발자</text>
+  
+  <rect x="335" y="177" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="370" y="198" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">50%</text>
+  
+  <rect x="415" y="177" width="70" height="36" rx="5" class="over-allocated"/>
+  <text x="450" y="198" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">120%</text>
+  
+  <rect x="495" y="177" width="70" height="36" rx="5" class="over-allocated"/>
+  <text x="530" y="198" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">110%</text>
+  
+  <rect x="575" y="177" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="610" y="198" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">70%</text>
+  
+  <rect x="650" y="170" width="80" height="50" class="gantt-row"/>
+  <text x="690" y="200" text-anchor="middle" class="text-dark">88%</text>
+  
+  <rect x="730" y="170" width="80" height="50" class="gantt-row"/>
+  <text x="770" y="200" text-anchor="middle" class="text-dark" style="fill: #E74C3C; font-weight: bold;">초과</text>
+  
+  <!-- Resource 3: 이민수 (디자이너) -->
+  <rect x="50" y="220" width="200" height="50" class="gantt-row"/>
+  <text x="60" y="250" class="text-dark">이민수 (Lee)</text>
+  
+  <rect x="250" y="220" width="80" height="50" class="gantt-row"/>
+  <text x="290" y="250" text-anchor="middle" class="text-dark">디자이너</text>
+  
+  <rect x="335" y="227" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="370" y="248" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">90%</text>
+  
+  <rect x="415" y="227" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="450" y="248" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">80%</text>
+  
+  <rect x="495" y="227" width="30" height="36" rx="5" class="resource-bar"/>
+  <text x="510" y="248" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">30%</text>
+  
+  <rect x="650" y="220" width="80" height="50" class="gantt-row"/>
+  <text x="690" y="250" text-anchor="middle" class="text-dark">50%</text>
+  
+  <rect x="730" y="220" width="80" height="50" class="gantt-row"/>
+  <text x="770" y="250" text-anchor="middle" class="text-dark" style="fill: #3498DB; font-weight: bold;">가용</text>
+  
+  <!-- Resource 4: 정수진 (QA) -->
+  <rect x="50" y="270" width="200" height="50" class="gantt-row"/>
+  <text x="60" y="300" class="text-dark">정수진 (Jung)</text>
+  
+  <rect x="250" y="270" width="80" height="50" class="gantt-row"/>
+  <text x="290" y="300" text-anchor="middle" class="text-dark">QA</text>
+  
+  <rect x="495" y="277" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="530" y="298" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">60%</text>
+  
+  <rect x="575" y="277" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="610" y="298" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">100%</text>
+  
+  <rect x="650" y="270" width="80" height="50" class="gantt-row"/>
+  <text x="690" y="300" text-anchor="middle" class="text-dark">40%</text>
+  
+  <rect x="730" y="270" width="80" height="50" class="gantt-row"/>
+  <text x="770" y="300" text-anchor="middle" class="text-dark" style="fill: #3498DB; font-weight: bold;">가용</text>
+  
+  <!-- Resource 5: 최동욱 (개발자) -->
+  <rect x="50" y="320" width="200" height="50" class="gantt-row"/>
+  <text x="60" y="350" class="text-dark">최동욱 (Choi)</text>
+  
+  <rect x="250" y="320" width="80" height="50" class="gantt-row"/>
+  <text x="290" y="350" text-anchor="middle" class="text-dark">개발자</text>
+  
+  <rect x="335" y="327" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="370" y="348" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">70%</text>
+  
+  <rect x="415" y="327" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="450" y="348" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">90%</text>
+  
+  <rect x="495" y="327" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="530" y="348" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">90%</text>
+  
+  <rect x="575" y="327" width="70" height="36" rx="5" class="resource-bar"/>
+  <text x="610" y="348" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 10px; fill: white;">60%</text>
+  
+  <rect x="650" y="320" width="80" height="50" class="gantt-row"/>
+  <text x="690" y="350" text-anchor="middle" class="text-dark">78%</text>
+  
+  <rect x="730" y="320" width="80" height="50" class="gantt-row"/>
+  <text x="770" y="350" text-anchor="middle" class="text-dark" style="fill: #27AE60; font-weight: bold;">정상</text>
+  
+  <!-- Summary Section -->
+  <text x="100" y="405" style="font-family: Arial, sans-serif; font-size: 16px; fill: #2C3E50; font-weight: bold;">요약 (Summary)</text>
+  
+  <rect x="100" y="420" width="250" height="140" rx="10" fill="#FFF3E0" stroke="#F39C12" stroke-width="2"/>
+  <text x="120" y="445" style="font-family: Arial, sans-serif; font-size: 13px; fill: #2C3E50; font-weight: bold;">팀 가용성 분석:</text>
+  <text x="120" y="470" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">• 총 팀원: 5명</text>
+  <text x="120" y="490" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">• 평균 가용률: 68%</text>
+  <text x="120" y="510" style="font-family: Arial, sans-serif; font-size: 11px; fill: #E74C3C; font-weight: bold;">⚠️ 과할당: 박영희 (Week 2-3)</text>
+  <text x="120" y="530" style="font-family: Arial, sans-serif; font-size: 11px; fill: #27AE60; font-weight: bold;">✓ 가용 인력: 이민수, 정수진</text>
+  <text x="120" y="550" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">권장: 자원 재배분 필요</text>
+  
+  <rect x="370" y="420" width="420" height="140" rx="10" fill="#E8F8F5" stroke="#27AE60" stroke-width="2"/>
+  <text x="390" y="445" style="font-family: Arial, sans-serif; font-size: 13px; fill: #2C3E50; font-weight: bold;">자원 평준화 (Resource Leveling):</text>
+  <text x="390" y="470" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">1. 박영희의 과할당 작업을 이민수 또는 최동욱에게 재배분</text>
+  <text x="390" y="490" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">2. Week 2-3의 비중요 작업을 Week 4로 이동</text>
+  <text x="390" y="510" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">3. 정수진의 QA 작업을 앞당겨 조기 검증</text>
+  <text x="390" y="530" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">4. 필요시 추가 개발자 단기 투입 검토</text>
+  
+  <!-- Legend -->
+  <rect x="100" y="570" width="60" height="15" rx="3" class="resource-bar"/>
+  <text x="170" y="582" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">정상 할당 (0-100%)</text>
+  
+  <rect x="320" y="570" width="60" height="15" rx="3" class="over-allocated"/>
+  <text x="390" y="582" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">과할당 (>100%)</text>
+  
+  <rect x="540" y="570" width="60" height="15" rx="3" class="available"/>
+  <text x="610" y="582" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">가용 자원 (<50%)</text>
+</svg>

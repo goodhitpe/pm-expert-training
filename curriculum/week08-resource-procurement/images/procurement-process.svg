@@ -1,0 +1,103 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .process-box { fill: #3498DB; stroke: #2980B9; stroke-width: 2; }
+      .activity-box { fill: #27AE60; stroke: #229954; stroke-width: 2; }
+      .decision-box { fill: #F39C12; stroke: #E67E22; stroke-width: 2; }
+      .output-box { fill: #E74C3C; stroke: #C0392B; stroke-width: 2; }
+      .arrow { stroke: #2C3E50; stroke-width: 2; fill: none; }
+      .text-white { font-family: Arial, sans-serif; font-size: 12px; fill: white; font-weight: bold; text-anchor: middle; }
+      .text-label { font-family: Arial, sans-serif; font-size: 10px; fill: white; text-anchor: middle; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2C3E50" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2C3E50;">조달 관리 프로세스 (Procurement Process)</text>
+  <text x="450" y="50" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 14px; fill: #7F8C8D;">Procurement Management Workflow</text>
+  
+  <!-- Step 1: Plan Procurement -->
+  <rect x="325" y="80" width="250" height="70" rx="10" class="process-box"/>
+  <text x="450" y="110" class="text-white" style="font-size: 14px;">1. 조달 계획</text>
+  <text x="450" y="130" class="text-label">(Plan Procurement Management)</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="450" y1="150" x2="450" y2="175" class="arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 2: Identify Vendors -->
+  <rect x="325" y="180" width="250" height="70" rx="10" class="activity-box"/>
+  <text x="450" y="210" class="text-white" style="font-size: 14px;">2. 공급업체 식별</text>
+  <text x="450" y="230" class="text-label">(Identify Potential Vendors)</text>
+  
+  <!-- Arrow 2 -->
+  <line x1="450" y1="250" x2="450" y2="275" class="arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 3: RFP/RFQ -->
+  <rect x="325" y="280" width="250" height="70" rx="10" class="output-box"/>
+  <text x="450" y="310" class="text-white" style="font-size: 14px;">3. 제안 요청서 발행</text>
+  <text x="450" y="330" class="text-label">(Issue RFP/RFQ/RFI)</text>
+  
+  <!-- Arrow 3 -->
+  <line x1="450" y1="350" x2="450" y2="375" class="arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 4: Evaluate Proposals -->
+  <rect x="325" y="380" width="250" height="70" rx="10" class="decision-box"/>
+  <text x="450" y="410" class="text-white" style="font-size: 14px;">4. 제안서 평가</text>
+  <text x="450" y="430" class="text-label">(Evaluate Proposals)</text>
+  
+  <!-- Arrow 4 -->
+  <line x1="450" y1="450" x2="450" y2="475" class="arrow" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 5: Select Vendor -->
+  <rect x="325" y="480" width="250" height="70" rx="10" class="activity-box"/>
+  <text x="450" y="510" class="text-white" style="font-size: 14px;">5. 공급업체 선정</text>
+  <text x="450" y="530" class="text-label">(Select Vendor &amp; Award Contract)</text>
+  
+  <!-- Side Details Left -->
+  <text x="80" y="115" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">산출물:</text>
+  <text x="80" y="135" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 조달 관리 계획서</text>
+  <text x="80" y="150" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• Make-or-Buy 분석</text>
+  
+  <text x="80" y="215" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">활동:</text>
+  <text x="80" y="235" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 시장 조사</text>
+  <text x="80" y="250" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 자격 심사</text>
+  
+  <text x="80" y="315" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">문서:</text>
+  <text x="80" y="335" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• RFP: 제안 요청서</text>
+  <text x="80" y="350" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• RFQ: 견적 요청서</text>
+  
+  <text x="80" y="415" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">평가 기준:</text>
+  <text x="80" y="435" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 가격</text>
+  <text x="80" y="450" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 품질</text>
+  
+  <text x="80" y="515" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">결과:</text>
+  <text x="80" y="535" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 계약서</text>
+  <text x="80" y="550" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 공급업체 선정</text>
+  
+  <!-- Side Details Right -->
+  <text x="650" y="115" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">고려사항:</text>
+  <text x="650" y="135" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 예산 제약</text>
+  <text x="650" y="150" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 일정 요구사항</text>
+  
+  <text x="650" y="215" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">검토 항목:</text>
+  <text x="650" y="235" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 재무 건전성</text>
+  <text x="650" y="250" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 과거 실적</text>
+  
+  <text x="650" y="315" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">협상 항목:</text>
+  <text x="650" y="335" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 가격 조건</text>
+  <text x="650" y="350" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 인도 일정</text>
+  
+  <text x="650" y="415" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">방법:</text>
+  <text x="650" y="435" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 가중치 평가</text>
+  <text x="650" y="450" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 독립 추정</text>
+  
+  <text x="650" y="515" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">계약 유형:</text>
+  <text x="650" y="535" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 고정가격(FFP)</text>
+  <text x="650" y="550" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">• 원가 상환(CPFF)</text>
+  
+  <!-- Bottom Note -->
+  <rect x="100" y="565" width="700" height="25" rx="8" fill="#F8F9FA" stroke="#BDC3C7" stroke-width="2"/>
+  <text x="450" y="583" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">조달 관리는 계약 체결 후에도 공급업체 성과 관리, 변경 통제, 계약 종료까지 이어집니다</text>
+</svg>
