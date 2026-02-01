@@ -1,0 +1,102 @@
+<svg width="900" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .phase-box { fill: #3498DB; stroke: #2980B9; stroke-width: 2; }
+      .milestone-diamond { fill: #F39C12; stroke: #E67E22; stroke-width: 2; }
+      .deliverable-box { fill: #27AE60; stroke: #229954; stroke-width: 2; }
+      .timeline { stroke: #2C3E50; stroke-width: 3; }
+      .text-white { font-family: Arial, sans-serif; font-size: 12px; fill: white; font-weight: bold; text-anchor: middle; }
+      .text-label { font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2C3E50;">모의 프로젝트 타임라인</text>
+  <text x="450" y="50" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 14px; fill: #7F8C8D;">Mock Project Timeline - 11-12주차</text>
+  
+  <!-- Timeline -->
+  <line x1="80" y1="250" x2="820" y2="250" class="timeline"/>
+  
+  <!-- Week Labels -->
+  <text x="150" y="280" class="text-label" style="font-weight: bold;">Week 11</text>
+  <text x="450" y="280" class="text-label" style="font-weight: bold;">Week 12</text>
+  <text x="750" y="280" class="text-label" style="font-weight: bold;">완료</text>
+  
+  <!-- Phase 1: Initiation -->
+  <rect x="80" y="100" width="150" height="80" rx="10" class="phase-box"/>
+  <text x="155" y="130" class="text-white">착수 단계</text>
+  <text x="155" y="150" class="text-white" style="font-size: 11px;">프로젝트 헌장</text>
+  <text x="155" y="165" class="text-white" style="font-size: 11px;">이해관계자 식별</text>
+  <line x1="155" y1="180" x2="155" y2="245" stroke="#3498DB" stroke-width="2"/>
+  
+  <!-- Milestone 1 -->
+  <polygon points="155,250 165,240 155,230 145,240" class="milestone-diamond"/>
+  <text x="155" y="215" class="text-label" style="font-size: 10px;">킥오프</text>
+  
+  <!-- Phase 2: Planning -->
+  <rect x="250" y="100" width="180" height="80" rx="10" class="phase-box"/>
+  <text x="340" y="130" class="text-white">계획 단계</text>
+  <text x="340" y="150" class="text-white" style="font-size: 11px;">WBS 작성</text>
+  <text x="340" y="165" class="text-white" style="font-size: 11px;">일정/예산 수립</text>
+  <line x1="340" y1="180" x2="340" y2="245" stroke="#3498DB" stroke-width="2"/>
+  
+  <!-- Milestone 2 -->
+  <polygon points="340,250 350,240 340,230 330,240" class="milestone-diamond"/>
+  <text x="340" y="215" class="text-label" style="font-size: 10px;">계획 승인</text>
+  
+  <!-- Phase 3: Execution -->
+  <rect x="450" y="100" width="200" height="80" rx="10" class="phase-box"/>
+  <text x="550" y="130" class="text-white">실행 단계</text>
+  <text x="550" y="150" class="text-white" style="font-size: 11px;">작업 수행</text>
+  <text x="550" y="165" class="text-white" style="font-size: 11px;">팀 관리</text>
+  <line x1="550" y1="180" x2="550" y2="245" stroke="#3498DB" stroke-width="2"/>
+  
+  <!-- Milestone 3 -->
+  <polygon points="550,250 560,240 550,230 540,240" class="milestone-diamond"/>
+  <text x="550" y="215" class="text-label" style="font-size: 10px;">중간 검토</text>
+  
+  <!-- Phase 4: Closing -->
+  <rect x="670" y="100" width="150" height="80" rx="10" class="phase-box"/>
+  <text x="745" y="130" class="text-white">종료 단계</text>
+  <text x="745" y="150" class="text-white" style="font-size: 11px;">최종 인도</text>
+  <text x="745" y="165" class="text-white" style="font-size: 11px;">교훈 정리</text>
+  <line x1="745" y1="180" x2="745" y2="245" stroke="#3498DB" stroke-width="2"/>
+  
+  <!-- Milestone 4 -->
+  <polygon points="745,250 755,240 745,230 735,240" class="milestone-diamond"/>
+  <text x="745" y="215" class="text-label" style="font-size: 10px;">프로젝트 완료</text>
+  
+  <!-- Deliverables Section -->
+  <text x="80" y="320" style="font-family: Arial, sans-serif; font-size: 16px; fill: #2C3E50; font-weight: bold;">주요 산출물 (Deliverables):</text>
+  
+  <!-- Deliverable 1 -->
+  <rect x="80" y="340" width="180" height="50" rx="8" class="deliverable-box"/>
+  <text x="170" y="362" class="text-white" style="font-size: 11px;">프로젝트 헌장</text>
+  <text x="170" y="378" class="text-white" style="font-size: 10px;">(Project Charter)</text>
+  
+  <!-- Deliverable 2 -->
+  <rect x="280" y="340" width="180" height="50" rx="8" class="deliverable-box"/>
+  <text x="370" y="362" class="text-white" style="font-size: 11px;">프로젝트 관리 계획서</text>
+  <text x="370" y="378" class="text-white" style="font-size: 10px;">(PM Plan)</text>
+  
+  <!-- Deliverable 3 -->
+  <rect x="480" y="340" width="180" height="50" rx="8" class="deliverable-box"/>
+  <text x="570" y="362" class="text-white" style="font-size: 11px;">WBS &amp; 간트 차트</text>
+  <text x="570" y="378" class="text-white" style="font-size: 10px;">(WBS &amp; Gantt)</text>
+  
+  <!-- Deliverable 4 -->
+  <rect x="680" y="340" width="180" height="50" rx="8" class="deliverable-box"/>
+  <text x="770" y="362" class="text-white" style="font-size: 11px;">최종 보고서</text>
+  <text x="770" y="378" class="text-white" style="font-size: 10px;">(Final Report)</text>
+  
+  <!-- Activities Section -->
+  <text x="80" y="420" style="font-family: Arial, sans-serif; font-size: 16px; fill: #2C3E50; font-weight: bold;">실습 활동:</text>
+  
+  <text x="100" y="445" style="font-family: Arial, sans-serif; font-size: 12px; fill: #2C3E50;">✓ 프로젝트 선정 및 팀 구성</text>
+  <text x="100" y="465" style="font-family: Arial, sans-serif; font-size: 12px; fill: #2C3E50;">✓ 이해관계자 분석 및 커뮤니케이션 계획</text>
+  <text x="100" y="485" style="font-family: Arial, sans-serif; font-size: 12px; fill: #2C3E50;">✓ 리스크 식별 및 대응 계획</text>
+  
+  <text x="500" y="445" style="font-family: Arial, sans-serif; font-size: 12px; fill: #2C3E50;">✓ 일정 및 예산 수립</text>
+  <text x="500" y="465" style="font-family: Arial, sans-serif; font-size: 12px; fill: #2C3E50;">✓ 프로젝트 실행 시뮬레이션</text>
+  <text x="500" y="485" style="font-family: Arial, sans-serif; font-size: 12px; fill: #2C3E50;">✓ 최종 발표 및 피드백</text>
+</svg>

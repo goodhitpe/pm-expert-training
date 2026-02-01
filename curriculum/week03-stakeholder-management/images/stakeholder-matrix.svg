@@ -1,0 +1,65 @@
+<svg width="700" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .matrix-cell { fill: white; stroke: #2C3E50; stroke-width: 2; }
+      .high-power-high-interest { fill: #E74C3C; }
+      .high-power-low-interest { fill: #F39C12; }
+      .low-power-high-interest { fill: #3498DB; }
+      .low-power-low-interest { fill: #95A5A6; }
+      .text-title { font-family: Arial, sans-serif; font-size: 22px; font-weight: bold; fill: #2C3E50; }
+      .text-label { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: white; }
+      .text-desc { font-family: Arial, sans-serif; font-size: 11px; fill: white; }
+      .text-axis { font-family: Arial, sans-serif; font-size: 13px; fill: #2C3E50; font-weight: bold; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" class="text-title">이해관계자 파워-관심 매트릭스</text>
+  <text x="350" y="50" text-anchor="middle" style="font-family: Arial; font-size: 14px; fill: #7F8C8D;">(Stakeholder Power-Interest Matrix)</text>
+  
+  <!-- Y-axis label (Power) -->
+  <text x="30" y="250" text-anchor="middle" transform="rotate(-90 30 250)" class="text-axis">파워 (Power)</text>
+  <text x="30" y="150" text-anchor="middle" transform="rotate(-90 30 150)" style="font-family: Arial; font-size: 12px; fill: #7F8C8D;">높음 (High)</text>
+  <text x="30" y="380" text-anchor="middle" transform="rotate(-90 30 380)" style="font-family: Arial; font-size: 12px; fill: #7F8C8D;">낮음 (Low)</text>
+  
+  <!-- X-axis label (Interest) -->
+  <text x="350" y="490" text-anchor="middle" class="text-axis">관심도 (Interest)</text>
+  <text x="200" y="470" text-anchor="middle" style="font-family: Arial; font-size: 12px; fill: #7F8C8D;">낮음 (Low)</text>
+  <text x="500" y="470" text-anchor="middle" style="font-family: Arial; font-size: 12px; fill: #7F8C8D;">높음 (High)</text>
+  
+  <!-- Quadrant 1: High Power, Low Interest (Top-Left) -->
+  <rect x="80" y="80" width="250" height="170" class="matrix-cell high-power-low-interest"/>
+  <text x="205" y="110" text-anchor="middle" class="text-label">만족 유지</text>
+  <text x="205" y="128" text-anchor="middle" class="text-label">(Keep Satisfied)</text>
+  <text x="205" y="155" text-anchor="middle" class="text-desc">• 높은 파워, 낮은 관심</text>
+  <text x="205" y="175" text-anchor="middle" class="text-desc">• 정기적 업데이트</text>
+  <text x="205" y="195" text-anchor="middle" class="text-desc">• 과도한 정보 전달 피함</text>
+  <text x="205" y="215" text-anchor="middle" class="text-desc">예: 고위 경영진, 스폰서</text>
+  
+  <!-- Quadrant 2: High Power, High Interest (Top-Right) -->
+  <rect x="335" y="80" width="250" height="170" class="matrix-cell high-power-high-interest"/>
+  <text x="460" y="110" text-anchor="middle" class="text-label">적극 관리</text>
+  <text x="460" y="128" text-anchor="middle" class="text-label">(Manage Closely)</text>
+  <text x="460" y="155" text-anchor="middle" class="text-desc">• 높은 파워, 높은 관심</text>
+  <text x="460" y="175" text-anchor="middle" class="text-desc">• 긴밀한 협력</text>
+  <text x="460" y="195" text-anchor="middle" class="text-desc">• 주요 의사결정 참여</text>
+  <text x="460" y="215" text-anchor="middle" class="text-desc">예: 프로젝트 스폰서, 주요 고객</text>
+  
+  <!-- Quadrant 3: Low Power, Low Interest (Bottom-Left) -->
+  <rect x="80" y="255" width="250" height="170" class="matrix-cell low-power-low-interest"/>
+  <text x="205" y="285" text-anchor="middle" class="text-label">모니터링</text>
+  <text x="205" y="303" text-anchor="middle" class="text-label">(Monitor)</text>
+  <text x="205" y="330" text-anchor="middle" class="text-desc">• 낮은 파워, 낮은 관심</text>
+  <text x="205" y="350" text-anchor="middle" class="text-desc">• 최소한의 관리</text>
+  <text x="205" y="370" text-anchor="middle" class="text-desc">• 필요시 정보 제공</text>
+  <text x="205" y="390" text-anchor="middle" class="text-desc">예: 간접 영향 부서</text>
+  
+  <!-- Quadrant 4: Low Power, High Interest (Bottom-Right) -->
+  <rect x="335" y="255" width="250" height="170" class="matrix-cell low-power-high-interest"/>
+  <text x="460" y="285" text-anchor="middle" class="text-label">정보 제공</text>
+  <text x="460" y="303" text-anchor="middle" class="text-label">(Keep Informed)</text>
+  <text x="460" y="330" text-anchor="middle" class="text-desc">• 낮은 파워, 높은 관심</text>
+  <text x="460" y="350" text-anchor="middle" class="text-desc">• 충분한 정보 제공</text>
+  <text x="460" y="370" text-anchor="middle" class="text-desc">• 우려사항 청취</text>
+  <text x="460" y="390" text-anchor="middle" class="text-desc">예: 실무 팀원, 일반 사용자</text>
+</svg>

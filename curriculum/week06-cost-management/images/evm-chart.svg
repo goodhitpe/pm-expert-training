@@ -1,0 +1,99 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .chart-bg { fill: white; stroke: #2C3E50; stroke-width: 2; }
+      .bar-pv { fill: #3498DB; }
+      .bar-ev { fill: #27AE60; }
+      .bar-ac { fill: #E74C3C; }
+      .grid-line { stroke: #BDC3C7; stroke-width: 1; }
+      .axis-line { stroke: #2C3E50; stroke-width: 2; }
+      .text-label { font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; }
+      .text-title { font-family: Arial, sans-serif; font-size: 22px; font-weight: bold; fill: #2C3E50; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="text-title">EVM 차트 (Earned Value Management)</text>
+  <text x="400" y="50" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 14px; fill: #7F8C8D;">성과 가치 관리 - 프로젝트 진행 상황 분석</text>
+  
+  <!-- Chart Background -->
+  <rect x="80" y="80" width="640" height="350" class="chart-bg"/>
+  
+  <!-- Grid Lines (Horizontal) -->
+  <line x1="80" y1="150" x2="720" y2="150" class="grid-line"/>
+  <line x1="80" y1="220" x2="720" y2="220" class="grid-line"/>
+  <line x1="80" y1="290" x2="720" y2="290" class="grid-line"/>
+  <line x1="80" y1="360" x2="720" y2="360" class="grid-line"/>
+  
+  <!-- Y-axis Labels -->
+  <text x="70" y="85" text-anchor="end" class="text-label">$100K</text>
+  <text x="70" y="155" text-anchor="end" class="text-label">$80K</text>
+  <text x="70" y="225" text-anchor="end" class="text-label">$60K</text>
+  <text x="70" y="295" text-anchor="end" class="text-label">$40K</text>
+  <text x="70" y="365" text-anchor="end" class="text-label">$20K</text>
+  <text x="70" y="435" text-anchor="end" class="text-label">$0</text>
+  
+  <!-- X-axis Labels -->
+  <text x="150" y="450" text-anchor="middle" class="text-label">Week 1</text>
+  <text x="270" y="450" text-anchor="middle" class="text-label">Week 2</text>
+  <text x="390" y="450" text-anchor="middle" class="text-label">Week 3</text>
+  <text x="510" y="450" text-anchor="middle" class="text-label">Week 4</text>
+  <text x="630" y="450" text-anchor="middle" class="text-label">Week 5</text>
+  
+  <!-- Axes -->
+  <line x1="80" y1="80" x2="80" y2="430" class="axis-line"/>
+  <line x1="80" y1="430" x2="720" y2="430" class="axis-line"/>
+  
+  <!-- Y-axis Label -->
+  <text x="30" y="255" text-anchor="middle" transform="rotate(-90 30 255)" style="font-family: Arial, sans-serif; font-size: 13px; fill: #2C3E50; font-weight: bold;">비용 (Cost)</text>
+  
+  <!-- X-axis Label -->
+  <text x="400" y="480" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 13px; fill: #2C3E50; font-weight: bold;">시간 (Time)</text>
+  
+  <!-- PV Line (Planned Value - Blue) -->
+  <polyline points="80,430 150,360 270,290 390,220 510,150 630,80" 
+            fill="none" stroke="#3498DB" stroke-width="3"/>
+  
+  <!-- EV Line (Earned Value - Green) -->
+  <polyline points="80,430 150,370 270,310 390,255 510,210" 
+            fill="none" stroke="#27AE60" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- AC Line (Actual Cost - Red) -->
+  <polyline points="80,430 150,365 270,300 390,240 510,185" 
+            fill="none" stroke="#E74C3C" stroke-width="3" stroke-dasharray="8,4"/>
+  
+  <!-- Current Time Marker -->
+  <line x1="510" y1="80" x2="510" y2="430" stroke="#F39C12" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="515" y="70" style="font-family: Arial, sans-serif; font-size: 11px; fill: #F39C12; font-weight: bold;">현재 시점</text>
+  
+  <!-- Legend -->
+  <rect x="100" y="500" width="600" height="80" rx="8" fill="#F8F9FA" stroke="#BDC3C7" stroke-width="2"/>
+  
+  <line x1="120" y1="525" x2="160" y2="525" stroke="#3498DB" stroke-width="3"/>
+  <text x="170" y="530" class="text-label" style="font-weight: bold;">PV (Planned Value)</text>
+  <text x="170" y="545" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">계획된 가치 - 예산대로 진행 시 소요 비용</text>
+  
+  <line x1="380" y1="525" x2="420" y2="525" stroke="#27AE60" stroke-width="3" stroke-dasharray="5,5"/>
+  <text x="430" y="530" class="text-label" style="font-weight: bold;">EV (Earned Value)</text>
+  <text x="430" y="545" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">획득 가치 - 실제 완료된 작업의 가치</text>
+  
+  <line x1="120" y1="560" x2="160" y2="560" stroke="#E74C3C" stroke-width="3" stroke-dasharray="8,4"/>
+  <text x="170" y="565" class="text-label" style="font-weight: bold;">AC (Actual Cost)</text>
+  <text x="170" y="580" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">실제 비용 - 지출된 실제 비용</text>
+  
+  <!-- Analysis Box -->
+  <text x="730" y="150" style="font-family: Arial, sans-serif; font-size: 12px; fill: #2C3E50; font-weight: bold;">분석 지표:</text>
+  <text x="730" y="175" style="font-family: Arial, sans-serif; font-size: 11px; fill: #27AE60; font-weight: bold;">CV = EV - AC</text>
+  <text x="730" y="195" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">비용 편차</text>
+  <text x="730" y="215" style="font-family: Arial, sans-serif; font-size: 10px; fill: #27AE60;">(양수: 예산 내)</text>
+  
+  <text x="730" y="245" style="font-family: Arial, sans-serif; font-size: 11px; fill: #3498DB; font-weight: bold;">SV = EV - PV</text>
+  <text x="730" y="265" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">일정 편차</text>
+  <text x="730" y="285" style="font-family: Arial, sans-serif; font-size: 10px; fill: #E74C3C;">(음수: 일정 지연)</text>
+  
+  <text x="730" y="315" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">CPI = EV / AC</text>
+  <text x="730" y="335" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">비용 성과 지수</text>
+  
+  <text x="730" y="365" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; font-weight: bold;">SPI = EV / PV</text>
+  <text x="730" y="385" style="font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D;">일정 성과 지수</text>
+</svg>

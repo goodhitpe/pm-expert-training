@@ -1,0 +1,85 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .tool-box { fill: white; stroke: #2C3E50; stroke-width: 2; }
+      .jira { fill: #0052CC; }
+      .trello { fill: #0079BF; }
+      .asana { fill: #F06A6A; }
+      .monday { fill: #FF3D57; }
+      .msproject { fill: #31752F; }
+      .text-white { font-family: Arial, sans-serif; font-size: 14px; fill: white; font-weight: bold; text-anchor: middle; }
+      .text-label { font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50; text-anchor: middle; }
+      .text-desc { font-family: Arial, sans-serif; font-size: 10px; fill: #7F8C8D; text-anchor: middle; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2C3E50;">주요 프로젝트 관리 도구</text>
+  <text x="400" y="50" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 14px; fill: #7F8C8D;">Popular Project Management Tools</text>
+  
+  <!-- Jira -->
+  <rect x="50" y="80" width="200" height="120" rx="10" class="tool-box jira"/>
+  <text x="150" y="120" class="text-white" style="font-size: 22px;">Jira</text>
+  <text x="150" y="145" class="text-white" style="font-size: 11px;">by Atlassian</text>
+  <text x="150" y="170" style="font-family: Arial, sans-serif; font-size: 10px; fill: white; text-anchor: middle;">애자일 프로젝트 관리</text>
+  <text x="150" y="185" style="font-family: Arial, sans-serif; font-size: 10px; fill: white; text-anchor: middle;">스프린트, 백로그, 보드</text>
+  
+  <text x="150" y="220" class="text-label" style="font-weight: bold;">장점:</text>
+  <text x="150" y="240" class="text-desc">• 강력한 이슈 추적</text>
+  <text x="150" y="255" class="text-desc">• 커스터마이징 가능</text>
+  <text x="150" y="270" class="text-desc">• 개발팀 친화적</text>
+  
+  <!-- Trello -->
+  <rect x="300" y="80" width="200" height="120" rx="10" class="tool-box trello"/>
+  <text x="400" y="120" class="text-white" style="font-size: 22px;">Trello</text>
+  <text x="400" y="145" class="text-white" style="font-size: 11px;">by Atlassian</text>
+  <text x="400" y="170" style="font-family: Arial, sans-serif; font-size: 10px; fill: white; text-anchor: middle;">칸반 보드 기반</text>
+  <text x="400" y="185" style="font-family: Arial, sans-serif; font-size: 10px; fill: white; text-anchor: middle;">시각적 작업 관리</text>
+  
+  <text x="400" y="220" class="text-label" style="font-weight: bold;">장점:</text>
+  <text x="400" y="240" class="text-desc">• 직관적인 UI</text>
+  <text x="400" y="255" class="text-desc">• 빠른 시작</text>
+  <text x="400" y="270" class="text-desc">• 무료 플랜 제공</text>
+  
+  <!-- Asana -->
+  <rect x="550" y="80" width="200" height="120" rx="10" class="tool-box asana"/>
+  <text x="650" y="120" class="text-white" style="font-size: 22px;">Asana</text>
+  <text x="650" y="145" class="text-white" style="font-size: 11px;">Team Collaboration</text>
+  <text x="650" y="170" style="font-family: Arial, sans-serif; font-size: 10px; fill: white; text-anchor: middle;">팀 협업 플랫폼</text>
+  <text x="650" y="185" style="font-family: Arial, sans-serif; font-size: 10px; fill: white; text-anchor: middle;">타임라인, 목표 관리</text>
+  
+  <text x="650" y="220" class="text-label" style="font-weight: bold;">장점:</text>
+  <text x="650" y="240" class="text-desc">• 다양한 뷰</text>
+  <text x="650" y="255" class="text-desc">• 목표 추적</text>
+  <text x="650" y="270" class="text-desc">• 통합 기능</text>
+  
+  <!-- Monday.com -->
+  <rect x="50" y="310" width="200" height="120" rx="10" class="tool-box monday"/>
+  <text x="150" y="350" class="text-white" style="font-size: 22px;">Monday.com</text>
+  <text x="150" y="375" class="text-white" style="font-size: 11px;">Work OS</text>
+  <text x="150" y="400" style="font-family: Arial, sans-serif; font-size: 10px; fill: white; text-anchor: middle;">유연한 작업 관리</text>
+  <text x="150" y="415" style="font-family: Arial, sans-serif; font-size: 10px; fill: white; text-anchor: middle;">자동화, 대시보드</text>
+  
+  <text x="150" y="450" class="text-label" style="font-weight: bold;">장점:</text>
+  <text x="150" y="470" class="text-desc">• 시각적 대시보드</text>
+  
+  <!-- MS Project -->
+  <rect x="300" y="310" width="200" height="120" rx="10" class="tool-box msproject"/>
+  <text x="400" y="350" class="text-white" style="font-size: 22px;">MS Project</text>
+  <text x="400" y="375" class="text-white" style="font-size: 11px;">by Microsoft</text>
+  <text x="400" y="400" style="font-family: Arial, sans-serif; font-size: 10px; fill: white; text-anchor: middle;">전통적 PM 도구</text>
+  <text x="400" y="415" style="font-family: Arial, sans-serif; font-size: 10px; fill: white; text-anchor: middle;">간트 차트, 자원 관리</text>
+  
+  <text x="400" y="450" class="text-label" style="font-weight: bold;">장점:</text>
+  <text x="400" y="470" class="text-desc">• 강력한 일정 관리</text>
+  
+  <!-- Notion/Others -->
+  <rect x="550" y="310" width="200" height="120" rx="10" class="tool-box" style="fill: #2C3E50;"/>
+  <text x="650" y="350" class="text-white" style="font-size: 18px;">기타 도구</text>
+  <text x="650" y="380" style="font-family: Arial, sans-serif; font-size: 11px; fill: white; text-anchor: middle;">• Notion</text>
+  <text x="650" y="400" style="font-family: Arial, sans-serif; font-size: 11px; fill: white; text-anchor: middle;">• ClickUp</text>
+  <text x="650" y="420" style="font-family: Arial, sans-serif; font-size: 11px; fill: white; text-anchor: middle;">• Smartsheet</text>
+  
+  <!-- Bottom Note -->
+  <text x="400" y="470" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 12px; fill: #7F8C8D;">도구 선택 시 고려사항: 팀 규모, 프로젝트 유형, 예산, 학습 곡선, 통합 요구사항</text>
+</svg>

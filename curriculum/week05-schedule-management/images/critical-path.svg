@@ -1,0 +1,105 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .node-box { fill: white; stroke: #2C3E50; stroke-width: 2; }
+      .critical-node { fill: #E74C3C; stroke: #C0392B; stroke-width: 3; }
+      .normal-node { fill: #3498DB; stroke: #2980B9; stroke-width: 2; }
+      .path-line { stroke: #E74C3C; stroke-width: 3; fill: none; }
+      .normal-line { stroke: #95A5A6; stroke-width: 2; fill: none; }
+      .text-node { font-family: Arial, sans-serif; font-size: 11px; fill: white; font-weight: bold; text-anchor: middle; }
+      .text-label { font-family: Arial, sans-serif; font-size: 10px; fill: #2C3E50; }
+      .text-duration { font-family: Arial, sans-serif; font-size: 9px; fill: #E74C3C; font-weight: bold; }
+    </style>
+    <marker id="arrow-critical" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#E74C3C" />
+    </marker>
+    <marker id="arrow-normal" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#95A5A6" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 22px; font-weight: bold; fill: #2C3E50;">크리티컬 패스 분석 (CPM)</text>
+  <text x="400" y="45" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 14px; fill: #7F8C8D;">Critical Path Method - 네트워크 다이어그램</text>
+  
+  <!-- Node A: Start -->
+  <rect x="50" y="150" width="80" height="60" rx="8" class="node-box critical-node"/>
+  <text x="90" y="170" class="text-node">시작</text>
+  <text x="90" y="188" class="text-node" style="font-size: 10px;">ES: 0</text>
+  <text x="90" y="202" class="text-node" style="font-size: 10px;">EF: 0</text>
+  
+  <!-- Node B: Task 1 -->
+  <rect x="200" y="80" width="80" height="60" rx="8" class="node-box critical-node"/>
+  <text x="240" y="100" class="text-node">작업 A</text>
+  <text x="240" y="118" class="text-node" style="font-size: 10px;">기간: 3일</text>
+  <text x="240" y="132" class="text-node" style="font-size: 9px;">Float: 0</text>
+  
+  <!-- Node C: Task 2 -->
+  <rect x="200" y="220" width="80" height="60" rx="8" class="node-box normal-node"/>
+  <text x="240" y="240" class="text-node">작업 B</text>
+  <text x="240" y="258" class="text-node" style="font-size: 10px;">기간: 2일</text>
+  <text x="240" y="272" class="text-node" style="font-size: 9px;">Float: 3</text>
+  
+  <!-- Node D: Task 3 -->
+  <rect x="350" y="80" width="80" height="60" rx="8" class="node-box critical-node"/>
+  <text x="390" y="100" class="text-node">작업 C</text>
+  <text x="390" y="118" class="text-node" style="font-size: 10px;">기간: 4일</text>
+  <text x="390" y="132" class="text-node" style="font-size: 9px;">Float: 0</text>
+  
+  <!-- Node E: Task 4 -->
+  <rect x="350" y="220" width="80" height="60" rx="8" class="node-box normal-node"/>
+  <text x="390" y="240" class="text-node">작업 D</text>
+  <text x="390" y="258" class="text-node" style="font-size: 10px;">기간: 3일</text>
+  <text x="390" y="272" class="text-node" style="font-size: 9px;">Float: 3</text>
+  
+  <!-- Node F: Task 5 -->
+  <rect x="500" y="150" width="80" height="60" rx="8" class="node-box critical-node"/>
+  <text x="540" y="170" class="text-node">작업 E</text>
+  <text x="540" y="188" class="text-node" style="font-size: 10px;">기간: 2일</text>
+  <text x="540" y="202" class="text-node" style="font-size: 9px;">Float: 0</text>
+  
+  <!-- Node G: End -->
+  <rect x="660" y="150" width="80" height="60" rx="8" class="node-box critical-node"/>
+  <text x="700" y="170" class="text-node">종료</text>
+  <text x="700" y="188" class="text-node" style="font-size: 10px;">ES: 9</text>
+  <text x="700" y="202" class="text-node" style="font-size: 10px;">EF: 9</text>
+  
+  <!-- Critical Path Lines (Red) -->
+  <line x1="130" y1="180" x2="195" y2="110" class="path-line" marker-end="url(#arrow-critical)"/>
+  <text x="165" y="140" class="text-duration">3일</text>
+  
+  <line x1="280" y1="110" x2="345" y2="110" class="path-line" marker-end="url(#arrow-critical)"/>
+  <text x="315" y="105" class="text-duration">4일</text>
+  
+  <line x1="430" y1="110" x2="495" y2="170" class="path-line" marker-end="url(#arrow-critical)"/>
+  <text x="465" y="135" class="text-duration">2일</text>
+  
+  <line x1="580" y1="180" x2="655" y2="180" class="path-line" marker-end="url(#arrow-critical)"/>
+  
+  <!-- Normal Path Lines (Gray) -->
+  <line x1="130" y1="180" x2="195" y2="250" class="normal-line" marker-end="url(#arrow-normal)"/>
+  <text x="165" y="220" class="text-label">2일</text>
+  
+  <line x1="280" y1="250" x2="345" y2="250" class="normal-line" marker-end="url(#arrow-normal)"/>
+  <text x="315" y="245" class="text-label">3일</text>
+  
+  <line x1="430" y1="250" x2="495" y2="190" class="normal-line" marker-end="url(#arrow-normal)"/>
+  <text x="465" y="225" class="text-label"></text>
+  
+  <!-- Critical Path Highlight Box -->
+  <rect x="50" y="330" width="700" height="140" rx="10" fill="#FFF5F5" stroke="#E74C3C" stroke-width="2"/>
+  
+  <text x="400" y="355" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #E74C3C;">크리티컬 패스 (Critical Path)</text>
+  
+  <text x="70" y="385" style="font-family: Arial, sans-serif; font-size: 13px; fill: #2C3E50; font-weight: bold;">경로: 시작 → 작업 A → 작업 C → 작업 E → 종료</text>
+  <text x="70" y="405" style="font-family: Arial, sans-serif; font-size: 13px; fill: #2C3E50;">총 기간: 0 + 3 + 4 + 2 = 9일</text>
+  <text x="70" y="425" style="font-family: Arial, sans-serif; font-size: 13px; fill: #2C3E50;">여유 시간 (Float): 0일</text>
+  <text x="70" y="445" style="font-family: Arial, sans-serif; font-size: 12px; fill: #7F8C8D;">⚠️ 크리티컬 패스의 작업이 지연되면 전체 프로젝트가 지연됩니다</text>
+  
+  <!-- Legend -->
+  <rect x="580" y="380" width="40" height="25" rx="5" class="critical-node"/>
+  <text x="630" y="397" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">크리티컬 작업 (Float = 0)</text>
+  
+  <rect x="580" y="415" width="40" height="25" rx="5" class="normal-node"/>
+  <text x="630" y="432" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">일반 작업 (Float > 0)</text>
+</svg>

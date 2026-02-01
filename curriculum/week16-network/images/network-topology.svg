@@ -1,0 +1,117 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .router-box { fill: #E74C3C; stroke: #C0392B; stroke-width: 2; }
+      .switch-box { fill: #3498DB; stroke: #2980B9; stroke-width: 2; }
+      .server-box { fill: #27AE60; stroke: #229954; stroke-width: 2; }
+      .client-box { fill: #F39C12; stroke: #E67E22; stroke-width: 2; }
+      .firewall-box { fill: #E67E22; stroke: #D35400; stroke-width: 2; }
+      .line { stroke: #2C3E50; stroke-width: 2; }
+      .text-white { font-family: Arial, sans-serif; font-size: 11px; fill: white; font-weight: bold; text-anchor: middle; }
+      .text-label { font-family: Arial, sans-serif; font-size: 10px; fill: #2C3E50; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2C3E50;">네트워크 토폴로지 (Network Topology)</text>
+  <text x="450" y="50" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 14px; fill: #7F8C8D;">기업 네트워크 인프라 구성 예시</text>
+  
+  <!-- Internet Cloud -->
+  <ellipse cx="450" cy="100" rx="120" ry="50" fill="white" stroke="#2C3E50" stroke-width="2"/>
+  <text x="450" y="108" style="font-family: Arial, sans-serif; font-size: 16px; fill: #2C3E50; font-weight: bold; text-anchor: middle;">인터넷</text>
+  
+  <!-- External Firewall -->
+  <rect x="375" y="180" width="150" height="60" rx="10" class="firewall-box"/>
+  <text x="450" y="207" class="text-white" style="font-size: 13px;">외부 방화벽</text>
+  <text x="450" y="225" class="text-white" style="font-size: 10px;">(Firewall)</text>
+  
+  <!-- Arrow from Internet -->
+  <line x1="450" y1="150" x2="450" y2="175" class="line"/>
+  <polygon points="450,175 445,165 455,165" fill="#2C3E50"/>
+  
+  <!-- Router -->
+  <rect x="375" y="270" width="150" height="60" rx="10" class="router-box"/>
+  <text x="450" y="297" class="text-white" style="font-size: 13px;">라우터</text>
+  <text x="450" y="315" class="text-white" style="font-size: 10px;">(Router)</text>
+  
+  <!-- Arrow to Router -->
+  <line x1="450" y1="240" x2="450" y2="265" class="line"/>
+  <polygon points="450,265 445,255 455,255" fill="#2C3E50"/>
+  
+  <!-- Core Switch -->
+  <rect x="375" y="360" width="150" height="60" rx="10" class="switch-box"/>
+  <text x="450" y="387" class="text-white" style="font-size: 13px;">코어 스위치</text>
+  <text x="450" y="405" class="text-white" style="font-size: 10px;">(Core Switch)</text>
+  
+  <!-- Arrow to Core Switch -->
+  <line x1="450" y1="330" x2="450" y2="355" class="line"/>
+  <polygon points="450,355 445,345 455,345" fill="#2C3E50"/>
+  
+  <!-- DMZ Zone -->
+  <rect x="50" y="460" width="250" height="120" rx="10" fill="#FFF3E0" stroke="#FF6F00" stroke-width="2"/>
+  <text x="70" y="485" style="font-family: Arial, sans-serif; font-size: 12px; fill: #FF6F00; font-weight: bold;">DMZ (비무장지대)</text>
+  
+  <!-- Web Server in DMZ -->
+  <rect x="80" y="500" width="90" height="60" rx="8" class="server-box"/>
+  <text x="125" y="525" class="text-white" style="font-size: 11px;">웹 서버</text>
+  <text x="125" y="543" class="text-white" style="font-size: 9px;">(Web Server)</text>
+  
+  <!-- Mail Server in DMZ -->
+  <rect x="190" y="500" width="90" height="60" rx="8" class="server-box"/>
+  <text x="235" y="525" class="text-white" style="font-size: 11px;">메일 서버</text>
+  <text x="235" y="543" class="text-white" style="font-size: 9px;">(Mail Server)</text>
+  
+  <!-- Internal Network Zone -->
+  <rect x="350" y="460" width="500" height="120" rx="10" fill="#E8F8F5" stroke="#27AE60" stroke-width="2"/>
+  <text x="370" y="485" style="font-family: Arial, sans-serif; font-size: 12px; fill: #27AE60; font-weight: bold;">내부 네트워크</text>
+  
+  <!-- Department Switch 1 -->
+  <rect x="380" y="500" width="110" height="60" rx="8" class="switch-box"/>
+  <text x="435" y="525" class="text-white" style="font-size: 11px;">스위치 1</text>
+  <text x="435" y="543" class="text-white" style="font-size: 9px;">(개발팀)</text>
+  
+  <!-- Department Switch 2 -->
+  <rect x="520" y="500" width="110" height="60" rx="8" class="switch-box"/>
+  <text x="575" y="525" class="text-white" style="font-size: 11px;">스위치 2</text>
+  <text x="575" y="543" class="text-white" style="font-size: 9px;">(영업팀)</text>
+  
+  <!-- Database Server -->
+  <rect x="660" y="500" width="110" height="60" rx="8" class="server-box"/>
+  <text x="715" y="525" class="text-white" style="font-size: 11px;">DB 서버</text>
+  <text x="715" y="543" class="text-white" style="font-size: 9px;">(Database)</text>
+  
+  <!-- Connections -->
+  <line x1="450" y1="420" x2="175" y2="495" class="line"/>
+  <line x1="450" y1="420" x2="435" y2="495" class="line"/>
+  <line x1="450" y1="420" x2="575" y2="495" class="line"/>
+  <line x1="450" y1="420" x2="715" y2="495" class="line"/>
+  
+  <!-- IP Addresses -->
+  <text x="175" y="475" class="text-label" style="font-size: 9px;">203.0.113.10</text>
+  <text x="435" y="475" class="text-label" style="font-size: 9px;">192.168.1.0/24</text>
+  <text x="575" y="475" class="text-label" style="font-size: 9px;">192.168.2.0/24</text>
+  <text x="715" y="475" class="text-label" style="font-size: 9px;">10.0.1.100</text>
+  
+  <!-- Network Info Box -->
+  <rect x="100" y="590" width="700" height="5" rx="2" fill="#BDC3C7"/>
+  
+  <!-- Legend -->
+  <rect x="50" y="85" width="80" height="25" rx="5" class="router-box"/>
+  <text x="140" y="102" class="text-label">라우터</text>
+  
+  <rect x="50" y="120" width="80" height="25" rx="5" class="switch-box"/>
+  <text x="140" y="137" class="text-label">스위치</text>
+  
+  <rect x="50" y="155" width="80" height="25" rx="5" class="server-box"/>
+  <text x="140" y="172" class="text-label">서버</text>
+  
+  <rect x="50" y="190" width="80" height="25" rx="5" class="firewall-box"/>
+  <text x="140" y="207" class="text-label">방화벽</text>
+  
+  <!-- Network Segments -->
+  <text x="750" y="102" class="text-label" style="font-weight: bold;">네트워크 세그먼트:</text>
+  <text x="750" y="122" style="font-family: Arial, sans-serif; font-size: 9px; fill: #7F8C8D;">• 공인 IP: 외부 접근</text>
+  <text x="750" y="142" style="font-family: Arial, sans-serif; font-size: 9px; fill: #7F8C8D;">• DMZ: 공개 서비스</text>
+  <text x="750" y="162" style="font-family: Arial, sans-serif; font-size: 9px; fill: #7F8C8D;">• 내부망: 사내 전용</text>
+  <text x="750" y="182" style="font-family: Arial, sans-serif; font-size: 9px; fill: #7F8C8D;">• 사설 IP: 보안 영역</text>
+</svg>

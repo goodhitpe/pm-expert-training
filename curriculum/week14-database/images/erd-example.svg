@@ -1,0 +1,100 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .entity-box { fill: #3498DB; stroke: #2980B9; stroke-width: 2; }
+      .relationship { fill: #F39C12; stroke: #E67E22; stroke-width: 2; }
+      .line { stroke: #2C3E50; stroke-width: 2; }
+      .text-white { font-family: Arial, sans-serif; font-size: 13px; fill: white; font-weight: bold; text-anchor: middle; }
+      .text-attr { font-family: Arial, sans-serif; font-size: 10px; fill: white; }
+      .text-card { font-family: Arial, sans-serif; font-size: 10px; fill: #2C3E50; font-weight: bold; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2C3E50;">ERD 예시 (Entity-Relationship Diagram)</text>
+  <text x="400" y="50" text-anchor="middle" style="font-family: Arial, sans-serif; font-size: 14px; fill: #7F8C8D;">프로젝트 관리 시스템 데이터베이스 설계</text>
+  
+  <!-- Entity: Project -->
+  <rect x="100" y="100" width="200" height="140" rx="10" class="entity-box"/>
+  <text x="200" y="125" class="text-white" style="font-size: 16px;">Project (프로젝트)</text>
+  <line x1="110" y1="135" x2="290" y2="135" stroke="white" stroke-width="2"/>
+  <text x="120" y="155" class="text-attr">• project_id (PK)</text>
+  <text x="120" y="175" class="text-attr">• project_name</text>
+  <text x="120" y="195" class="text-attr">• start_date</text>
+  <text x="120" y="215" class="text-attr">• end_date</text>
+  <text x="120" y="235" class="text-attr">• budget</text>
+  
+  <!-- Entity: Task -->
+  <rect x="500" y="100" width="200" height="140" rx="10" class="entity-box"/>
+  <text x="600" y="125" class="text-white" style="font-size: 16px;">Task (작업)</text>
+  <line x1="510" y1="135" x2="690" y2="135" stroke="white" stroke-width="2"/>
+  <text x="520" y="155" class="text-attr">• task_id (PK)</text>
+  <text x="520" y="175" class="text-attr">• task_name</text>
+  <text x="520" y="195" class="text-attr">• description</text>
+  <text x="520" y="215" class="text-attr">• status</text>
+  <text x="520" y="235" class="text-attr">• project_id (FK)</text>
+  
+  <!-- Relationship: has -->
+  <polygon points="400,170 420,160 400,150 380,160" class="relationship"/>
+  <text x="400" y="135" class="text-card">has</text>
+  <text x="345" y="155" class="text-card">1</text>
+  <text x="455" y="155" class="text-card">N</text>
+  <line x1="300" y1="170" x2="375" y2="170" class="line"/>
+  <line x1="425" y1="170" x2="500" y2="170" class="line"/>
+  
+  <!-- Entity: Employee -->
+  <rect x="100" y="320" width="200" height="140" rx="10" class="entity-box"/>
+  <text x="200" y="345" class="text-white" style="font-size: 16px;">Employee (직원)</text>
+  <line x1="110" y1="355" x2="290" y2="355" stroke="white" stroke-width="2"/>
+  <text x="120" y="375" class="text-attr">• employee_id (PK)</text>
+  <text x="120" y="395" class="text-attr">• name</text>
+  <text x="120" y="415" class="text-attr">• email</text>
+  <text x="120" y="435" class="text-attr">• role</text>
+  
+  <!-- Entity: Assignment -->
+  <rect x="500" y="320" width="200" height="140" rx="10" class="entity-box"/>
+  <text x="600" y="345" class="text-white" style="font-size: 14px;">Assignment (할당)</text>
+  <line x1="510" y1="355" x2="690" y2="355" stroke="white" stroke-width="2"/>
+  <text x="520" y="375" class="text-attr">• assignment_id (PK)</text>
+  <text x="520" y="395" class="text-attr">• employee_id (FK)</text>
+  <text x="520" y="415" class="text-attr">• task_id (FK)</text>
+  <text x="520" y="435" class="text-attr">• assigned_date</text>
+  
+  <!-- Relationship: assigned to -->
+  <polygon points="400,390 420,380 400,370 380,380" class="relationship"/>
+  <text x="400" y="355" class="text-card">assigned</text>
+  <text x="345" y="375" class="text-card">M</text>
+  <text x="455" y="375" class="text-card">N</text>
+  <line x1="300" y1="390" x2="375" y2="390" class="line"/>
+  <line x1="425" y1="390" x2="500" y2="390" class="line"/>
+  
+  <!-- Relationship: Project-Employee -->
+  <line x1="200" y1="240" x2="200" y2="315" class="line"/>
+  <polygon points="200,280 210,290 200,300 190,290" class="relationship"/>
+  <text x="230" y="280" class="text-card">manages</text>
+  <text x="210" y="260" class="text-card">1</text>
+  <text x="210" y="305" class="text-card">1</text>
+  
+  <!-- Relationship: Task-Assignment -->
+  <line x1="600" y1="240" x2="600" y2="315" class="line"/>
+  <polygon points="600,280 610,290 600,300 590,290" class="relationship"/>
+  <text x="630" y="280" class="text-card">has</text>
+  <text x="610" y="260" class="text-card">1</text>
+  <text x="610" y="305" class="text-card">N</text>
+  
+  <!-- Legend -->
+  <rect x="80" y="500" width="640" height="80" rx="10" fill="#F8F9FA" stroke="#BDC3C7" stroke-width="2"/>
+  
+  <text x="100" y="525" style="font-family: Arial, sans-serif; font-size: 14px; fill: #2C3E50; font-weight: bold;">범례 (Legend):</text>
+  
+  <rect x="100" y="535" width="80" height="30" rx="5" class="entity-box"/>
+  <text x="140" y="555" style="font-family: Arial, sans-serif; font-size: 11px; fill: white; font-weight: bold; text-anchor: middle;">엔티티</text>
+  <text x="200" y="555" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">: 데이터를 저장하는 객체</text>
+  
+  <polygon points="420,550 430,545 420,540 410,545" class="relationship"/>
+  <text x="450" y="555" style="font-family: Arial, sans-serif; font-size: 11px; fill: #2C3E50;">: 엔티티 간 관계</text>
+  
+  <text x="580" y="535" style="font-family: Arial, sans-serif; font-size: 10px; fill: #2C3E50;">PK: Primary Key (기본 키)</text>
+  <text x="580" y="555" style="font-family: Arial, sans-serif; font-size: 10px; fill: #2C3E50;">FK: Foreign Key (외래 키)</text>
+  <text x="580" y="570" style="font-family: Arial, sans-serif; font-size: 10px; fill: #2C3E50;">1:N: 일대다 관계, M:N: 다대다 관계</text>
+</svg>
