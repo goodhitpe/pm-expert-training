@@ -660,9 +660,776 @@ REST API 엔드포인트 설계
 **제출물**:
 - API 명세서 (2페이지)
 
+**제출물**:
+- API 명세서 (2페이지)
+
 ---
 
-## 🎯 7. 자가 점검 퀴즈
+## 🚀 8. 고급 API 패턴
+
+### 8.1 GraphQL
+
+#### REST vs GraphQL
+
+**REST API 문제점**:
+```
+시나리오: 사용자 프로필 + 게시글 + 댓글 조회
+
+REST (3번 요청):
+GET /users/123
+GET /users/123/posts
+GET /posts/456/comments
+
+문제:
+- Over-fetching: 불필요한 데이터까지 받음
+- Under-fetching: 여러 번 요청 필요
+- N+1 문제
+```
+
+**GraphQL (1번 요청)**:
+```graphql
+query {
+  user(id: 123) {
+    name
+    email
+    posts {
+      title
+      comments {
+        author
+        text
+      }
+    }
+  }
+}
+
+장점:
+- 필요한 데이터만 요청
+- 단일 엔드포인트
+- 강력한 타입 시스템
+```
+
+#### GraphQL 쿼리 예시
+
+**쿼리 (Query) - 데이터 조회**:
+```graphql
+# 특정 사용자 조회
+query GetUser {
+  user(id: "123") {
+    id
+    name
+    email
+    posts(limit: 5) {
+      title
+      createdAt
+    }
+  }
+}
+
+# 응답
+{
+  "data": {
+    "user": {
+      "id": "123",
+      "name": "김철수",
+      "email": "kim@example.com",
+      "posts": [
+        {
+          "title": "첫 번째 게시글",
+          "createdAt": "2024-01-01"
+        }
+      ]
+    }
+  }
+}
+```
+
+**뮤테이션 (Mutation) - 데이터 변경**:
+```graphql
+mutation CreatePost {
+  createPost(
+    title: "새 게시글"
+    content: "내용..."
+  ) {
+    id
+    title
+    createdAt
+  }
+}
+```
+
+**구독 (Subscription) - 실시간 데이터**:
+```graphql
+subscription OnNewPost {
+  postCreated {
+    id
+    title
+    author {
+      name
+    }
+  }
+}
+```
+
+#### PM 관점의 GraphQL
+
+**언제 사용하면 좋을까?**:
+- ✅ 모바일 앱 (데이터 효율 중요)
+- ✅ 복잡한 데이터 관계
+- ✅ 빠른 프로토타이핑
+- ✅ 여러 클라이언트 (웹, 모바일, IoT)
+
+**언제 사용하지 말아야 할까?**:
+- ❌ 단순한 CRUD 작업
+- ❌ 파일 업로드/다운로드
+- ❌ 캐싱이 중요한 경우
+- ❌ 팀의 학습 곡선 고려
+
+### 8.2 WebSocket
+
+#### HTTP vs WebSocket
+
+**HTTP (Request-Response)**:
+```
+클라이언트 → 서버: 요청
+서버 → 클라이언트: 응답
+(연결 종료)
+
+다시 데이터 필요:
+클라이언트 → 서버: 새 요청
+서버 → 클라이언트: 응답
+```
+
+**WebSocket (Full-Duplex)**:
+```
+클라이언트 ↔ 서버: 연결 유지
+클라이언트 → 서버: 메시지
+서버 → 클라이언트: 메시지
+서버 → 클라이언트: 메시지 (Push)
+(연결 계속 유지)
+```
+
+#### WebSocket 활용 사례
+
+**1. 실시간 채팅**:
+```javascript
+// 클라이언트
+const ws = new WebSocket('wss://chat.example.com');
+
+// 연결 성공
+ws.onopen = () => {
+  console.log('Connected');
+  ws.send(JSON.stringify({
+    type: 'join',
+    room: 'general'
+  }));
+};
+
+// 메시지 수신
+ws.onmessage = (event) => {
+  const message = JSON.parse(event.data);
+  displayMessage(message);
+};
+
+// 메시지 전송
+function sendMessage(text) {
+  ws.send(JSON.stringify({
+    type: 'message',
+    text: text
+  }));
+}
+```
+
+**2. 실시간 대시보드**:
+```
+서버 → 클라이언트 (주기적 Push)
+{
+  "type": "metrics",
+  "cpu": 45,
+  "memory": 78,
+  "requests": 1234
+}
+```
+
+**3. 협업 도구** (Google Docs 스타일):
+```
+사용자 A → 서버 → 사용자 B, C
+{
+  "type": "edit",
+  "position": 123,
+  "text": "Hello"
+}
+```
+
+#### WebSocket vs Polling
+
+**Short Polling**:
+```javascript
+// 1초마다 요청
+setInterval(() => {
+  fetch('/api/messages')
+    .then(res => res.json())
+    .then(data => updateUI(data));
+}, 1000);
+
+문제:
+- 서버 부하 높음 (불필요한 요청)
+- 지연 시간 (최대 1초)
+- 대역폭 낭비
+```
+
+**Long Polling**:
+```javascript
+function poll() {
+  fetch('/api/messages')
+    .then(res => res.json())
+    .then(data => {
+      updateUI(data);
+      poll(); // 다시 요청
+    });
+}
+
+개선:
+- 데이터 있을 때만 응답
+- 지연 시간 감소
+
+문제:
+- 여전히 HTTP 오버헤드
+```
+
+**WebSocket (Best)**:
+```javascript
+const ws = new WebSocket('wss://api.example.com');
+ws.onmessage = (event) => {
+  updateUI(JSON.parse(event.data));
+};
+
+장점:
+- 실시간 (지연 최소)
+- 서버 Push 가능
+- 오버헤드 낮음
+- 양방향 통신
+```
+
+### 8.3 gRPC
+
+#### gRPC란?
+
+**정의**:
+- Google이 개발한 RPC (Remote Procedure Call) 프레임워크
+- Protocol Buffers (Protobuf) 사용
+- HTTP/2 기반
+
+**특징**:
+```
+REST:
+- 텍스트 기반 (JSON)
+- 사람이 읽기 쉬움
+- 크기 큼
+
+gRPC:
+- 바이너리 (Protobuf)
+- 사람이 읽기 어려움
+- 크기 작음 (20-50% 절감)
+- 빠름 (5-10배)
+```
+
+#### Protocol Buffers 예시
+
+**user.proto (정의)**:
+```protobuf
+syntax = "proto3";
+
+message User {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+  repeated Post posts = 4;
+}
+
+message Post {
+  int32 id = 1;
+  string title = 2;
+  string content = 3;
+}
+
+service UserService {
+  rpc GetUser (UserRequest) returns (User);
+  rpc CreateUser (CreateUserRequest) returns (User);
+  rpc ListUsers (Empty) returns (stream User);
+}
+```
+
+#### gRPC vs REST
+
+**장점**:
+- ✅ 높은 성능 (바이너리, HTTP/2)
+- ✅ 강력한 타입 (컴파일 타임 체크)
+- ✅ 스트리밍 지원
+- ✅ 다국어 클라이언트 자동 생성
+
+**단점**:
+- ❌ 브라우저 직접 호출 어려움
+- ❌ 사람이 읽기 어려움
+- ❌ 학습 곡선 높음
+- ❌ REST만큼 보편적이지 않음
+
+**적용 사례**:
+- 🎯 마이크로서비스 간 통신
+- 🎯 모바일 앱 ↔ 백엔드
+- 🎯 IoT 디바이스
+- 🎯  스트리밍 서비스
+
+---
+
+## 🌐 9. 마이크로서비스 네트워킹
+
+### 9.1 서비스 간 통신
+
+#### 동기 vs 비동기
+
+**동기 통신 (Synchronous)**:
+```
+[Service A] → [Service B]
+            ← 응답 대기 (블로킹)
+            ← 응답
+계속 진행
+
+예: REST API, gRPC
+
+장점: 간단, 즉시 결과
+단점: 결합도 높음, 장애 전파
+```
+
+**비동기 통신 (Asynchronous)**:
+```
+[Service A] → [Message Queue]
+              [Service B] ← 처리 (독립적)
+              
+예: RabbitMQ, Kafka, AWS SQS
+
+장점: 결합도 낮음, 장애 격리
+단점: 복잡도 증가, 최종 일관성
+```
+
+#### 메시지 큐 패턴
+
+**1. Point-to-Point**:
+```
+[Producer] → [Queue] → [Consumer]
+
+예: 주문 처리
+주문 서비스 → [주문 큐] → 결제 서비스
+```
+
+**2. Publish-Subscribe**:
+```
+[Publisher] → [Topic]
+                ├→ [Subscriber 1]
+                ├→ [Subscriber 2]
+                └→ [Subscriber 3]
+
+예: 이벤트 알림
+주문 완료 → [이벤트 버스]
+              ├→ 이메일 서비스
+              ├→ SMS 서비스
+              └→ 로그 서비스
+```
+
+#### Circuit Breaker 패턴
+
+**문제 상황**:
+```
+[Service A] → [Service B] (장애)
+              ↑ Timeout (30초)
+              ↑ Retry (3회)
+              ↑ 총 90초 대기...
+              
+→ Service A도 느려짐 (Cascading Failure)
+```
+
+**Circuit Breaker 적용**:
+```
+[Service A] → [Circuit Breaker] → [Service B]
+
+상태:
+1. Closed (정상)
+   → 요청 통과
+   
+2. Open (장애 감지)
+   → 즉시 실패 반환 (빠른 실패)
+   → Service A 보호
+   
+3. Half-Open (회복 테스트)
+   → 일부 요청 허용
+   → 성공 시 Closed
+   → 실패 시 Open
+```
+
+**구현 예시 (Node.js)**:
+```javascript
+const CircuitBreaker = require('opossum');
+
+const options = {
+  timeout: 3000, // 3초 타임아웃
+  errorThresholdPercentage: 50, // 50% 에러 시 오픈
+  resetTimeout: 30000 // 30초 후 Half-Open
+};
+
+const breaker = new CircuitBreaker(callService, options);
+
+// 폴백 처리
+breaker.fallback(() => {
+  return { cached: true, data: getCachedData() };
+});
+
+// 사용
+breaker.fire(userId)
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+```
+
+### 9.2 Service Mesh
+
+#### Service Mesh란?
+
+**정의**:
+- 마이크로서비스 간 통신을 관리하는 인프라 레이어
+- 애플리케이션 코드와 분리
+- Proxy (Sidecar) 패턴
+
+**아키텍처**:
+```
+[Service A] ← [Proxy A] ↔ [Proxy B] → [Service B]
+                ↕                ↕
+            [Control Plane]
+            (Istio, Linkerd)
+```
+
+**제공 기능**:
+1. **트래픽 관리**:
+   - 로드 밸런싱
+   - Canary 배포
+   - A/B 테스팅
+
+2. **보안**:
+   - mTLS (상호 인증)
+   - 인증/인가
+   - 암호화
+
+3. **관찰성**:
+   - 분산 트레이싱
+   - 메트릭 수집
+   - 로그 집계
+
+#### Istio 예시
+
+**Canary 배포 (10% 트래픽)**:
+```yaml
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: reviews
+spec:
+  hosts:
+    - reviews
+  http:
+  - match:
+    - headers:
+        end-user:
+          exact: jason
+    route:
+    - destination:
+        host: reviews
+        subset: v2
+  - route:
+    - destination:
+        host: reviews
+        subset: v1
+      weight: 90
+    - destination:
+        host: reviews
+        subset: v2
+      weight: 10
+```
+
+**PM이 알아야 할 것**:
+- ✅ 마이크로서비스 통신 복잡도
+- ✅ Service Mesh 도입 시점 (서비스 5-10개 이상)
+- ✅ 학습 곡선 및 운영 비용
+- ✅ 관찰성 개선 효과
+
+---
+
+## 📊 10. 네트워크 모니터링 및 최적화
+
+### 10.1 주요 성능 지표
+
+#### 1. Latency (지연 시간)
+
+**정의**: 요청부터 응답까지 시간
+```
+구성 요소:
+- DNS 조회: 20-120ms
+- TCP 연결: 20-100ms
+- TLS 핸드셰이크: 50-300ms (HTTPS)
+- 서버 처리: 10-500ms
+- 데이터 전송: 10-200ms
+합계: 110-1220ms
+```
+
+**최적화 방법**:
+1. **DNS Prefetch**:
+```html
+<link rel="dns-prefetch" href="//api.example.com">
+```
+
+2. **연결 재사용**:
+```
+HTTP/1.1: Keep-Alive
+HTTP/2: 멀티플렉싱
+```
+
+3. **CDN 활용**:
+```
+사용자 (서울) → CDN (서울) [10ms]
+vs
+사용자 (서울) → 서버 (미국) [200ms]
+```
+
+#### 2. Throughput (처리량)
+
+**정의**: 초당 처리 가능한 요청 수
+```
+측정:
+- Requests per second (RPS)
+- Transactions per second (TPS)
+
+예:
+- 웹 서버: 1,000 RPS
+- DB: 10,000 TPS
+```
+
+**병목 지점 찾기**:
+```
+[로드 밸런서] (10,000 RPS)
+      ↓
+[웹 서버 x 5] (각 1,000 RPS = 5,000 RPS) ← 병목!
+      ↓
+[DB] (10,000 TPS)
+```
+
+**개선**:
+- 웹 서버 증설 (5 → 10대)
+- 캐싱 도입 (Redis)
+- DB 쿼리 최적화
+
+#### 3. Bandwidth (대역폭)
+
+**정의**: 전송할 수 있는 데이터 양
+```
+측정:
+- Mbps (Megabits per second)
+- GB/월
+
+예:
+- 비디오 스트리밍: 5 Mbps
+- 웹 페이지: 2 MB = 16 Mbps (1초 로딩)
+```
+
+**최적화**:
+1. **이미지 압축**:
+```
+Before: image.jpg (5 MB)
+After: image.webp (500 KB) ← 10배 절감
+```
+
+2. **Gzip/Brotli 압축**:
+```
+HTML/CSS/JS:
+Before: 1 MB
+After: 200 KB (80% 절감)
+```
+
+3. **Lazy Loading**:
+```javascript
+// 화면에 보이는 이미지만 로드
+<img src="placeholder.jpg" data-src="real-image.jpg" loading="lazy">
+```
+
+### 10.2 CDN (Content Delivery Network)
+
+#### CDN이란?
+
+**정의**: 전 세계에 분산된 서버 네트워크
+```
+Origin Server (미국)
+  └─ CDN Edge Servers
+      ├─ 서울
+      ├─ 도쿄
+      ├─ 홍콩
+      └─ 싱가포르
+
+사용자 (서울) → CDN (서울) [빠름]
+         vs
+사용자 (서울) → Origin (미국) [느림]
+```
+
+**동작 원리**:
+```
+1. 사용자 요청
+   사용자 → CDN (서울)
+
+2. 캐시 확인
+   캐시 있음 → 즉시 응답 (Cache Hit)
+   캐시 없음 → Origin에서 가져오기 (Cache Miss)
+
+3. 캐싱
+   CDN에 저장 (다음 요청을 위해)
+```
+
+#### CDN 설정 예시
+
+**CloudFront (AWS CDN)**:
+```yaml
+Distribution:
+  Origins:
+    - DomainName: myapp.s3.amazonaws.com
+      Id: S3-myapp
+  
+  DefaultCacheBehavior:
+    TargetOriginId: S3-myapp
+    ViewerProtocolPolicy: redirect-to-https
+    Compress: true
+    CachePolicyId: CachingOptimized
+    
+  CachePolicy:
+    MinTTL: 0
+    MaxTTL: 31536000  # 1년
+    DefaultTTL: 86400  # 1일
+```
+
+**Cache Control 헤더**:
+```http
+# 정적 파일 (이미지, CSS, JS)
+Cache-Control: public, max-age=31536000, immutable
+
+# 동적 콘텐츠 (HTML)
+Cache-Control: public, max-age=300, must-revalidate
+
+# 개인정보 (캐시 안 함)
+Cache-Control: private, no-cache, no-store, must-revalidate
+```
+
+#### PM 의사결정
+
+**CDN 도입 시점**:
+- ✅ 글로벌 사용자
+- ✅ 정적 콘텐츠 많음 (이미지, 비디오)
+- ✅ 트래픽 증가
+
+**비용 분석**:
+```
+시나리오: 월 1TB 트래픽
+
+서버 직접 전송:
+- 대역폭 비용: $90/TB
+- 서버 부하 증가
+합계: $90 + 서버 증설
+
+CDN 사용:
+- CloudFront: $85/TB
+- 서버 부하 감소
+합계: $85 (서버 절약)
+```
+
+### 10.3 HTTP/2 & HTTP/3
+
+#### HTTP/1.1의 문제
+
+**Head-of-Line Blocking**:
+```
+HTTP/1.1 (연결당 1개 요청):
+[Request 1] → [Response 1]
+              [Request 2] → [Response 2]
+                            [Request 3] → [Response 3]
+
+→ 순차 처리 (느림)
+```
+
+**해결책** (HTTP/1.1):
+```
+병렬 연결 (6개):
+Connection 1: [Request 1]
+Connection 2: [Request 2]
+Connection 3: [Request 3]
+...
+
+→ 연결 오버헤드 증가
+```
+
+#### HTTP/2 개선
+
+**멀티플렉싱 (Multiplexing)**:
+```
+HTTP/2 (1개 연결로 여러 요청):
+[Connection]
+  ├─ [Stream 1: Request 1 → Response 1]
+  ├─ [Stream 2: Request 2 → Response 2]
+  └─ [Stream 3: Request 3 → Response 3]
+
+→ 동시 처리 (빠름)
+```
+
+**Server Push**:
+```
+클라이언트 → 서버: index.html 요청
+
+서버 → 클라이언트:
+- index.html
+- style.css (Push)
+- script.js (Push)
+
+→ 추가 요청 없이 미리 전송
+```
+
+**헤더 압축 (HPACK)**:
+```
+HTTP/1.1:
+Request 1: 500 bytes (헤더)
+Request 2: 500 bytes (중복 헤더)
+Request 3: 500 bytes (중복 헤더)
+
+HTTP/2:
+Request 1: 500 bytes
+Request 2: 50 bytes (차이만)
+Request 3: 50 bytes (차이만)
+```
+
+#### HTTP/3 (QUIC)
+
+**주요 개선**:
+```
+HTTP/2 (TCP):
+패킷 손실 → 전체 Stream 블로킹
+
+HTTP/3 (QUIC/UDP):
+패킷 손실 → 해당 Stream만 블로킹
+→ 다른 Stream은 계속 진행
+```
+
+**0-RTT 연결**:
+```
+HTTP/2 (TLS 1.3):
+1-RTT 또는 2-RTT 핸드셰이크
+
+HTTP/3:
+0-RTT (이전 연결 재개 시)
+→ 즉시 데이터 전송
+```
+
+---
+
+## 🎯 11. 자가 점검 퀴즈
 
 ### 객관식
 
