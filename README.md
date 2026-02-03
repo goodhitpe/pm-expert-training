@@ -2,7 +2,9 @@
 
 IT 비전공자를 위한 실무 중심 프로젝트 매니저(PM) 교육 과정
 
-> **⭐ 최신 업데이트 (2025년 2월 초)**: 전체 커리큘럼 종합 재평가 완료! [종합 평가 보고서](./CURRICULUM_COMPREHENSIVE_EVALUATION_2025.md) | [보강 필요 영역 요약](./보강필요영역_요약.md) | [이전 재평가](./CURRICULUM_RE-EVALUATION_2025.md) | [평가 비교](./EVALUATION_COMPARISON.md)
+> **⭐ 최신 업데이트 (2025년 2월 초)**: 
+> - 전체 커리큘럼 종합 재평가 완료! [종합 평가 보고서](./CURRICULUM_COMPREHENSIVE_EVALUATION_2025.md) | [보강 필요 영역 요약](./보강필요영역_요약.md)
+> - **🎮 NEW!** [Unity 기반 LMS 및 프로젝트 시뮬레이터 Phase 1 요구사항](./UNITY_PROJECT_README.md) - 실습형 학습 환경 개발 시작!
 
 ---
 
@@ -168,6 +170,13 @@ pm-expert-training/
 프로그램 관련 문의사항은 이슈(Issue)로 등록해주세요.
 
 ### 📚 주요 문서
+
+#### 🎮 Unity LMS & 시뮬레이터 (2025.02 NEW!)
+- **[Unity 프로젝트 가이드](./UNITY_PROJECT_README.md)** ⭐⭐⭐ 필독 - 전체 프로젝트 개요 및 문서 가이드
+- **[Phase 1 요구사항 정의서](./UNITY_LMS_PHASE1_REQUIREMENTS.md)** - 기능/비기능 요구사항 22개 정의
+- **[기술 사양서](./UNITY_PROJECT_TECHNICAL_SPEC.md)** - 시스템 아키텍처 및 구현 방법
+- **[구현 로드맵](./UNITY_IMPLEMENTATION_ROADMAP.md)** - 8주 Phase 1 상세 일정
+- **[프로젝트 구조 설계서](./UNITY_PROJECT_STRUCTURE.md)** - Unity 폴더 구조 및 코드 예제
 
 #### 최신 평가 보고서 (2025.02)
 - **[종합 평가 보고서](./CURRICULUM_COMPREHENSIVE_EVALUATION_2025.md)** ⭐⭐ 최신 - 전체 커리큘럼 상세 분석
