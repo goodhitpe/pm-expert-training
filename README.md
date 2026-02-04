@@ -172,11 +172,17 @@ pm-expert-training/
 ### 📚 주요 문서
 
 #### 🎮 Unity LMS & 시뮬레이터 (2025.02 NEW!)
+**Phase 1 요구사항 정의**:
 - **[Unity 프로젝트 가이드](./UNITY_PROJECT_README.md)** ⭐⭐⭐ 필독 - 전체 프로젝트 개요 및 문서 가이드
 - **[Phase 1 요구사항 정의서](./UNITY_LMS_PHASE1_REQUIREMENTS.md)** - 기능/비기능 요구사항 22개 정의
 - **[기술 사양서](./UNITY_PROJECT_TECHNICAL_SPEC.md)** - 시스템 아키텍처 및 구현 방법
 - **[구현 로드맵](./UNITY_IMPLEMENTATION_ROADMAP.md)** - 8주 Phase 1 상세 일정
 - **[프로젝트 구조 설계서](./UNITY_PROJECT_STRUCTURE.md)** - Unity 폴더 구조 및 코드 예제
+
+**전문가 평가 및 개선 제안** (2025.02.04 NEW! 🔥):
+- **[교육/이러닝 전문가 평가](./EXPERT_EVALUATION_ELEARNING.md)** ⭐⭐⭐ - LMS 교육학적 평가, 강사/학습자 관점 (72/100점)
+- **[게임 개발 전문가 평가](./EXPERT_EVALUATION_GAME_DESIGN.md)** ⭐⭐⭐ - 시뮬레이터 게임 메커닉스, 플레이 경험 (68/100점)
+- **[통합 개선 제안서](./INTEGRATED_IMPROVEMENT_PROPOSAL.md)** ⭐⭐⭐ 필독 - Phase 1.5~3 로드맵, 예산 계획 (70점→90점)
 
 #### 최신 평가 보고서 (2025.02)
 - **[종합 평가 보고서](./CURRICULUM_COMPREHENSIVE_EVALUATION_2025.md)** ⭐⭐ 최신 - 전체 커리큘럼 상세 분석
