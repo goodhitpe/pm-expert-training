@@ -1,0 +1,168 @@
+{
+  "decisions": [
+    {
+      "decisionId": "dec_001",
+      "title": "기술 스택 선택",
+      "context": "프로젝트 초기 단계입니다. 팀이 사용할 기술 스택을 결정해야 합니다. 각 선택지마다 장단점이 있습니다.",
+      "question": "어떤 기술 스택을 선택하시겠습니까?",
+      "category": "Resource",
+      "difficultyLevel": 2,
+      "tags": ["기술", "초기설정", "리스크"],
+      "choices": [
+        {
+          "text": "최신 기술 스택 (React 18, Node.js 18)",
+          "prosText": "성능↑↑ 개발속도↑ 트렌드↑",
+          "consText": "러닝커브↓ 안정성↓ 기술부채↑",
+          "impacts": [
+            {"metricType": "Quality", "change": 15, "description": "최신 기능으로 품질 향상"},
+            {"metricType": "Schedule", "change": -10, "description": "러닝 커브로 일정 지연"},
+            {"metricType": "TeamMorale", "change": 10, "description": "새 기술 학습 의욕 상승"}
+          ],
+          "hiddenImpacts": [
+            {"metricType": "TechDebt", "change": 20, "probability": 0.3, "description": "호환성 이슈 발생"}
+          ],
+          "timeBlocksRequired": 2,
+          "explanation": "최신 기술은 장기적으로 유리하지만 초기 학습 비용이 큽니다."
+        },
+        {
+          "text": "검증된 기술 스택 (React 16, Node.js 14)",
+          "prosText": "안정성↑↑ 빠른시작↑",
+          "consText": "성능↓ 확장성↓",
+          "impacts": [
+            {"metricType": "Schedule", "change": 10, "description": "익숙한 기술로 빠른 시작"},
+            {"metricType": "Quality", "change": -5, "description": "구형 기술의 성능 한계"},
+            {"metricType": "Risk", "change": 10, "description": "검증된 기술로 리스크 감소"}
+          ],
+          "hiddenImpacts": [],
+          "timeBlocksRequired": 1,
+          "explanation": "안정적이지만 미래 확장성에 제약이 있을 수 있습니다."
+        },
+        {
+          "text": "하이브리드 접근 (신기술 + 레거시)",
+          "prosText": "균형↑ 리스크분산↑",
+          "consText": "복잡도↑↑ 통합비용↑",
+          "impacts": [
+            {"metricType": "Quality", "change": 5, "description": "적절한 균형"},
+            {"metricType": "Schedule", "change": -5, "description": "통합 시간 소요"},
+            {"metricType": "TechDebt", "change": 15, "description": "두 시스템 유지보수"}
+          ],
+          "hiddenImpacts": [
+            {"metricType": "TeamMorale", "change": -10, "probability": 0.2, "description": "팀원 간 기술 격차"}
+          ],
+          "timeBlocksRequired": 2,
+          "explanation": "중도적 접근이지만 복잡도가 증가할 수 있습니다."
+        }
+      ]
+    },
+    {
+      "decisionId": "dec_002",
+      "title": "긴급 버그 대응",
+      "context": "프로덕션에서 심각한 버그가 발견되었습니다. 고객사 CEO가 직접 연락해왔고, 내일 중요한 프레젠테이션이 있다고 합니다.",
+      "question": "어떻게 대응하시겠습니까?",
+      "category": "Risk",
+      "difficultyLevel": 4,
+      "tags": ["긴급", "버그", "고객"],
+      "choices": [
+        {
+          "text": "전체 팀 동원하여 즉시 수정 (야근)",
+          "prosText": "고객만족↑↑ 신뢰↑",
+          "consText": "사기↓↓ 번아웃↑ 품질↓",
+          "impacts": [
+            {"metricType": "Stakeholder", "change": 20, "description": "고객 신뢰 확보"},
+            {"metricType": "TeamMorale", "change": -25, "description": "야근으로 사기 저하"},
+            {"metricType": "Quality", "change": -10, "description": "급하게 수정하여 품질 저하"}
+          ],
+          "hiddenImpacts": [
+            {"metricType": "Schedule", "change": -15, "probability": 0.5, "description": "다른 작업 지연"}
+          ],
+          "timeBlocksRequired": 4,
+          "explanation": "즉각 대응은 고객을 만족시키지만 팀에 큰 부담을 줍니다."
+        },
+        {
+          "text": "핵심 인력만 투입, 임시 해결책 제시",
+          "prosText": "효율↑ 균형↑",
+          "consText": "완전한해결↓",
+          "impacts": [
+            {"metricType": "Stakeholder", "change": 10, "description": "고객 부분 만족"},
+            {"metricType": "TeamMorale", "change": -10, "description": "일부 팀원만 부담"},
+            {"metricType": "TechDebt", "change": 20, "description": "임시 해결책으로 기술부채 증가"}
+          ],
+          "hiddenImpacts": [
+            {"metricType": "Quality", "change": -15, "probability": 0.4, "description": "임시방편이 문제 재발"}
+          ],
+          "timeBlocksRequired": 2,
+          "explanation": "균형잡힌 접근이지만 근본적 해결은 아닙니다."
+        },
+        {
+          "text": "일정 조율 요청, 제대로 된 수정 계획 수립",
+          "prosText": "품질↑↑ 근본해결↑",
+          "consText": "고객불만↑ 신뢰↓",
+          "impacts": [
+            {"metricType": "Quality", "change": 20, "description": "제대로 된 수정"},
+            {"metricType": "Stakeholder", "change": -20, "description": "고객 불만"},
+            {"metricType": "Schedule", "change": 10, "description": "계획적 일정 관리"}
+          ],
+          "hiddenImpacts": [
+            {"metricType": "Budget", "change": -15, "probability": 0.3, "description": "계약 위약금"}
+          ],
+          "timeBlocksRequired": 1,
+          "explanation": "장기적으로 올바르지만 단기적 고객 관계에 악영향을 줄 수 있습니다."
+        }
+      ]
+    },
+    {
+      "decisionId": "dec_003",
+      "title": "범위 변경 요청",
+      "context": "프로젝트 중반, 고객이 큰 기능 추가를 요청했습니다. 일정과 예산은 그대로 유지하길 원합니다.",
+      "question": "어떻게 대응하시겠습니까?",
+      "category": "Scope",
+      "difficultyLevel": 3,
+      "tags": ["범위", "협상", "고객"],
+      "choices": [
+        {
+          "text": "일정/예산 증액 협상",
+          "prosText": "품질↑ 팀사기↑ 현실적↑",
+          "consText": "협상난항↓ 고객관계↓",
+          "impacts": [
+            {"metricType": "Quality", "change": 10, "description": "충분한 리소스 확보"},
+            {"metricType": "Budget", "change": 20, "description": "예산 증액"},
+            {"metricType": "Stakeholder", "change": -10, "description": "협상 과정 마찰"}
+          ],
+          "hiddenImpacts": [
+            {"metricType": "Schedule", "change": 15, "probability": 0.6, "description": "협상 성공 시 일정 여유"}
+          ],
+          "timeBlocksRequired": 3,
+          "explanation": "가장 현실적이지만 협상 능력이 중요합니다."
+        },
+        {
+          "text": "범위 축소 제안 (기존 기능 제거)",
+          "prosText": "일정유지↑ 집중↑",
+          "consText": "고객불만↑ 가치↓",
+          "impacts": [
+            {"metricType": "Schedule", "change": 10, "description": "일정 준수"},
+            {"metricType": "Scope", "change": -15, "description": "범위 축소"},
+            {"metricType": "Stakeholder", "change": -15, "description": "고객 기대 미충족"}
+          ],
+          "hiddenImpacts": [],
+          "timeBlocksRequired": 2,
+          "explanation": "현실적이지만 고객 만족도가 낮아질 수 있습니다."
+        },
+        {
+          "text": "MVP 접근 (최소 기능으로 우선 출시)",
+          "prosText": "빠른출시↑ 피드백↑",
+          "consText": "미완성↓ 재작업↑",
+          "impacts": [
+            {"metricType": "Schedule", "change": 15, "description": "빠른 출시"},
+            {"metricType": "Quality", "change": -10, "description": "미완성 제품"},
+            {"metricType": "Stakeholder", "change": 5, "description": "점진적 만족"}
+          ],
+          "hiddenImpacts": [
+            {"metricType": "TechDebt", "change": 25, "probability": 0.5, "description": "급하게 만든 코드"}
+          ],
+          "timeBlocksRequired": 2,
+          "explanation": "빠른 출시는 가능하지만 기술 부채가 쌓일 수 있습니다."
+        }
+      ]
+    }
+  ]
+}
