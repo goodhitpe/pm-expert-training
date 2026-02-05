@@ -15,10 +15,11 @@
 - ✅ 프로젝트 메트릭 관리
 - ✅ 샘플 의사결정 데이터 (3개)
 
-### Week 2: 교육 기능 ⏳ 예정
-- [ ] Instructor Dashboard (Backend API)
-- [ ] Learning Analytics (Python)
-- [ ] Unity WebView 통합
+### Week 2: 교육 기능 ✅ 완료!
+- ✅ Instructor Dashboard (Backend API - 5 endpoints)
+- ✅ Learning Analytics (Python - 6 functions)
+- ✅ Unity WebView 통합
+- ✅ Mock 데이터 (3 files)
 
 ### Week 3: UX 개선 ⏳ 예정
 - [ ] 온보딩 튜토리얼
@@ -319,7 +320,77 @@ Play 버튼 → Console 확인
 
 ---
 
-## 🔧 Week 2 계획
+---
+
+## ✅ Week 2 완료 내역 (2025-02-05)
+
+### 구현된 시스템
+
+#### 1. Backend API Server (Node.js + Express)
+**파일**: `backend/server.js` (10,605자)
+
+**5개 REST API 엔드포인트**:
+```javascript
+GET  /api/instructor/dashboard      // 강사 대시보드
+GET  /api/instructor/students/:id   // 개별 학습자 정보
+GET  /api/instructor/at-risk        // 위험군 목록
+GET  /api/instructor/weeks/:week    // 주차별 통계
+POST /api/instructor/send-message   // 메시지 전송
+```
+
+**자동 위험군 식별**:
+- 진행률 < 30%: +40점
+- 14일 미접속: +30점
+- 퀴즈 < 50점: +20점
+- 연속 5일 결석: +30점
+- → 총 50점 이상 = 위험군
+
+#### 2. Learning Analytics (Python)
+**파일**: `backend/analytics.py` (11,556자)
+
+**6개 분석 기능**:
+1. Drop-off 포인트 분석 (이탈률 30% 이상)
+2. 어려운 주차 식별 (평균 70점 미만)
+3. 잔류율 계산 (주차별)
+4. 위험군 학습자 식별
+5. 주간 리포트 자동 생성
+6. CSV 내보내기
+
+**실행 결과 예시**:
+```
+🔍 Drop-off 포인트
+   Week 7: 40.0% 이탈
+   Week 10: 33.3% 이탈
+
+⚠️  위험군 학습자
+   STU005: 위험도 100점
+   STU003: 위험도 80점
+```
+
+#### 3. Unity WebView Integration
+**파일**: `unity-implementation/Scripts/Managers/WebViewManager.cs` (7,038자)
+
+**주요 기능**:
+```csharp
+ShowInstructorDashboard()  // 강사 대시보드
+ShowQABoard(weekNumber)    // Q&A 게시판
+ShowStudentDetail(id)      // 학습자 상세
+```
+
+**플랫폼 지원**:
+- PC/Mac: 기본 브라우저
+- 모바일: UniWebView (유료) / gree-unity-webview (무료)
+- WebGL: 새 탭
+
+#### 4. Mock Data
+**3개 JSON 파일**:
+- `students.json` (718자) - 5명 학습자
+- `progress.json` (3,282자) - 진행 상황
+- `metrics.json` (1,029자) - 프로젝트 메트릭
+
+---
+
+## 🔧 Week 3 계획 (다음)
 
 ### Backend 개발 (Node.js + Firebase)
 
