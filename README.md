@@ -191,13 +191,13 @@ pm-expert-training/
 - **[Phase 1.5 빠른 시작](./PHASE1.5_QUICK_START.md)** - 오늘 바로 시작하는 개발 가이드
 
 **Phase 1.5 구현 완료** (2025.02.05 🎉🎉):
-- **[Phase 1.5 구현 진행 상황](./PHASE1.5_IMPLEMENTATION_STATUS.md)** ⭐⭐⭐ NEW! - **Week 1-2 완료**, 80KB 코드 구현
+- **[Phase 1.5 구현 진행 상황](./PHASE1.5_IMPLEMENTATION_STATUS.md)** ⭐⭐⭐ NEW! - **Week 1-3 완료**, 122KB 코드 구현
   - ✅ Week 1: 게임 메커닉스 (Time Block, Events, Decisions, Metrics)
   - ✅ Week 2: 교육 기능 (Backend API, Analytics, WebView)
-  - ⏳ Week 3: UX 개선 (온보딩, Juice)
+  - ✅ Week 3: UX 개선 (온보딩 튜토리얼 + UI Juice) 🔥 NEW!
   - ⏳ Week 4: 통합 및 테스트
 - **[Unity 구현 가이드](./unity-implementation/README.md)** ⭐⭐⭐ NEW! - 실제 Unity 프로젝트 구조 및 사용법
-- 💻 **[실제 구현 코드](./unity-implementation/)** - TimeManager, EventManager, DecisionSystem, MetricManager (C#)
+- 💻 **[실제 구현 코드](./unity-implementation/)** - 6개 Manager (TimeManager, EventManager, DecisionSystem, MetricManager, WebViewManager, OnboardingManager, UIJuiceManager)
 
 #### 최신 평가 보고서 (2025.02)
 - **[종합 평가 보고서](./CURRICULUM_COMPREHENSIVE_EVALUATION_2025.md)** ⭐⭐ 최신 - 전체 커리큘럼 상세 분석
