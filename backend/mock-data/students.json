@@ -1,0 +1,37 @@
+[
+  {
+    "id": "STU001",
+    "name": "김민수",
+    "email": "minsu.kim@example.com",
+    "enrolledDate": "2025-01-15",
+    "role": "student"
+  },
+  {
+    "id": "STU002",
+    "name": "이지은",
+    "email": "jieun.lee@example.com",
+    "enrolledDate": "2025-01-15",
+    "role": "student"
+  },
+  {
+    "id": "STU003",
+    "name": "박준호",
+    "email": "junho.park@example.com",
+    "enrolledDate": "2025-01-15",
+    "role": "student"
+  },
+  {
+    "id": "STU004",
+    "name": "최수진",
+    "email": "sujin.choi@example.com",
+    "enrolledDate": "2025-01-16",
+    "role": "student"
+  },
+  {
+    "id": "STU005",
+    "name": "정태양",
+    "email": "taeyang.jung@example.com",
+    "enrolledDate": "2025-01-16",
+    "role": "student"
+  }
+]

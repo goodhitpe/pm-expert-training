@@ -1,0 +1,117 @@
+[
+  {
+    "studentId": "STU001",
+    "overallProgress": 75,
+    "currentWeek": 12,
+    "completedWeeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "weeklyProgress": {
+      "1": 100, "2": 100, "3": 100, "4": 100, "5": 100,
+      "6": 100, "7": 100, "8": 100, "9": 100, "10": 100,
+      "11": 100, "12": 60
+    },
+    "weeklyQuizScores": {
+      "1": 85, "2": 90, "3": 78, "4": 88, "5": 92,
+      "6": 85, "7": 80, "8": 87, "9": 90, "10": 83,
+      "11": 88
+    },
+    "weeklyTimeSpent": {
+      "1": 240, "2": 210, "3": 270, "4": 230, "5": 250,
+      "6": 220, "7": 260, "8": 240, "9": 230, "10": 250,
+      "11": 240, "12": 120
+    },
+    "avgQuizScore": 86,
+    "totalTimeSpent": 2760,
+    "lastActive": "2025-02-04T14:30:00Z",
+    "consecutiveAbsences": 0,
+    "recentAction": "Week 12 강의 시청"
+  },
+  {
+    "studentId": "STU002",
+    "overallProgress": 62,
+    "currentWeek": 10,
+    "completedWeeks": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "weeklyProgress": {
+      "1": 100, "2": 100, "3": 100, "4": 100, "5": 100,
+      "6": 100, "7": 100, "8": 100, "9": 100, "10": 45
+    },
+    "weeklyQuizScores": {
+      "1": 75, "2": 82, "3": 70, "4": 78, "5": 85,
+      "6": 73, "7": 80, "8": 75, "9": 82
+    },
+    "weeklyTimeSpent": {
+      "1": 200, "2": 180, "3": 220, "4": 190, "5": 210,
+      "6": 180, "7": 200, "8": 190, "9": 210, "10": 90
+    },
+    "avgQuizScore": 78,
+    "totalTimeSpent": 1870,
+    "lastActive": "2025-02-03T10:15:00Z",
+    "consecutiveAbsences": 1,
+    "recentAction": "Week 10 퀴즈 미완료"
+  },
+  {
+    "studentId": "STU003",
+    "overallProgress": 43,
+    "currentWeek": 7,
+    "completedWeeks": [1, 2, 3, 4, 5, 6],
+    "weeklyProgress": {
+      "1": 100, "2": 100, "3": 100, "4": 100, "5": 100,
+      "6": 100, "7": 20
+    },
+    "weeklyQuizScores": {
+      "1": 68, "2": 65, "3": 58, "4": 72, "5": 60,
+      "6": 55
+    },
+    "weeklyTimeSpent": {
+      "1": 180, "2": 150, "3": 170, "4": 160, "5": 150,
+      "6": 140, "7": 30
+    },
+    "avgQuizScore": 63,
+    "totalTimeSpent": 980,
+    "lastActive": "2025-01-28T16:45:00Z",
+    "consecutiveAbsences": 7,
+    "recentAction": "Week 7 시작하지 않음"
+  },
+  {
+    "studentId": "STU004",
+    "overallProgress": 56,
+    "currentWeek": 9,
+    "completedWeeks": [1, 2, 3, 4, 5, 6, 7, 8],
+    "weeklyProgress": {
+      "1": 100, "2": 100, "3": 100, "4": 100, "5": 100,
+      "6": 100, "7": 100, "8": 100, "9": 35
+    },
+    "weeklyQuizScores": {
+      "1": 80, "2": 75, "3": 78, "4": 72, "5": 68,
+      "6": 70, "7": 65, "8": 60
+    },
+    "weeklyTimeSpent": {
+      "1": 210, "2": 190, "3": 200, "4": 180, "5": 170,
+      "6": 160, "7": 150, "8": 140, "9": 70
+    },
+    "avgQuizScore": 71,
+    "totalTimeSpent": 1470,
+    "lastActive": "2025-02-02T09:20:00Z",
+    "consecutiveAbsences": 2,
+    "recentAction": "Week 9 강의 일부 시청"
+  },
+  {
+    "studentId": "STU005",
+    "overallProgress": 25,
+    "currentWeek": 4,
+    "completedWeeks": [1, 2, 3],
+    "weeklyProgress": {
+      "1": 100, "2": 100, "3": 100, "4": 15
+    },
+    "weeklyQuizScores": {
+      "1": 52, "2": 48, "3": 45
+    },
+    "weeklyTimeSpent": {
+      "1": 120, "2": 100, "3": 110, "4": 20
+    },
+    "avgQuizScore": 48,
+    "totalTimeSpent": 350,
+    "lastActive": "2025-01-25T13:00:00Z",
+    "consecutiveAbsences": 10,
+    "recentAction": "Week 4 미접속"
+  }
+]

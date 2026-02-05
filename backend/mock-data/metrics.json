@@ -1,0 +1,62 @@
+[
+  {
+    "studentId": "STU001",
+    "week": 11,
+    "schedule": 85,
+    "budget": 80,
+    "quality": 90,
+    "scope": 85,
+    "teamMorale": 80,
+    "stakeholder": 88,
+    "risk": 75,
+    "techDebt": 30
+  },
+  {
+    "studentId": "STU002",
+    "week": 9,
+    "schedule": 70,
+    "budget": 75,
+    "quality": 80,
+    "scope": 75,
+    "teamMorale": 65,
+    "stakeholder": 72,
+    "risk": 60,
+    "techDebt": 45
+  },
+  {
+    "studentId": "STU003",
+    "week": 6,
+    "schedule": 55,
+    "budget": 60,
+    "quality": 65,
+    "scope": 60,
+    "teamMorale": 50,
+    "stakeholder": 58,
+    "risk": 70,
+    "techDebt": 60
+  },
+  {
+    "studentId": "STU004",
+    "week": 8,
+    "schedule": 65,
+    "budget": 70,
+    "quality": 72,
+    "scope": 68,
+    "teamMorale": 60,
+    "stakeholder": 65,
+    "risk": 65,
+    "techDebt": 50
+  },
+  {
+    "studentId": "STU005",
+    "week": 3,
+    "schedule": 40,
+    "budget": 45,
+    "quality": 50,
+    "scope": 45,
+    "teamMorale": 35,
+    "stakeholder": 40,
+    "risk": 80,
+    "techDebt": 70
+  }
+]
