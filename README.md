@@ -184,10 +184,16 @@ pm-expert-training/
 - **[게임 개발 전문가 평가](./EXPERT_EVALUATION_GAME_DESIGN.md)** ⭐⭐⭐ - 시뮬레이터 게임 메커닉스, 플레이 경험 (68/100점)
 - **[통합 개선 제안서](./INTEGRATED_IMPROVEMENT_PROPOSAL.md)** ⭐⭐⭐ 필독 - Phase 1.5~3 로드맵, 예산 계획 (70점→90점)
 
-**Phase 1.5 구현 가이드** (2025.02.04 NEW! 🔥🔥):
+**Phase 1.5 구현 가이드** (2025.02.04-05 NEW! 🔥🔥):
 - **[Phase 1.5 즉시 실행 가이드](./PHASE1.5_ACTION_PLAN.md)** ⭐⭐⭐ 필독 - 4주 긴급 개선사항, 70점→78점
 - **[Phase 1.5 개발자 체크리스트](./PHASE1.5_DEV_CHECKLIST.md)** - 역할별 일일 작업, 진행 추적
 - **[Phase 1.5 샘플 코드](./PHASE1.5_CODE_SAMPLES.md)** - C#/TypeScript/Python 실행 가능 코드
+- **[Phase 1.5 빠른 시작](./PHASE1.5_QUICK_START.md)** - 오늘 바로 시작하는 개발 가이드
+
+**Phase 1.5 구현 완료** (2025.02.05 🎉):
+- **[Phase 1.5 구현 진행 상황](./PHASE1.5_IMPLEMENTATION_STATUS.md)** ⭐⭐⭐ NEW! - Week 1 완료, 40KB 코드 구현
+- **[Unity 구현 가이드](./unity-implementation/README.md)** ⭐⭐⭐ NEW! - 실제 Unity 프로젝트 구조 및 사용법
+- 💻 **[실제 구현 코드](./unity-implementation/)** - TimeManager, EventManager, DecisionSystem, MetricManager (C#)
 
 #### 최신 평가 보고서 (2025.02)
 - **[종합 평가 보고서](./CURRICULUM_COMPREHENSIVE_EVALUATION_2025.md)** ⭐⭐ 최신 - 전체 커리큘럼 상세 분석
