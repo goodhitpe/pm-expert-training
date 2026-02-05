@@ -1,0 +1,129 @@
+{
+  "questions": [
+    {
+      "id": "Q001",
+      "studentId": "STU001",
+      "week": 5,
+      "category": "technical",
+      "title": "애자일 스프린트 계획 질문",
+      "content": "스프린트 계획 시 팀 속도(Velocity)를 어떻게 계산하고 활용해야 하나요? 첫 스프린트에서는 어떻게 추정하는지 궁금합니다.",
+      "status": "answered",
+      "votes": 8,
+      "views": 45,
+      "createdAt": "2025-02-01T09:30:00Z"
+    },
+    {
+      "id": "Q002",
+      "studentId": "STU003",
+      "week": 3,
+      "category": "practical",
+      "title": "WBS 작성 방법",
+      "content": "Work Breakdown Structure를 작성할 때 어느 정도 수준까지 세분화해야 하나요? 너무 세세하게 나누면 관리가 어렵고, 너무 크게 나누면 추적이 어려울 것 같습니다.",
+      "status": "answered",
+      "votes": 5,
+      "views": 32,
+      "createdAt": "2025-02-02T14:15:00Z"
+    },
+    {
+      "id": "Q003",
+      "studentId": "STU005",
+      "week": 7,
+      "category": "theoretical",
+      "title": "리스크 관리 매트릭스",
+      "content": "리스크 확률과 영향도를 평가할 때 정량적 기준이 있나요? 주관적으로 판단하다 보니 팀원마다 의견이 다릅니다.",
+      "status": "unanswered",
+      "votes": 3,
+      "views": 18,
+      "createdAt": "2025-02-03T11:20:00Z"
+    },
+    {
+      "id": "Q004",
+      "studentId": "STU002",
+      "week": 2,
+      "category": "practical",
+      "title": "이해관계자 분석",
+      "content": "이해관계자가 많을 때 우선순위를 어떻게 정하나요? Power-Interest Grid를 사용하면 되나요?",
+      "status": "resolved",
+      "votes": 12,
+      "views": 67,
+      "createdAt": "2025-01-28T16:45:00Z"
+    },
+    {
+      "id": "Q005",
+      "studentId": "STU004",
+      "week": 16,
+      "category": "practical",
+      "title": "프로젝트 종료 보고서",
+      "content": "프로젝트 종료 시 작성하는 Lessons Learned 문서의 효과적인 형식이 있을까요? 다음 프로젝트에 실제로 도움이 되도록 작성하고 싶습니다.",
+      "status": "answered",
+      "votes": 6,
+      "views": 28,
+      "createdAt": "2025-02-04T10:00:00Z"
+    }
+  ],
+  "answers": [
+    {
+      "id": "A001",
+      "questionId": "Q001",
+      "authorId": "INSTRUCTOR_01",
+      "authorType": "instructor",
+      "content": "좋은 질문입니다! 팀 속도는 스프린트마다 완료한 스토리 포인트의 합으로 계산합니다.\n\n첫 스프린트의 경우:\n1. 팀원 수 × 집중 가능 일수 × 생산성 계수(0.6-0.8)로 추정\n2. 예: 5명 × 10일 × 0.7 = 35 포인트\n\n이후 스프린트:\n- 최근 3개 스프린트의 평균 속도 사용\n- 예: (30 + 35 + 33) / 3 = 33 포인트\n\nTip: 처음에는 보수적으로 추정하고, 3-4 스프린트 후 안정화됩니다.",
+      "votes": 10,
+      "createdAt": "2025-02-01T10:15:00Z"
+    },
+    {
+      "id": "A002",
+      "questionId": "Q001",
+      "authorId": "STU002",
+      "authorType": "student",
+      "content": "저희 팀은 첫 스프린트에서 예상보다 30% 적게 완료했어요. 회의 시간이나 예상 못한 업무를 고려하지 못했거든요. 두 번째 스프린트부터는 실제 데이터로 계획하니 훨씬 정확해졌습니다.",
+      "votes": 5,
+      "createdAt": "2025-02-01T15:30:00Z"
+    },
+    {
+      "id": "A003",
+      "questionId": "Q002",
+      "authorId": "INSTRUCTOR_01",
+      "authorType": "instructor",
+      "content": "WBS 세분화 기준:\n\n**적정 수준:**\n- 각 작업이 8-80시간 (1-10일) 소요\n- 한 명의 담당자가 명확\n- 완료 기준이 명확\n- 독립적으로 추적 가능\n\n**예시:**\n❌ 너무 큼: \"로그인 기능 개발\" (2주)\n✅ 적정: \"로그인 UI 개발\" (2일), \"인증 API 개발\" (3일)\n❌ 너무 작음: \"버튼 색상 변경\" (1시간)\n\n**실무 팁:**\n- 프로젝트 규모에 따라 3-5 레벨로 제한\n- 진척도 보고 주기와 맞춤 (주간 보고면 주 단위 작업)",
+      "votes": 7,
+      "createdAt": "2025-02-02T16:00:00Z"
+    },
+    {
+      "id": "A004",
+      "questionId": "Q004",
+      "authorId": "INSTRUCTOR_01",
+      "authorType": "instructor",
+      "content": "네, Power-Interest Grid가 효과적입니다!\n\n**4분면 분류:**\n\n1. **High Power, High Interest** (주요 관리)\n   - 정기적 1:1 미팅\n   - 의사결정 참여\n   - 예: CEO, 프로젝트 스폰서\n\n2. **High Power, Low Interest** (만족 유지)\n   - 간결한 요약 보고\n   - 주요 마일스톤만 공유\n   - 예: 임원진\n\n3. **Low Power, High Interest** (지속 정보 제공)\n   - 정기 뉴스레터\n   - 상세 진행 상황\n   - 예: 실무 팀원\n\n4. **Low Power, Low Interest** (모니터링)\n   - 최소한의 커뮤니케이션\n   - 예: 간접 이해관계자\n\n**실전 팁:**\n분기마다 재평가하세요. 상황에 따라 위치가 바뀔 수 있습니다!",
+      "votes": 15,
+      "createdAt": "2025-01-28T18:00:00Z"
+    },
+    {
+      "id": "A005",
+      "questionId": "Q004",
+      "authorId": "STU001",
+      "authorType": "student",
+      "content": "저는 Stakeholder Register를 만들어서 각 이해관계자의 관심사와 커뮤니케이션 선호 방식도 함께 기록했어요. 예를 들어 CTO는 기술적 상세를, CFO는 예산 영향만 원하시더라고요.",
+      "votes": 8,
+      "createdAt": "2025-01-29T09:30:00Z"
+    },
+    {
+      "id": "A006",
+      "questionId": "Q004",
+      "authorId": "STU003",
+      "authorType": "student",
+      "content": "RACI 매트릭스도 함께 사용하면 좋아요. Responsible, Accountable, Consulted, Informed를 명확히 하면 역할 혼선이 줄어듭니다.",
+      "votes": 6,
+      "createdAt": "2025-01-29T14:20:00Z"
+    },
+    {
+      "id": "A007",
+      "questionId": "Q005",
+      "authorId": "INSTRUCTOR_01",
+      "authorType": "instructor",
+      "content": "Lessons Learned 문서 구조 추천:\n\n**1. 프로젝트 개요** (1페이지)\n- 목표, 기간, 예산, 팀 구성\n\n**2. 성공 요인** (What Went Well)\n- 구체적 사례와 수치\n- 재사용 가능한 프로세스/도구\n- 예: \"데일리 스탠드업 → 이슈 해결 시간 50% 단축\"\n\n**3. 개선 필요 사항** (What Could Be Better)\n- 문제 상황과 원인\n- 개선 방안 제시\n- 예: \"요구사항 변경 관리 부족 → 변경 요청 프로세스 필요\"\n\n**4. 액션 아이템**\n- 다음 프로젝트 적용 사항\n- 담당자와 기한\n\n**5. 메트릭**\n- 목표 vs 실제 (일정, 예산, 품질)\n- 그래프와 차트\n\n**실전 팁:**\n- 프로젝트 종료 회의에서 팀 전체가 함께 작성\n- 긍정적 내용과 부정적 내용의 균형\n- 다음 PM이 실제로 사용할 수 있도록 구체적으로 작성",
+      "votes": 9,
+      "createdAt": "2025-02-04T11:30:00Z"
+    }
+  ]
+}

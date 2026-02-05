@@ -1,0 +1,72 @@
+{
+  "decisions": [
+    {
+      "id": "DECISION_004",
+      "title": "팀 구성 방식 결정",
+      "weekRange": [1, 4],
+      "difficulty": 2,
+      "timeBlocksRequired": 2,
+      "context": "새로운 프로젝트 시작. 7명의 개발자로 팀을 구성해야 합니다. 어떤 방식으로 조직할까요?",
+      "choices": [
+        {
+          "id": "CHOICE_A",
+          "text": "기능별 팀 (Frontend/Backend/QA)",
+          "pros": ["전문성↑↑", "기술스택통일↑", "코드품질↑"],
+          "cons": ["커뮤니케이션↓", "전체이해↓", "병목현상↑"],
+          "impacts": [
+            {"metricType": "Quality", "change": 15},
+            {"metricType": "Schedule", "change": -5},
+            {"metricType": "TeamMorale", "change": 5}
+          ]
+        },
+        {
+          "id": "CHOICE_B",
+          "text": "기능 교차 팀 (Feature Team)",
+          "pros": ["속도↑↑", "자율성↑", "책임감↑"],
+          "cons": ["전문성↓", "중복작업↑"],
+          "impacts": [
+            {"metricType": "Schedule", "change": 10},
+            {"metricType": "TeamMorale", "change": 10},
+            {"metricType": "Quality", "change": -5}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DECISION_005",
+      "title": "개발 방법론 선택",
+      "weekRange": [1, 4],
+      "difficulty": 3,
+      "timeBlocksRequired": 2,
+      "context": "프로젝트 특성: 요구사항이 자주 변경될 것으로 예상됩니다. 어떤 방법론을 채택할까요?",
+      "choices": [
+        {
+          "id": "CHOICE_A",
+          "text": "애자일/스크럼",
+          "pros": ["유연성↑↑", "빠른피드백↑", "리스크관리↑"],
+          "cons": ["문서화↓", "예측어려움↓"],
+          "impacts": [
+            {"metricType": "Stakeholder", "change": 10},
+            {"metricType": "Risk", "change": -15},
+            {"metricType": "TechDebt", "change": 10}
+          ]
+        },
+        {
+          "id": "CHOICE_B",
+          "text": "전통적 워터폴",
+          "pros": ["명확한계획↑", "문서화↑↑", "예측가능↑"],
+          "cons": ["유연성↓↓", "변경비용↑↑"],
+          "impacts": [
+            {"metricType": "Schedule", "change": -10},
+            {"metricType": "Risk", "change": 10},
+            {"metricType": "Stakeholder", "change": -5}
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "totalScenarios": 30,
+    "note": "실제 구현 시 27개 추가 시나리오 포함 (여기서는 샘플 2개만 표시)"
+  }
+}
