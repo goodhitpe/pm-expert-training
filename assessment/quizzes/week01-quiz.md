@@ -7,6 +7,12 @@
 
 ---
 
+> **📚 PMBOK 버전**: 이 퀴즈는 PMBOK 6th Edition을 기반으로 하며,  
+> 7th Edition의 주요 개념도 포함합니다.  
+> 👉 [버전 정책 보기](../../PMBOK_VERSION_POLICY.md)
+
+---
+
 ## 📋 객관식 문제 (10문제)
 
 ### 문제 1
@@ -26,7 +32,7 @@ D) 점진적 구체화 (Progressive Elaboration)
 ---
 
 ### 문제 2
-**질문**: PMBOK Guide 7th Edition에서 제시하는 프로젝트 관리의 5대 프로세스 그룹이 **아닌** 것은?
+**질문** (PMBOK 6th Edition 기준): PMBOK에서 제시하는 프로젝트 관리의 5대 프로세스 그룹이 **아닌** 것은?
 
 A) 착수 (Initiating)  
 B) 계획 (Planning)  
@@ -203,8 +209,13 @@ D) 문제 해결 능력 (Problem Solving)
 
 ## 🔗 참고 자료
 
+> **📚 PMBOK 버전**: PMBOK 6th Edition 기반 (7th Edition 개념 포함)  
+> 👉 [버전 정책](../../PMBOK_VERSION_POLICY.md) | [6판→7판 매핑](../../guides/pmbok-6th-to-7th-mapping.md)
+
 ### 필수 복습 자료
 - Week 1 강의 자료: `curriculum/week01-pm-overview/README.md`
+- PMBOK 6th Edition, Chapter 1-2: PM Introduction
+- PMBOK 7th Edition: PM Principles (참고)
 - PMBOK 요약 가이드: `guides/pmbok-summary-guide.md`
 - PM 용어집: `guides/pm-glossary.md`
 

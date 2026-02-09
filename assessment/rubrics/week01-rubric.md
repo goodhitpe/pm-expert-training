@@ -153,8 +153,14 @@
 
 ## 📚 참고 자료
 
+> **📚 PMBOK 버전**: 이 루브릭은 PMBOK 6th Edition을 기반으로 하며,  
+> 7th Edition의 주요 변화를 추가로 다룹니다.  
+> 👉 [버전 정책 보기](../../PMBOK_VERSION_POLICY.md)
+
 ### 필수 참고 자료
 - Week 1 강의 자료: `curriculum/week01-pm-overview/README.md`
+- PMBOK 6th Edition, Chapter 1-2: PM Introduction
+- PMBOK 7th Edition: Stakeholders Performance Domain
 - PMBOK 요약 가이드: `guides/pmbok-summary-guide.md`
 - PM 용어집: `guides/pm-glossary.md`
 
@@ -165,6 +171,7 @@
 
 ### 추가 학습 자료
 - PMBOK Guide 7th Edition, Chapter 3: "The Role of the Project Manager"
+- [PMBOK 6판 → 7판 매핑 가이드](../../guides/pmbok-6th-to-7th-mapping.md)
 - 추천 도서: "The Project Manager's Guide to Success" by Randall L. Englund
 
 ---

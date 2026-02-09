@@ -1,5 +1,13 @@
 # Week 10: PM 도구 활용
 
+---
+
+> **📚 PMBOK 버전**: 이 자료는 PMBOK 6th Edition을 기반으로 하며,  
+> 7th Edition의 주요 변화를 추가로 다룹니다.  
+> 👉 [상세 버전 정책 보기](../../PMBOK_VERSION_POLICY.md)
+
+---
+
 ## 📝 학습 목표
 - 주요 PM 도구의 특징 및 활용법 학습
 - Jira를 활용한 애자일 프로젝트 관리

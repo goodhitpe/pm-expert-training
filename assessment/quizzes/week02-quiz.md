@@ -7,10 +7,16 @@
 
 ---
 
+> **📚 PMBOK 버전**: 이 퀴즈는 PMBOK 6th Edition을 기반으로 하며,  
+> 7th Edition의 주요 개념도 포함합니다.  
+> 👉 [버전 정책 보기](../../PMBOK_VERSION_POLICY.md)
+
+---
+
 ## 📋 객관식 문제 (10문제)
 
 ### 문제 1
-**질문**: PMBOK의 5대 프로세스 그룹을 **순서대로** 나열한 것은?
+**질문** (PMBOK 6th Edition 기준): PMBOK의 5대 프로세스 그룹을 **순서대로** 나열한 것은?
 
 A) 착수 → 실행 → 계획 → 통제 → 종료  
 B) 착수 → 계획 → 실행 → 감시 및 통제 → 종료  
@@ -206,13 +212,18 @@ D) 랜덤하게 분포된 독립적인 프로세스들
 
 ## 🔗 참고 자료
 
+> **📚 PMBOK 버전**: PMBOK 6th Edition 기반 (7th Edition 개념 포함)  
+> 👉 [버전 정책](../../PMBOK_VERSION_POLICY.md) | [6판→7판 매핑](../../guides/pmbok-6th-to-7th-mapping.md)
+
 ### 필수 복습 자료
 - Week 2 강의 자료: `curriculum/week02-pm-fundamentals/README.md`
-- PMBOK Guide Chapter 3-13
+- PMBOK 6th Edition, Chapter 3-13: Process Groups & Knowledge Areas
+- PMBOK 7th Edition: 8 Performance Domains (참고)
 - PM 용어집: `guides/pm-glossary.md`
 
 ### 추천 학습 자료
-- PMBOK Guide 6th/7th Edition (공식 가이드)
+- PMBOK Guide 6th Edition (본 과정의 주요 기반)
+- PMBOK Guide 7th Edition (PMP 시험 대비)
 - PMI 프로세스 그룹 가이드
 - 프로세스 그룹별 체크리스트
 

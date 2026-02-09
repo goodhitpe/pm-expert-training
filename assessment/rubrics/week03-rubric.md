@@ -197,8 +197,15 @@
 
 ## 📚 참고 자료
 
+> **📚 PMBOK 버전**: 이 루브릭은 PMBOK 6th Edition을 기반으로 하며,  
+> 7th Edition의 주요 변화를 추가로 다룹니다.  
+> 👉 [버전 정책 보기](../../PMBOK_VERSION_POLICY.md)
+
 ### 필수 참고 자료
 - Week 3 강의 자료: `curriculum/week03-stakeholder-management/README.md`
+- PMBOK 6th Edition, Chapter 13: Stakeholder Management
+- PMBOK 7th Edition: Stakeholders Performance Domain
+- [PMBOK 6판 → 7판 매핑 가이드](../../guides/pmbok-6th-to-7th-mapping.md)
 - PMBOK 요약 가이드 Chapter 13: `guides/pmbok-summary-guide.md`
 - PM 용어집: `guides/pm-glossary.md`
 - 커뮤니케이션 계획 템플릿: `templates/communication-plan-template.md`
