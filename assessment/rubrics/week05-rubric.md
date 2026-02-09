@@ -214,8 +214,15 @@
 
 ## 📚 참고 자료
 
+> **📚 PMBOK 버전**: 이 루브릭은 PMBOK 6th Edition을 기반으로 하며,  
+> 7th Edition의 주요 변화를 추가로 다룹니다.  
+> 👉 [버전 정책 보기](../../PMBOK_VERSION_POLICY.md)
+
 ### 필수 참고 자료
 - Week 5 강의 자료: `curriculum/week05-schedule-management/README.md`
+- PMBOK 6th Edition, Chapter 6: Schedule Management
+- PMBOK 7th Edition: Planning & Measurement Performance Domains
+- [PMBOK 6판 → 7판 매핑 가이드](../../guides/pmbok-6th-to-7th-mapping.md)
 - PMBOK 요약 가이드 Chapter 6: `guides/pmbok-summary-guide.md`
 - PM 용어집: `guides/pm-glossary.md`
 - 간트 차트 템플릿: `templates/gantt-chart-template.xlsx`
