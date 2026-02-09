@@ -1,5 +1,13 @@
 # PMBOK 가이드 종합 요약 (PMBOK Guide Summary)
 
+---
+
+> **📚 PMBOK 버전**: 이 요약은 PMBOK 6th Edition (2017)을 기반으로 작성되었으며,  
+> 7th Edition (2021)의 주요 변화를 추가로 다룹니다.  
+> 👉 [상세 버전 정책 보기](../PMBOK_VERSION_POLICY.md) | [6판→7판 매핑](./pmbok-6th-to-7th-mapping.md)
+
+---
+
 ## 목차
 1. [PMBOK 개요](#pmbok-개요)
 2. [5대 프로세스 그룹](#5대-프로세스-그룹)
@@ -884,6 +892,12 @@ VAC = BAC - EAC (완료 시점 편차)
 
 ---
 
-**문서 버전**: 1.0  
-**작성일**: 2024년 1월  
-**기반**: PMBOK Guide 6th Edition
+**문서 버전**: 2.0  
+**기반**: PMBOK Guide 6th Edition (2017)  
+**추가 참조**: PMBOK Guide 7th Edition (2021)  
+**최종 업데이트**: 2025년 2월 9일  
+
+**관련 문서**:
+- [PMBOK 버전 정책](../PMBOK_VERSION_POLICY.md)
+- [PMBOK 6판 → 7판 매핑 가이드](./pmbok-6th-to-7th-mapping.md)
+- [자격증 준비 가이드](../resources/certification-guide.md)

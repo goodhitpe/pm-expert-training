@@ -1,5 +1,13 @@
 # Project Management Certification Guide
 
+---
+
+> **📚 PMBOK 버전**: 이 가이드는 PMBOK 7th Edition (2021) 기반 PMP 시험을 다루며,  
+> 6th Edition의 프로세스 지식도 포함합니다.  
+> 👉 [버전 정책 보기](../PMBOK_VERSION_POLICY.md) | [6판→7판 매핑](../guides/pmbok-6th-to-7th-mapping.md)
+
+---
+
 A comprehensive guide to the most valuable project management certifications, helping you choose the right path for your career.
 
 ## Table of Contents
@@ -94,6 +102,78 @@ The **PMP** is the gold standard in project management certification, offered by
 - PrepCast Simulator by Cornelius Fichtner
 - PM Exam Simulator
 - Study Hall by PMI (new adaptive learning)
+
+### PMBOK 6th + 7th Edition Integration Strategy
+
+> **💡 본 프로그램의 접근법**: 6판으로 기초를 다지고, 7판으로 시험 대비
+
+**Why Both Editions Matter:**
+
+현재 PMP 시험(2021년 1월 이후)은 7판 기반이지만, 6판의 프로세스 지식이 여전히 중요합니다:
+- **Process Domain (50%)**: 6판의 49개 프로세스 이해 필수
+- **People Domain (42%)**: 7판의 12가지 원칙 기반
+- **Business Environment (8%)**: 7판의 가치 전달 관점
+
+**Effective Study Approach:**
+
+**Phase 1: 6th Edition Foundation (60% of study time)**
+- ✅ 5대 프로세스 그룹 완벽 숙지
+- ✅ 10대 지식영역 이해
+- ✅ 49개 프로세스의 ITTO (Inputs, Tools & Techniques, Outputs)
+- ✅ EVM, CPM, PERT 등 계산 문제 연습
+- ✅ 프로세스 간 상호작용 파악
+
+**Resources:**
+- 본 커리큘럼 Week 1-8 (6판 기반 체계 학습)
+- [PMBOK 요약 가이드](../guides/pmbok-summary.md)
+
+**Phase 2: 7th Edition Integration (30% of study time)**
+- ✅ 12가지 프로젝트 관리 원칙 이해 및 적용
+- ✅ 8개 성과 영역(Performance Domains) 학습
+- ✅ 6판 프로세스 → 7판 성과 영역 매핑
+- ✅ People 영역 집중 (Servant Leadership, Emotional Intelligence)
+- ✅ 가치 전달(Value Delivery) 관점 학습
+
+**Resources:**
+- PMBOK Guide 7th Edition 정독
+- [6판 → 7판 매핑 가이드](../guides/pmbok-6th-to-7th-mapping.md)
+- Week 2 상세 자료의 "6판 vs 7판 비교" 섹션
+
+**Phase 3: Practice & Application (10% of study time)**
+- ✅ 모의고사 3회 이상 (80% 이상 목표)
+- ✅ 하이브리드/애자일 시나리오 문제 집중
+- ✅ 약점 영역 재학습
+- ✅ 실전 시험 환경 연습
+
+**Exam Question Approach:**
+
+**6th Edition-focused questions:**
+```
+예: "프로젝트에서 EV=1000, AC=1200일 때 CPI는?"
+→ 6판 공식 활용: CPI = EV/AC = 0.83
+```
+
+**7th Edition-focused questions:**
+```
+예: "PM이 팀원 간 갈등을 발견했다. 가장 적절한 접근은?"
+→ 7판 원칙(Team, Leadership) 기반: 대화를 통한 근본 원인 파악
+```
+
+**Integrated questions:**
+```
+예: "이해관계자가 새 요구사항을 제시했다. PM의 조치는?"
+→ 6판 프로세스(통합 변경 통제) + 7판 관점(가치 평가)
+```
+
+**Study Checklist:**
+- [ ] 6판 49개 프로세스 숙지
+- [ ] 6판 ITTO 완벽 이해
+- [ ] 7판 12가지 원칙 이해
+- [ ] 7판 8개 성과 영역 이해
+- [ ] 프로세스 → 성과 영역 매핑 완료
+- [ ] 애자일 프랙티스 가이드 학습
+- [ ] People-Process-Business 관점 통합
+- [ ] 모의고사 80% 이상 득점
 
 ### Cost (USD)
 

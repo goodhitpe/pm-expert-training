@@ -1,5 +1,13 @@
 # PM 체크리스트 모음 (PM Checklists)
 
+---
+
+> **📚 PMBOK 버전**: 이 체크리스트는 PMBOK 6th Edition을 기반으로 작성되었으며,  
+> 7th Edition의 원칙과 실무 베스트 프랙티스를 반영합니다.  
+> 👉 [버전 정책 보기](../PMBOK_VERSION_POLICY.md)
+
+---
+
 프로젝트 관리의 각 단계와 활동별로 사용할 수 있는 실무 체크리스트 모음입니다.
 
 ## 목차
@@ -1204,6 +1212,12 @@
 
 ---
 
-**문서 버전**: 1.0  
-**작성일**: 2024년 1월  
-**기반**: PMBOK Guide 6th Edition 및 실무 베스트 프랙티스
+**문서 버전**: 2.0  
+**기반**: PMBOK Guide 6th Edition (2017) 및 실무 베스트 프랙티스  
+**추가 참조**: PMBOK Guide 7th Edition (2021) 원칙  
+**최종 업데이트**: 2025년 2월 9일
+
+**관련 문서**:
+- [PMBOK 버전 정책](../PMBOK_VERSION_POLICY.md)
+- [PMBOK 요약](./pmbok-summary.md)
+- [PM 용어집](./pm-glossary.md)
