@@ -1,5 +1,13 @@
 # Week 2: 프로젝트 관리 기초
 
+---
+
+> **📚 PMBOK 버전**: 이 자료는 PMBOK 6th Edition을 기반으로 하며,  
+> 7th Edition의 주요 변화를 추가로 다룹니다.  
+> 👉 [상세 버전 정책 보기](../../PMBOK_VERSION_POLICY.md)
+
+---
+
 ## 📝 학습 목표
 - PMBOK의 5대 프로세스 그룹 이해
 - 10대 지식영역의 개념 파악
