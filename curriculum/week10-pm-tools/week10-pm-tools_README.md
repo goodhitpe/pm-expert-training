@@ -286,6 +286,332 @@ To Do → In Progress → Code Review → Testing → Done
 - MS Project (일정) + Teams (협업) + SharePoint (문서)
 - Trello (백로그) + Google Workspace (문서) + Zoom (회의)
 
+## 🎯 실무 적용 예시: Jira + GitHub + CI/CD 통합 워크플로우
+
+### 예시 1: 완전 자동화된 개발 파이프라인
+
+**프로젝트**: SaaS 플랫폼 (10명 개발팀)
+
+#### 통합 아키텍처
+
+```
+┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
+│  Jira   │ ←→ │ GitHub  │ ←→ │Jenkins  │ ←→ │  AWS    │
+│(작업관리)│    │(코드)   │    │(CI/CD)  │    │(배포)   │
+└─────────┘    └─────────┘    └─────────┘    └─────────┘
+     ↓              ↓              ↓              ↓
+  Sprint        Pull          Auto           Auto
+  Tracking      Request       Build          Deploy
+```
+
+#### Step-by-Step 워크플로우
+
+```
+Day 1: Sprint Planning
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+Jira에서:
+1. Epic 생성: "결제 시스템 v2.0"
+2. Story 생성: "PROJ-123: 신용카드 결제 추가"
+   - Story Points: 8
+   - Sprint: Sprint 15
+   - Assignee: 개발자 김철수
+
+Day 2: 개발 시작
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+개발자 김철수:
+
+1. Jira 티켓 상태 변경
+   Jira: PROJ-123 → "진행 중"
+   
+2. GitHub 브랜치 생성 (자동 연동)
+   $ git checkout -b feature/PROJ-123-credit-card
+   
+   브랜치명 규칙: feature/[Jira 티켓번호]-[설명]
+   → Jira Smart Commit으로 자동 연동
+
+3. 코드 작성
+   payment-service.js 수정
+   
+4. Commit (Smart Commit 활용)
+   $ git commit -m "PROJ-123 #time 4h #comment 카드 검증 로직 구현"
+   
+   효과:
+   - Jira에 자동으로 4시간 작업 시간 기록
+   - 코멘트 자동 추가
+   - Work Log 자동 업데이트
+
+Day 3: Pull Request
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. GitHub PR 생성
+   Title: "[PROJ-123] 신용카드 결제 추가"
+   Description:
+   ```
+   ## Changes
+   - 신용카드 유효성 검증
+   - PG사 API 연동
+   - 에러 처리
+   
+   ## Jira Ticket
+   https://company.atlassian.net/browse/PROJ-123
+   
+   ## Test Coverage
+   - Unit Tests: 95%
+   - Integration Tests: Pass
+   ```
+
+2. 자동 트리거 (GitHub Actions)
+   PR 생성 → 자동으로:
+   ✅ Lint 검사 (ESLint)
+   ✅ 단위 테스트 (Jest)
+   ✅ 코드 커버리지 (80% 이상 필수)
+   ✅ 보안 스캔 (Snyk)
+   ✅ 빌드 테스트
+   
+   결과: 모두 통과 ✅
+   
+3. Jira 자동 업데이트
+   PROJ-123 상태 → "코드 리뷰"
+   코멘트 추가: "PR#456 생성됨"
+
+Day 4: 코드 리뷰
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+시니어 개발자 이영희:
+
+1. GitHub에서 리뷰
+   Comment: "Line 45: 에러 처리 개선 필요"
+   Request Changes
+   
+2. Jira 자동 알림
+   김철수에게 Slack DM:
+   "PROJ-123 코드 리뷰 피드백 있음"
+
+Day 5: 수정 및 승인
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. 김철수 수정
+   $ git commit -m "PROJ-123 #comment 에러 처리 개선"
+   $ git push
+   
+2. 자동 재검사
+   CI 파이프라인 재실행 → 통과 ✅
+   
+3. 리뷰어 승인
+   이영희: "Approved ✅"
+   
+4. Merge to main
+   $ git merge feature/PROJ-123-credit-card
+   
+5. 자동 트리거 (Jenkins CI/CD)
+   main 브랜치 merge → 자동으로:
+   
+   Stage 1: Build (2분)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✅ npm install
+   ✅ npm run build
+   ✅ Docker image 생성
+   
+   Stage 2: Test (5분)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✅ 단위 테스트 (2,000개)
+   ✅ 통합 테스트 (500개)
+   ✅ E2E 테스트 (50개)
+   
+   Stage 3: Security Scan (3분)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✅ OWASP Dependency Check
+   ✅ SonarQube 코드 분석
+   ✅ 취약점: 0건
+   
+   Stage 4: Deploy to Staging (2분)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✅ AWS ECS Staging 배포
+   ✅ Health Check 통과
+   ✅ Smoke Test 통과
+   
+   Stage 5: Deploy to Production (2분)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✅ Blue-Green Deployment
+   ✅ 트래픽 전환 (0% → 100%)
+   ✅ Rollback 대기 (30분)
+   
+   총 소요 시간: 14분
+
+6. Jira 자동 완료
+   PROJ-123 상태 → "완료"
+   코멘트: "배포 완료 - Production"
+   Release Note 자동 생성
+```
+
+#### 통합 대시보드 (실시간 모니터링)
+
+```
+PM 대시보드 (Jira Dashboard):
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+Sprint 15 진행 상황:
+
+Burndown Chart:
+Day 1: 40 SP 남음
+Day 5: 28 SP 남음 ✅ (목표선 위)
+Day 10: 예상 완료
+
+Velocity:
+Sprint 12: 35 SP
+Sprint 13: 38 SP
+Sprint 14: 40 SP ← 트렌드 상승
+Sprint 15: 40 SP (목표)
+
+Cycle Time:
+평균: 3.2일 (목표: 5일 이하) ✅
+
+Code Quality (SonarQube):
+- 커버리지: 85% ✅
+- 버그: 3건 (모두 Low)
+- 기술 부채: 2일 (관리 가능)
+
+Deployment Frequency:
+- 주간: 8회
+- 성공률: 100%
+- 평균 배포 시간: 12분
+
+Lead Time (Jira → Production):
+- 평균: 2.5일 ✅
+- 목표: 3일 이하
+```
+
+### 예시 2: Jira 자동화 규칙 (Automation Rules)
+
+```
+Rule 1: Sprint 시작 시 자동 알림
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+Trigger: Sprint 상태 → "Active"
+Action:
+  - Slack 채널에 메시지
+  - 모든 티켓 담당자에게 이메일
+  - Sprint Goal Confluence 페이지 생성
+
+Rule 2: 고위험 버그 자동 에스컬레이션
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+Trigger: 
+  - Issue Type = Bug
+  - Priority = Critical
+  - 생성 후 30분 경과
+  - 상태 = "열림"
+
+Action:
+  - PM에게 Slack DM
+  - Assignee를 시니어 개발자로 변경
+  - Due Date = 당일
+  - 라벨 추가: "urgent"
+
+Rule 3: PR 병합 시 티켓 자동 전환
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+Trigger: GitHub PR merged
+Condition: PR 제목에 Jira 티켓번호 포함
+Action:
+  - 티켓 상태 → "배포 대기"
+  - Comment: "PR#XXX merged"
+  - QA 담당자에게 할당
+
+Rule 4: 장기 미완료 티켓 알림
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+Trigger: 매주 월요일 9:00
+Condition:
+  - 상태 = "진행 중"
+  - 7일 이상 업데이트 없음
+
+Action:
+  - 담당자에게 Slack DM
+  - PM에게 요약 리포트
+  - 라벨 추가: "stale"
+```
+
+### 예시 3: MS Project + Teams 통합 (대기업 환경)
+
+```
+시나리오: 건설 프로젝트 (1,000개 태스크, 50명)
+
+MS Project:
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Gantt Chart: 마스터 스케줄
+- Resource Leveling: 자원 평준화
+- Critical Path: 크리티컬 패스 추적
+- Baseline: 기준선 설정
+
+Teams 통합:
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. 프로젝트별 Team 생성
+   - General 채널: 공지사항
+   - Tasks 채널: 일일 업데이트
+   - Issues 채널: 문제 해결
+
+2. Planner 탭 추가
+   - MS Project 태스크 동기화
+   - 주간 마일스톤 표시
+   - 담당자별 작업 목록
+
+3. SharePoint 문서 라이브러리
+   - 설계 도면 (AutoCAD)
+   - 시방서 (PDF)
+   - 회의록 (Word)
+   - 버전 관리
+
+4. Power BI 대시보드
+   - MS Project 데이터 연동
+   - 실시간 진척률
+   - 비용 대비 실적 (EVM)
+   - 리스크 Heat Map
+
+워크플로우:
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+오전 9:00 - Daily Meeting (Teams 화상)
+- PM이 Gantt Chart 화면 공유
+- 각 팀 리더 진행 상황 보고
+- 이슈 식별 및 즉시 논의
+
+오전 10:00 - MS Project 업데이트
+- 팀 리더가 실적 입력
+- PM이 일정 재계산
+- Critical Path 변경 확인
+
+오후 2:00 - Power BI 자동 리프레시
+- 대시보드 업데이트
+- 경영진에게 자동 이메일
+- Red Alert 시 Teams 알림
+
+주간 보고:
+- MS Project → PDF Export
+- Teams에 자동 업로드
+- 이해관계자에게 공유
+```
+
+### 실전 팁: 도구 선택 기준
+
+```
+┌─────────────┬──────────┬──────────┬──────────┐
+│ 기준        │ Jira     │ MS Project│ Trello   │
+├─────────────┼──────────┼──────────┼──────────┤
+│ 방법론      │ 애자일✅ │ 워터폴✅ │ 칸반✅   │
+│ 팀 규모     │ 10-100명 │ 10-1000명│ 3-20명   │
+│ 복잡도      │ 중-고    │ 고       │ 저-중    │
+│ 가격        │ $7/월    │ $30/월   │ 무료~$10 │
+│ 학습 곡선   │ 중간     │ 높음     │ 낮음     │
+│ API 통합    │ 풍부✅   │ 제한적   │ 보통     │
+└─────────────┴──────────┴──────────┴──────────┘
+
+PM 선택 가이드:
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+스타트업 (10명, 애자일):
+→ Jira + GitHub + Slack
+
+중견기업 (50명, 하이브리드):
+→ Jira (애자일) + MS Project (마스터 스케줄)
+
+대기업 (500명, 워터폴):
+→ MS Project + Teams + SharePoint
+
+소규모 팀 (5명, 칸반):
+→ Trello + Google Workspace
+```
+
 ## 💡 실습 과제
 
 ### 과제 1: Jira 프로젝트 생성
