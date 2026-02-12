@@ -662,6 +662,685 @@ REST API 엔드포인트 설계
 
 ---
 
+## 🔧 Part 6: REST API 설계 심화
+
+### 6.1 RESTful API 설계 원칙 상세
+
+#### 원칙 1: 리소스 중심 설계
+
+**리소스는 명사로 표현**:
+```
+✅ 좋은 예:
+GET  /users              # 사용자 목록
+GET  /users/123          # 특정 사용자
+POST /users              # 사용자 생성
+PUT  /users/123          # 사용자 수정
+DELETE /users/123        # 사용자 삭제
+
+❌ 나쁜 예:
+GET  /getUsers           # 동사 사용
+POST /createUser         # 동사 사용
+GET  /user/delete/123    # HTTP 메서드와 불일치
+```
+
+#### 원칙 2: 계층 구조 표현
+
+**중첩 리소스**:
+```
+✅ 좋은 예:
+GET  /users/123/posts           # 사용자 123의 게시물 목록
+GET  /users/123/posts/456       # 사용자 123의 게시물 456
+POST /users/123/posts           # 사용자 123의 게시물 생성
+GET  /posts/456/comments        # 게시물 456의 댓글 목록
+
+❌ 나쁜 예:
+GET  /getUserPosts?userId=123   # 쿼리 파라미터보다 경로 우선
+GET  /posts_by_user_123         # 언더스코어, 사용자 ID 하드코딩
+```
+
+**중첩 깊이 제한**:
+```
+✅ 적절:
+/users/123/posts/456/comments     # 3단계 OK
+
+❌ 과도:
+/users/123/posts/456/comments/789/replies/101/likes  # 너무 깊음
+→ /comments/789/replies/101/likes 로 분리
+```
+
+#### 원칙 3: HTTP 메서드 적절히 사용
+
+**CRUD 매핑**:
+```
+CREATE → POST
+READ   → GET
+UPDATE → PUT (전체 수정) 또는 PATCH (부분 수정)
+DELETE → DELETE
+```
+
+**멱등성 (Idempotency) 이해**:
+```
+멱등: 여러 번 실행해도 결과 동일
+- GET, PUT, DELETE: 멱등
+- POST: 비멱등 (매번 새 리소스 생성)
+
+예시:
+DELETE /users/123  # 여러 번 실행해도 결과 동일 (이미 삭제됨)
+POST /users        # 매번 새 사용자 생성
+```
+
+#### 원칙 4: 적절한 HTTP 상태 코드 사용
+
+**성공 코드 (2xx)**:
+```
+200 OK               - 요청 성공 (GET, PUT, PATCH)
+201 Created          - 리소스 생성 성공 (POST)
+204 No Content       - 성공, 응답 본문 없음 (DELETE)
+```
+
+**클라이언트 오류 (4xx)**:
+```
+400 Bad Request      - 잘못된 요청 (유효성 검사 실패)
+401 Unauthorized     - 인증 필요
+403 Forbidden        - 권한 없음
+404 Not Found        - 리소스 없음
+409 Conflict         - 충돌 (중복 생성 시도)
+422 Unprocessable    - 유효성 검사 실패 (의미적)
+```
+
+**서버 오류 (5xx)**:
+```
+500 Internal Server Error  - 서버 오류
+502 Bad Gateway           - 게이트웨이 오류
+503 Service Unavailable   - 서비스 일시 중단
+```
+
+#### 원칙 5: 버전 관리
+
+**URL 버전** (권장):
+```
+https://api.example.com/v1/users
+https://api.example.com/v2/users
+
+장점: 명확, 간단
+단점: URL 변경 시 클라이언트 수정
+```
+
+**헤더 버전**:
+```
+GET /users
+Accept: application/vnd.example.v1+json
+
+장점: URL 변경 없음
+단점: 덜 명확
+```
+
+#### 원칙 6: 필터링, 정렬, 페이징
+
+**필터링**:
+```
+GET /users?status=active
+GET /users?role=admin&status=active
+GET /posts?author=123&category=tech
+```
+
+**정렬**:
+```
+GET /users?sort=created_at
+GET /users?sort=-created_at    # 내림차순 (-)
+GET /users?sort=name,created_at # 다중 정렬
+```
+
+**페이징**:
+```
+방법 1: Offset-based
+GET /users?page=2&limit=20
+GET /users?offset=20&limit=20
+
+방법 2: Cursor-based (대용량 데이터)
+GET /users?cursor=abc123&limit=20
+```
+
+### 6.2 API 응답 설계
+
+#### 일관된 응답 구조
+
+**성공 응답**:
+```json
+{
+  "status": "success",
+  "data": {
+    "id": 123,
+    "name": "John Doe",
+    "email": "john@example.com"
+  },
+  "meta": {
+    "timestamp": "2025-02-12T10:30:00Z",
+    "version": "v1"
+  }
+}
+```
+
+**목록 응답 (페이징)**:
+```json
+{
+  "status": "success",
+  "data": [
+    { "id": 1, "name": "User 1" },
+    { "id": 2, "name": "User 2" }
+  ],
+  "pagination": {
+    "page": 1,
+    "per_page": 20,
+    "total": 150,
+    "total_pages": 8
+  }
+}
+```
+
+**에러 응답**:
+```json
+{
+  "status": "error",
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "이메일 형식이 올바르지 않습니다.",
+    "details": [
+      {
+        "field": "email",
+        "message": "유효한 이메일 주소를 입력하세요."
+      }
+    ]
+  },
+  "meta": {
+    "timestamp": "2025-02-12T10:30:00Z",
+    "request_id": "abc-123-def"
+  }
+}
+```
+
+### 6.3 API 보안
+
+#### 인증 방법
+
+**1. API Key**:
+```
+GET /users
+Authorization: Bearer YOUR_API_KEY
+
+장점: 간단
+단점: 키 유출 위험, 사용자별 권한 관리 어려움
+```
+
+**2. JWT (JSON Web Token)**:
+```
+GET /users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+장점: 상태 비저장 (stateless), 확장성
+단점: 토큰 크기, 즉시 무효화 어려움
+```
+
+**3. OAuth 2.0**:
+```
+장점: 표준화, 안전, 제3자 인증 지원
+단점: 복잡, 구현 부담
+
+사용 사례:
+- "Google로 로그인"
+- "Facebook으로 로그인"
+```
+
+#### API Rate Limiting
+
+**요청 제한**:
+```
+사용자당 시간당 1,000 요청 제한
+
+응답 헤더:
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 999
+X-RateLimit-Reset: 1676123456
+
+초과 시:
+HTTP 429 Too Many Requests
+Retry-After: 3600
+```
+
+---
+
+## 📖 Part 7: API 문서화 (Swagger/OpenAPI)
+
+### 7.1 OpenAPI 스펙이란?
+
+**OpenAPI Specification (OAS)**:
+- REST API 표준 명세 형식
+- 기계 가독 (YAML 또는 JSON)
+- Swagger는 OpenAPI 도구 모음
+
+**장점**:
+- 자동 문서 생성
+- 클라이언트 코드 생성
+- API 테스트 도구
+- 팀 간 소통 명확
+
+### 7.2 OpenAPI 문서 예시
+
+**간단한 API 명세** (YAML):
+```yaml
+openapi: 3.0.0
+info:
+  title: Blog API
+  version: 1.0.0
+  description: 블로그 시스템 REST API
+
+servers:
+  - url: https://api.example.com/v1
+    description: Production server
+
+paths:
+  /posts:
+    get:
+      summary: 게시물 목록 조회
+      tags:
+        - Posts
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: 성공
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Post'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+
+    post:
+      summary: 게시물 생성
+      tags:
+        - Posts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCreate'
+      responses:
+        '201':
+          description: 생성 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+        '400':
+          description: 잘못된 요청
+        '401':
+          description: 인증 필요
+
+  /posts/{postId}:
+    get:
+      summary: 특정 게시물 조회
+      tags:
+        - Posts
+      parameters:
+        - name: postId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+        '404':
+          description: 게시물 없음
+
+components:
+  schemas:
+    Post:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 123
+        title:
+          type: string
+          example: "My First Post"
+        content:
+          type: string
+          example: "This is the content..."
+        author_id:
+          type: integer
+          example: 456
+        created_at:
+          type: string
+          format: date-time
+          example: "2025-02-12T10:30:00Z"
+        updated_at:
+          type: string
+          format: date-time
+
+    PostCreate:
+      type: object
+      required:
+        - title
+        - content
+      properties:
+        title:
+          type: string
+          minLength: 1
+          maxLength: 200
+        content:
+          type: string
+          minLength: 1
+
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+        per_page:
+          type: integer
+        total:
+          type: integer
+        total_pages:
+          type: integer
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: []
+```
+
+### 7.3 Swagger UI
+
+**Swagger UI**:
+- OpenAPI 스펙을 시각적으로 표시
+- 브라우저에서 API 테스트 가능
+- 자동 생성
+
+**접속 방법**:
+```
+일반적으로:
+https://api.example.com/docs
+또는
+https://api.example.com/swagger-ui
+```
+
+**기능**:
+- API 엔드포인트 목록
+- 요청/응답 스키마
+- "Try it out" 버튼으로 실제 API 호출
+- 인증 설정 (API Key, JWT 등)
+
+### 7.4 PM을 위한 API 문서 검토 체크리스트
+
+**문서 완성도**:
+- [ ] 모든 엔드포인트 문서화?
+- [ ] 요청/응답 예시 포함?
+- [ ] 에러 응답 문서화?
+- [ ] 인증 방법 명시?
+
+**명세 품질**:
+- [ ] HTTP 메서드 적절?
+- [ ] 상태 코드 명확?
+- [ ] 데이터 타입 명시?
+- [ ] 필수/선택 파라미터 구분?
+
+**개발자 경험**:
+- [ ] "Try it out" 기능 작동?
+- [ ] 예시가 실제와 일치?
+- [ ] 용어가 일관성 있나?
+- [ ] 버전 정보 명확?
+
+---
+
+## 🔬 Part 8: Postman 실습 가이드
+
+### 8.1 Postman이란?
+
+**Postman**:
+- API 개발 및 테스트 도구
+- GUI 기반 (개발자가 아니어도 사용 가능)
+- 팀 협업 기능
+- 무료 버전으로 충분 (개인/소규모 팀)
+
+**다운로드**:
+- URL: https://www.postman.com/downloads/
+- Windows, Mac, Linux 지원
+
+### 8.2 Postman 기본 사용법
+
+#### Step 1: 첫 요청 만들기
+
+1. **Postman 실행**
+2. **"New" → "HTTP Request"** 클릭
+3. **요청 설정**:
+   ```
+   Method: GET
+   URL: https://jsonplaceholder.typicode.com/posts/1
+   ```
+4. **"Send"** 클릭
+5. **응답 확인**:
+   ```json
+   {
+     "userId": 1,
+     "id": 1,
+     "title": "sunt aut...",
+     "body": "quia et..."
+   }
+   ```
+
+#### Step 2: POST 요청 (데이터 생성)
+
+1. **Method**: POST
+2. **URL**: `https://jsonplaceholder.typicode.com/posts`
+3. **Body 탭** 클릭 → **raw** 선택 → **JSON** 선택
+4. **Body 내용**:
+   ```json
+   {
+     "title": "My New Post",
+     "body": "This is the content.",
+     "userId": 1
+   }
+   ```
+5. **"Send"** 클릭
+6. **응답 확인**: 생성된 게시물 (201 Created)
+
+#### Step 3: 인증 설정
+
+**Bearer Token 예시**:
+1. **Authorization 탭** 클릭
+2. **Type**: Bearer Token
+3. **Token**: `your-jwt-token-here`
+4. **"Send"** 클릭
+
+**API Key 예시**:
+1. **Authorization 탭** 클릭
+2. **Type**: API Key
+3. **Key**: `X-API-KEY`
+4. **Value**: `your-api-key`
+5. **Add to**: Header
+
+### 8.3 Collection 사용법
+
+**Collection**:
+- 관련 API 요청을 그룹화
+- 폴더 구조로 정리
+- 팀과 공유 가능
+
+**예시: Blog API Collection**:
+```
+Blog API
+├─ Authentication
+│  ├─ Login
+│  └─ Logout
+├─ Posts
+│  ├─ Get All Posts
+│  ├─ Get Post by ID
+│  ├─ Create Post
+│  ├─ Update Post
+│  └─ Delete Post
+└─ Comments
+   ├─ Get Comments
+   └─ Create Comment
+```
+
+**생성 방법**:
+1. 좌측 **"Collections"** → **"+"** 클릭
+2. Collection 이름: "Blog API"
+3. 폴더 추가: **"Add folder"** → "Posts"
+4. 요청 추가: **"Add request"** → "Get All Posts"
+
+### 8.4 Environment 변수
+
+**Environment**:
+- 환경별 변수 관리 (Dev, Staging, Production)
+- URL, API Key 등을 환경별로 분리
+
+**설정 예시**:
+```
+Development 환경:
+- base_url: https://dev-api.example.com
+- api_key: dev-key-123
+
+Production 환경:
+- base_url: https://api.example.com
+- api_key: prod-key-456
+```
+
+**사용 방법**:
+1. 우측 상단 **톱니바퀴 아이콘** → **"Manage Environments"**
+2. **"Add"** → 환경 이름: "Development"
+3. 변수 추가:
+   ```
+   Variable: base_url
+   Initial Value: https://dev-api.example.com
+   Current Value: https://dev-api.example.com
+   ```
+4. 요청 URL에서 사용:
+   ```
+   {{base_url}}/posts
+   ```
+
+### 8.5 테스트 스크립트
+
+**자동화된 검증**:
+```javascript
+// Tests 탭에 작성
+
+// 상태 코드 확인
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+// 응답 시간 확인
+pm.test("Response time is less than 500ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(500);
+});
+
+// 응답 본문 확인
+pm.test("Response has id field", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.have.property('id');
+});
+
+// 응답 데이터 타입 확인
+pm.test("ID is a number", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.id).to.be.a('number');
+});
+```
+
+### 8.6 PM을 위한 Postman 활용 시나리오
+
+#### 시나리오 1: 개발 진행 상황 확인
+
+**목적**: API가 명세대로 구현되었는지 확인
+
+**절차**:
+1. 개발자에게 Postman Collection 요청
+2. 각 엔드포인트 테스트
+3. 응답이 명세와 일치하는지 확인
+4. 문제 발견 시 이슈 등록
+
+#### 시나리오 2: 버그 재현
+
+**목적**: 버그를 명확히 재현하여 개발자에게 전달
+
+**절차**:
+1. 문제가 발생한 API 요청 재현
+2. 요청/응답 캡처
+3. Postman Collection으로 공유
+4. 개발자가 동일한 요청으로 디버깅
+
+#### 시나리오 3: 성능 테스트
+
+**목적**: API 응답 시간 모니터링
+
+**절차**:
+1. Collection Runner 실행
+2. 반복 횟수 설정 (예: 100회)
+3. 평균 응답 시간 확인
+4. 병목 구간 식별
+
+#### 시나리오 4: 인수 테스트
+
+**목적**: 배포 전 API 기능 검증
+
+**절차**:
+1. Staging 환경으로 전환
+2. 테스트 시나리오 실행
+3. 모든 테스트 통과 확인
+4. Production 배포 승인
+
+### 8.7 Postman 고급 기능
+
+**Newman (CLI)**:
+```bash
+# Postman Collection을 명령줄에서 실행
+npm install -g newman
+
+# Collection 실행
+newman run Blog_API.postman_collection.json -e Development.postman_environment.json
+
+# CI/CD 파이프라인에 통합 가능
+```
+
+**Mock Server**:
+- 실제 API 없이 프론트엔드 개발
+- Postman에서 Mock Server 생성
+- 명세대로 응답 반환
+
+**Monitor**:
+- 주기적으로 API 헬스 체크
+- 장애 시 알림
+- 가동 시간 모니터링
+
+---
+
 ## 🎯 7. 자가 점검 퀴즈
 
 ### 객관식
