@@ -87,6 +87,8 @@
 
 ### 4. 간트 차트 (Gantt Chart)
 
+![간트 차트 예시](./images/week05-schedule-management_images_gantt-chart.svg)
+
 #### 4.1 간트 차트의 구성 요소
 - 작업 목록 (세로축)
 - 시간축 (가로축)
@@ -110,6 +112,8 @@
 - 보고서 작성
 
 ### 5. 크리티컬 패스 분석 (CPM)
+
+![크리티컬 패스 예시](./images/week05-schedule-management_images_critical-path.svg)
 
 #### 5.1 크리티컬 패스란?
 - 프로젝트의 가장 긴 경로

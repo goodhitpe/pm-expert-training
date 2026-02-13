@@ -184,6 +184,8 @@ CREATE INDEX idx_dept_salary ON employees(department, salary);
 
 ### 4. 데이터 모델링
 
+![ERD 예시](./images/week14-database_images_erd-example.svg)
+
 #### 4.1 ER 다이어그램 (Entity-Relationship Diagram)
 ```
 ┌─────────────┐       ┌─────────────┐

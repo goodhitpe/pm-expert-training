@@ -26,6 +26,8 @@
 
 ### 2. 소프트웨어 개발 생명주기 (SDLC)
 
+![SDLC 다이어그램](./images/week13-software-engineering_images_sdlc-diagram.svg)
+
 #### 2.1 SDLC 단계
 ```
 요구사항 분석 → 설계 → 구현 → 테스트 → 배포 → 유지보수

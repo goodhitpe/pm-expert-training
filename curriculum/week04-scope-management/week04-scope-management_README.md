@@ -73,6 +73,8 @@
 
 ### 3. WBS (Work Breakdown Structure)
 
+![WBS 예시](./images/week04-scope-management_images_wbs-example.svg)
+
 #### 3.1 WBS의 중요성
 - 프로젝트 범위의 시각화
 - 작업 추정의 기초
