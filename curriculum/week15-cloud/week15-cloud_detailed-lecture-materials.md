@@ -577,6 +577,515 @@ Region (서울)
 
 ---
 
+## 📦 Part 7: 컨테이너와 오케스트레이션 기초
+
+### 7.1 컨테이너란?
+
+#### 가상 머신 vs 컨테이너
+
+**가상 머신 (VM)**:
+```
+물리 서버
+├─ 하이퍼바이저
+├─ VM 1
+│  ├─ Guest OS (5GB)
+│  ├─ 라이브러리
+│  └─ 애플리케이션
+├─ VM 2
+│  ├─ Guest OS (5GB)
+│  ├─ 라이브러리
+│  └─ 애플리케이션
+
+특징:
+- 무겁고 느림 (부팅 시간 분 단위)
+- 리소스 많이 사용
+- 완전한 격리
+```
+
+**컨테이너**:
+```
+물리 서버
+├─ Host OS
+├─ Container Engine (Docker)
+├─ Container 1
+│  ├─ 라이브러리
+│  └─ 애플리케이션
+├─ Container 2
+│  ├─ 라이브러리
+│  └─ 애플리케이션
+
+특징:
+- 가볍고 빠름 (부팅 시간 초 단위)
+- 리소스 효율적
+- 프로세스 레벨 격리
+```
+
+### 7.2 Docker 기초
+
+#### Docker란?
+
+**Docker**:
+- 컨테이너 플랫폼
+- "Build, Ship, Run" 어디서나 동작
+- 개발 환경 = 운영 환경
+
+**주요 개념**:
+```
+1. Image (이미지)
+   - 컨테이너의 템플릿
+   - 예: Ubuntu, Node.js, MySQL
+
+2. Container (컨테이너)
+   - 이미지의 실행 인스턴스
+   - 격리된 환경에서 실행
+
+3. Dockerfile
+   - 이미지 빌드 방법 정의
+   - 코드처럼 관리 (Infrastructure as Code)
+
+4. Docker Hub
+   - 이미지 저장소
+   - 공개/비공개 이미지
+```
+
+#### Docker 기본 명령어 (PM 관점)
+
+```bash
+# 이미지 검색
+docker search nginx
+
+# 이미지 다운로드
+docker pull nginx:latest
+
+# 컨테이너 실행
+docker run -d -p 80:80 nginx
+
+# 실행 중인 컨테이너 확인
+docker ps
+
+# 컨테이너 중지
+docker stop <container-id>
+
+# 컨테이너 삭제
+docker rm <container-id>
+```
+
+**PM이 알아야 할 것**:
+- 개발자가 "Docker로 배포"라고 하면 → 컨테이너 사용
+- 환경 일관성 보장 → 버그 감소
+- 빠른 배포 → CI/CD에 유리
+
+### 7.3 Kubernetes (K8s) 소개
+
+#### Kubernetes란?
+
+**Kubernetes (쿠버네티스, K8s)**:
+- 컨테이너 오케스트레이션 플랫폼
+- Google이 오픈소스로 공개 (2014)
+- 컨테이너 수백~수천 개 관리
+
+**해결하는 문제**:
+```
+문제: 컨테이너가 100개인데...
+❌ 수동 배포 불가능
+❌ 장애 시 자동 복구?
+❌ 트래픽 증가 시 확장?
+❌ 네트워크 설정?
+
+해결: Kubernetes
+✅ 자동 배포 및 롤백
+✅ 자가 치유 (Self-healing)
+✅ 수평 확장 (Horizontal scaling)
+✅ 서비스 디스커버리 및 로드 밸런싱
+```
+
+#### Kubernetes 핵심 개념
+
+**Pod (파드)**:
+```
+- 최소 배포 단위
+- 1개 이상의 컨테이너 그룹
+- 같은 네트워크, 스토리지 공유
+```
+
+**Deployment (디플로이먼트)**:
+```
+- Pod의 복제본 관리
+- 롤링 업데이트
+- 롤백 가능
+```
+
+**Service (서비스)**:
+```
+- Pod의 네트워크 진입점
+- 로드 밸런싱
+- 고정 IP/DNS 제공
+```
+
+**Namespace (네임스페이스)**:
+```
+- 리소스 그룹화
+- 팀별, 환경별 분리
+- 예: dev, staging, production
+```
+
+#### Kubernetes 아키텍처 (간단히)
+
+```
+Master Node (Control Plane)
+├─ API Server (명령 수신)
+├─ Scheduler (Pod 배치)
+├─ Controller Manager (상태 관리)
+└─ etcd (클러스터 데이터 저장)
+
+Worker Node (실제 작업)
+├─ kubelet (Pod 관리)
+├─ kube-proxy (네트워크)
+└─ Pods
+   ├─ Container 1
+   ├─ Container 2
+   └─ ...
+```
+
+#### PM이 알아야 할 Kubernetes 개념
+
+**선언적 설정**:
+```yaml
+# deployment.yaml 예시
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 3  # 3개의 Pod 복제본
+  template:
+    spec:
+      containers:
+      - name: app
+        image: my-app:v1.0
+        ports:
+        - containerPort: 8080
+```
+
+**자가 치유**:
+```
+상황: Pod 1개가 크래시
+Kubernetes: 자동으로 새 Pod 생성
+결과: 사용자는 장애를 느끼지 못함
+```
+
+**오토 스케일링**:
+```
+CPU 사용률 80% 초과
+→ Kubernetes가 자동으로 Pod 추가
+→ 트래픽 감소 시 자동 축소
+```
+
+### 7.4 관리형 Kubernetes 서비스
+
+#### AWS EKS (Elastic Kubernetes Service)
+
+**특징**:
+- AWS 관리형 Kubernetes
+- Master Node 관리 불필요
+- AWS 서비스와 통합 (ALB, RDS, S3)
+
+**비용**:
+- 클러스터당 $0.10/시간 ($73/월)
+- Worker Node는 EC2 요금 별도
+
+**언제 사용**:
+- Kubernetes 운영 부담 감소
+- AWS 생태계 활용
+
+#### Azure AKS (Azure Kubernetes Service)
+
+**특징**:
+- Microsoft 관리형 Kubernetes
+- Control Plane 무료!
+- Azure DevOps 통합
+
+**비용**:
+- Control Plane 무료
+- Worker Node는 VM 요금만
+
+**언제 사용**:
+- Microsoft 스택 사용
+- Control Plane 비용 절감
+
+#### GKE (Google Kubernetes Engine)
+
+**특징**:
+- Google의 Kubernetes (원조!)
+- 가장 성숙한 플랫폼
+- Autopilot 모드 (완전 관리형)
+
+**비용**:
+- Standard: 클러스터당 $0.10/시간
+- Autopilot: Node 사용량만 청구
+
+**언제 사용**:
+- Kubernetes 전문 팀
+- 최신 기능 필요
+
+### 7.5 PM을 위한 컨테이너/K8s 활용 팁
+
+#### 프로젝트 범위 산정
+
+**Docker 도입 시**:
+```
+초기 투자:
+- 개발자 학습 시간 (2-4주)
+- Dockerfile 작성
+- CI/CD 파이프라인 구축
+
+장기 효과:
+- 배포 시간 단축 (시간 → 분)
+- 환경 불일치 버그 감소
+- 개발-운영 협업 개선
+```
+
+**Kubernetes 도입 시**:
+```
+초기 투자:
+- 학습 곡선 가파름 (2-3개월)
+- 인프라 구축 (EKS, AKS, GKE)
+- 모니터링 설정 (Prometheus, Grafana)
+
+적합:
+- 마이크로서비스 아키텍처
+- 트래픽 변동 큼
+- 다수의 서비스 운영
+
+부적합:
+- 소규모 단일 애플리케이션
+- 팀에 Kubernetes 전문가 없음
+```
+
+#### 개발팀과의 소통
+
+**PM이 물어볼 질문**:
+
+1. **"왜 Docker를 사용하나요?"**
+   - 답: 환경 일관성, 빠른 배포, 리소스 효율
+
+2. **"Kubernetes가 정말 필요한가요?"**
+   - 필요: 서비스 10개 이상, 트래픽 많음, 확장성 중요
+   - 불필요: 서비스 1-2개, 트래픽 적음
+
+3. **"컨테이너 보안은 어떻게 관리하나요?"**
+   - 이미지 스캔 (취약점 검사)
+   - 최소 권한 원칙
+   - 정기 업데이트
+
+4. **"장애 시 복구 계획은?"**
+   - Kubernetes: 자가 치유
+   - 모니터링: Prometheus, Grafana
+   - 알람: Slack, PagerDuty
+
+#### 비용 산정 예시
+
+**시나리오**: 마이크로서비스 10개
+
+**Docker + ECS (간단)**:
+```
+EC2 인스턴스 3대 (t3.medium)
+- 온디맨드: $90/월
+- Reserved (1년): $55/월
+
+총: $165/월 (온디맨드)
+```
+
+**Kubernetes + EKS (고급)**:
+```
+EKS Control Plane: $73/월
+Worker Node 3대 (t3.medium): $90/월
+
+총: $163/월 (온디맨드)
+
+차이: 거의 비슷하지만, K8s는 관리 복잡도 높음
+```
+
+**결론**: 비용보다 팀 역량과 프로젝트 복잡도를 고려!
+
+---
+
+## 🏗️ Part 8: 클라우드 아키텍처 패턴
+
+### 8.1 대표적인 아키텍처 패턴
+
+#### 패턴 1: 3-Tier 아키텍처
+
+```
+인터넷
+  ↓
+[Web Tier] - 웹 서버 (Nginx, Apache)
+  ↓
+[App Tier] - 애플리케이션 서버 (Node.js, Java)
+  ↓
+[Data Tier] - 데이터베이스 (RDS, DynamoDB)
+```
+
+**특징**:
+- 계층 분리로 유지보수 용이
+- 각 계층 독립적 확장
+- 가장 일반적인 패턴
+
+**AWS 구현**:
+- Web: EC2 + Auto Scaling + ALB
+- App: EC2 + Auto Scaling
+- Data: RDS Multi-AZ
+
+**비용**: 월 $200-500 (소규모)
+
+#### 패턴 2: 서버리스 아키텍처
+
+```
+사용자 요청
+  ↓
+[API Gateway] - REST API 엔드포인트
+  ↓
+[Lambda] - 함수 실행 (코드만 배포)
+  ↓
+[DynamoDB] - NoSQL 데이터베이스
+```
+
+**특징**:
+- 서버 관리 불필요
+- 사용량에 따른 과금
+- 자동 확장
+
+**AWS 구현**:
+- API Gateway + Lambda + DynamoDB
+- S3 정적 호스팅 (프론트엔드)
+
+**비용**: 월 $10-100 (소규모, 트래픽 적음)
+
+**적합**:
+- 간헐적 트래픽
+- 빠른 MVP 개발
+- 비용 민감
+
+#### 패턴 3: 마이크로서비스 아키텍처
+
+```
+[API Gateway]
+  ↓
+[Service Mesh] - 서비스 간 통신 관리
+  ├─ User Service
+  ├─ Order Service
+  ├─ Payment Service
+  ├─ Inventory Service
+  └─ Notification Service
+
+각 서비스는 독립적인 DB 소유
+```
+
+**특징**:
+- 서비스별 독립 개발/배포
+- 기술 스택 자유도
+- 복잡도 높음
+
+**AWS 구현**:
+- ECS/EKS + ALB + RDS (각 서비스별)
+- Service Mesh: AWS App Mesh
+
+**비용**: 월 $1,000+ (중대규모)
+
+**적합**:
+- 대규모 팀
+- 빠른 기능 추가
+- 높은 트래픽
+
+### 8.2 고가용성 설계 원칙
+
+#### 원칙 1: 단일 장애점 제거 (No SPOF)
+
+**나쁜 예**:
+```
+사용자 → [EC2 1대] → [RDS 1대]
+문제: EC2 장애 → 전체 서비스 중단
+```
+
+**좋은 예**:
+```
+사용자 → [Load Balancer]
+              ├─ [EC2 #1]
+              ├─ [EC2 #2]
+              └─ [EC2 #3]
+                    ↓
+              [RDS Multi-AZ]
+```
+
+#### 원칙 2: Multi-AZ 배포
+
+**Single-AZ** (가용성 99.9%):
+```
+Seoul AZ-A
+├─ EC2 인스턴스
+└─ RDS
+
+문제: AZ 장애 → 서비스 중단
+```
+
+**Multi-AZ** (가용성 99.99%):
+```
+Seoul AZ-A        Seoul AZ-C
+├─ EC2 #1         ├─ EC2 #2
+└─ RDS Master     └─ RDS Standby
+
+장애 시: AZ-A 다운 → AZ-C로 자동 전환
+```
+
+#### 원칙 3: 자동 복구
+
+**헬스 체크**:
+```
+Load Balancer → EC2 헬스 체크 (30초마다)
+실패 → 트래픽 중단
+성공 → 트래픽 재개
+```
+
+**Auto Healing**:
+```
+Auto Scaling → EC2 헬스 체크
+실패 → 인스턴스 종료 + 새 인스턴스 생성
+```
+
+### 8.3 PM을 위한 아키텍처 검토 체크리스트
+
+**1. 가용성**:
+- [ ] Multi-AZ 배포인가?
+- [ ] 로드 밸런서 사용하는가?
+- [ ] Auto Scaling 설정되었는가?
+- [ ] 헬스 체크 설정되었는가?
+
+**2. 보안**:
+- [ ] 보안 그룹 최소 권한 원칙?
+- [ ] 데이터 암호화 (전송, 저장)?
+- [ ] IAM 역할 적절히 분리?
+- [ ] VPC 네트워크 격리?
+
+**3. 성능**:
+- [ ] CDN (CloudFront) 사용?
+- [ ] 캐싱 (Redis, ElastiCache)?
+- [ ] 데이터베이스 인덱스 최적화?
+- [ ] 리전 선택 적절 (지연시간)?
+
+**4. 비용**:
+- [ ] 리소스 크기 적절 (과도하지 않은가)?
+- [ ] Reserved Instance 검토?
+- [ ] 미사용 리소스 정리?
+- [ ] 태깅 전략으로 비용 추적?
+
+**5. 운영**:
+- [ ] 모니터링 (CloudWatch) 설정?
+- [ ] 로그 수집 및 분석?
+- [ ] 백업 자동화?
+- [ ] 재해 복구 계획 (DR)?
+
+---
+
 ## 🎯 7. 자가 점검 퀴즈
 
 ### 객관식
