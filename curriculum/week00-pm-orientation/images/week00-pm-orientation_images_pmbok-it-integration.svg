@@ -1,0 +1,112 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title-text { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2C3E50; text-anchor: middle; }
+      .subtitle-text { font-family: Arial, sans-serif; font-size: 14px; fill: #7F8C8D; text-anchor: middle; }
+      .box-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: white; text-anchor: middle; }
+      .box-text { font-family: Arial, sans-serif; font-size: 11px; fill: white; }
+      .pmbok-box { fill: #3498DB; stroke: #2980B9; stroke-width: 3; }
+      .it-box { fill: #E74C3C; stroke: #C0392B; stroke-width: 3; }
+      .integration-box { fill: #27AE60; stroke: #229954; stroke-width: 3; }
+      .connector { stroke: #34495E; stroke-width: 2; marker-end: url(#arrowhead); }
+      .label-text { font-family: Arial, sans-serif; font-size: 12px; fill: #2C3E50; font-weight: bold; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#34495E"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="35" class="title-text">PMBOK + IT 기술 통합 학습 모델</text>
+  <text x="450" y="58" class="subtitle-text">프로젝트 제약조건을 극복하는 통합적 접근</text>
+  
+  <!-- PMBOK Knowledge Areas (Left) -->
+  <rect x="50" y="100" width="280" height="380" rx="10" class="pmbok-box"/>
+  <text x="190" y="130" class="box-title">PMBOK 지식영역</text>
+  <text x="190" y="148" style="font-family: Arial; font-size: 11px; fill: white; text-anchor: middle; font-style: italic;">(Weeks 1-12)</text>
+  
+  <text x="70" y="180" class="box-text" style="font-weight: bold;">📋 10대 지식영역:</text>
+  <text x="70" y="200" class="box-text">1. 통합 관리 (Integration)</text>
+  <text x="70" y="220" class="box-text">2. 범위 관리 (Scope)</text>
+  <text x="70" y="240" class="box-text">3. 일정 관리 (Schedule)</text>
+  <text x="70" y="260" class="box-text">4. 원가 관리 (Cost)</text>
+  <text x="70" y="280" class="box-text">5. 품질 관리 (Quality)</text>
+  <text x="70" y="300" class="box-text">6. 자원 관리 (Resource)</text>
+  <text x="70" y="320" class="box-text">7. 의사소통 관리 (Communication)</text>
+  <text x="70" y="340" class="box-text">8. 리스크 관리 (Risk)</text>
+  <text x="70" y="360" class="box-text">9. 조달 관리 (Procurement)</text>
+  <text x="70" y="380" class="box-text">10. 이해관계자 관리 (Stakeholder)</text>
+  
+  <text x="70" y="410" class="box-text" style="font-weight: bold;">⚡ 5대 프로세스 그룹:</text>
+  <text x="70" y="430" class="box-text">착수 → 계획 → 실행 → 감시/통제 → 종료</text>
+  
+  <text x="70" y="460" class="box-text" style="font-weight: bold;">🎯 애자일/스크럼:</text>
+  <text x="70" y="475" class="box-text">• 스프린트 기반 반복 개발</text>
+  
+  <!-- IT Technology Stack (Right) -->
+  <rect x="570" y="100" width="280" height="380" rx="10" class="it-box"/>
+  <text x="710" y="130" class="box-title">IT 기술 기초</text>
+  <text x="710" y="148" style="font-family: Arial; font-size: 11px; fill: white; text-anchor: middle; font-style: italic;">(Weeks 13-16)</text>
+  
+  <text x="590" y="180" class="box-text" style="font-weight: bold;">💻 4대 기술 영역:</text>
+  
+  <text x="590" y="210" class="box-text" style="font-weight: bold;">1. 소프트웨어 공학</text>
+  <text x="600" y="228" class="box-text">• SDLC (개발 생명주기)</text>
+  <text x="600" y="243" class="box-text">• CI/CD (지속적 통합/배포)</text>
+  <text x="600" y="258" class="box-text">• 테스팅 전략</text>
+  
+  <text x="590" y="285" class="box-text" style="font-weight: bold;">2. 데이터베이스</text>
+  <text x="600" y="303" class="box-text">• SQL 쿼리</text>
+  <text x="600" y="318" class="box-text">• 데이터 모델링 (ERD)</text>
+  <text x="600" y="333" class="box-text">• RDBMS vs NoSQL</text>
+  
+  <text x="590" y="360" class="box-text" style="font-weight: bold;">3. 클라우드 컴퓨팅</text>
+  <text x="600" y="378" class="box-text">• AWS, Azure, GCP</text>
+  <text x="600" y="393" class="box-text">• 클라우드 아키텍처</text>
+  
+  <text x="590" y="420" class="box-text" style="font-weight: bold;">4. 네트워크</text>
+  <text x="600" y="438" class="box-text">• OSI 7계층, TCP/IP</text>
+  <text x="600" y="453" class="box-text">• 네트워크 보안</text>
+  
+  <!-- Integration Zone (Center) -->
+  <rect x="370" y="150" width="160" height="280" rx="10" class="integration-box"/>
+  <text x="450" y="180" class="box-title" style="font-size: 14px;">통합 학습의</text>
+  <text x="450" y="200" class="box-title" style="font-size: 14px;">시너지</text>
+  
+  <text x="380" y="235" class="box-text" style="font-weight: bold;">✓ 제약조건 극복:</text>
+  <text x="380" y="253" class="box-text">• 범위 관리 ← 요구사항 분석</text>
+  <text x="380" y="268" class="box-text">• 일정 관리 ← SDLC 이해</text>
+  <text x="380" y="283" class="box-text">• 원가 관리 ← 클라우드 최적화</text>
+  <text x="380" y="298" class="box-text">• 품질 관리 ← 테스팅 전략</text>
+  
+  <text x="380" y="325" class="box-text" style="font-weight: bold;">✓ 의사소통 향상:</text>
+  <text x="380" y="343" class="box-text">• 개발팀과 효과적 협업</text>
+  <text x="380" y="358" class="box-text">• 기술 이슈 정확한 파악</text>
+  <text x="380" y="373" class="box-text">• 현실적 일정 수립</text>
+  
+  <text x="380" y="400" class="box-text" style="font-weight: bold;">✓ 리스크 관리:</text>
+  <text x="380" y="418" class="box-text">• 기술적 리스크 조기 식별</text>
+  
+  <!-- Arrows from PMBOK to Integration -->
+  <path d="M 330 240 L 370 240" class="connector"/>
+  <text x="340" y="235" class="label-text" style="font-size: 10px;">계획</text>
+  
+  <path d="M 330 320 L 370 320" class="connector"/>
+  <text x="340" y="315" class="label-text" style="font-size: 10px;">실행</text>
+  
+  <!-- Arrows from IT to Integration -->
+  <path d="M 570 280 L 530 280" class="connector"/>
+  <text x="542" y="275" class="label-text" style="font-size: 10px;">기술 지식</text>
+  
+  <path d="M 570 360 L 530 360" class="connector"/>
+  <text x="542" y="355" class="label-text" style="font-size: 10px;">실무 활용</text>
+  
+  <!-- Bottom Summary -->
+  <rect x="100" y="510" width="700" height="60" rx="8" fill="#ECF0F1" stroke="#BDC3C7" stroke-width="2"/>
+  <text x="450" y="535" style="font-family: Arial; font-size: 14px; font-weight: bold; fill: #2C3E50; text-anchor: middle;">
+    🎯 학습 목표: IT 비전공자도 개발팀과 효과적으로 협업하고 프로젝트를 성공적으로 관리
+  </text>
+  <text x="450" y="555" style="font-family: Arial; font-size: 12px; fill: #34495E; text-anchor: middle;">
+    PMBOK 체계 + IT 기술 이해 = 범위/일정/비용/품질 4대 제약조건 극복
+  </text>
+</svg>

@@ -1,0 +1,114 @@
+<svg width="900" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title-text { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2C3E50; text-anchor: middle; }
+      .phase-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: white; text-anchor: middle; }
+      .week-text { font-family: Arial, sans-serif; font-size: 12px; fill: white; text-anchor: middle; }
+      .phase0-box { fill: #9B59B6; stroke: #8E44AD; stroke-width: 2; }
+      .phase1-box { fill: #3498DB; stroke: #2980B9; stroke-width: 2; }
+      .phase2-box { fill: #E67E22; stroke: #D35400; stroke-width: 2; }
+      .phase3-box { fill: #2ECC71; stroke: #27AE60; stroke-width: 2; }
+      .phase4-box { fill: #E74C3C; stroke: #C0392B; stroke-width: 2; }
+      .connector { stroke: #95A5A6; stroke-width: 2; stroke-dasharray: 5,5; fill: none; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="35" class="title-text">PM 전문가 양성 프로그램 커리큘럼 (16주)</text>
+  
+  <!-- Phase 0: Orientation -->
+  <rect x="350" y="60" width="200" height="80" rx="8" class="phase0-box"/>
+  <text x="450" y="85" class="phase-title">Phase 0: 오리엔테이션</text>
+  <text x="450" y="105" class="week-text">Week 0</text>
+  <text x="450" y="125" class="week-text">프로그램 소개 및 학습 가이드</text>
+  
+  <!-- Connector -->
+  <path d="M 450 140 L 450 170" class="connector"/>
+  
+  <!-- Phase 1: Foundation (Weeks 1-3) -->
+  <rect x="50" y="170" width="250" height="120" rx="8" class="phase1-box"/>
+  <text x="175" y="195" class="phase-title">Phase 1: 기초 다지기</text>
+  <text x="175" y="220" class="week-text">Week 1: PM의 이해</text>
+  <text x="175" y="240" class="week-text">Week 2: PM 기초 (5대 프로세스, 10대 지식영역)</text>
+  <text x="175" y="260" class="week-text">Week 3: 이해관계자 관리</text>
+  <text x="175" y="280" class="week-text" style="font-size: 10px; font-style: italic;">(커뮤니케이션, 회의 운영, 보고서)</text>
+  
+  <!-- Phase 2: Core Skills (Weeks 4-8) -->
+  <rect x="320" y="170" width="250" height="180" rx="8" class="phase2-box"/>
+  <text x="445" y="195" class="phase-title">Phase 2: 핵심 역량 습득</text>
+  <text x="445" y="220" class="week-text">Week 4: 범위 관리 (WBS, 요구사항)</text>
+  <text x="445" y="240" class="week-text">Week 5: 일정 관리 (간트, CPM)</text>
+  <text x="445" y="260" class="week-text">Week 6: 원가 관리 (예산, EVM)</text>
+  <text x="445" y="280" class="week-text">Week 7: 품질/리스크 관리</text>
+  <text x="445" y="300" class="week-text">Week 8: 자원/조달 관리</text>
+  <text x="445" y="320" class="week-text" style="font-size: 10px; font-style: italic;">(팀 관리, 갈등 해결)</text>
+  
+  <!-- Phase 3: Practical Application (Weeks 9-12) -->
+  <rect x="590" y="170" width="250" height="150" rx="8" class="phase3-box"/>
+  <text x="715" y="195" class="phase-title">Phase 3: 실전 적용</text>
+  <text x="715" y="220" class="week-text">Week 9: 애자일/스크럼</text>
+  <text x="715" y="240" class="week-text">Week 10: PM 도구 활용</text>
+  <text x="715" y="260" class="week-text" style="font-size: 10px; font-style: italic;">(Jira, Trello, MS Project)</text>
+  <text x="715" y="280" class="week-text">Week 11-12: 모의 프로젝트</text>
+  <text x="715" y="300" class="week-text" style="font-size: 10px; font-style: italic;">(팀별 실습 및 발표)</text>
+  
+  <!-- Connector -->
+  <path d="M 175 290 L 175 380 M 445 350 L 445 380 M 715 320 L 715 380" class="connector"/>
+  
+  <!-- Phase 4: IT Foundation (Weeks 13-16) -->
+  <rect x="200" y="380" width="500" height="150" rx="8" class="phase4-box"/>
+  <text x="450" y="405" class="phase-title">Phase 4: IT 기술 기초</text>
+  <text x="275" y="435" class="week-text">Week 13:</text>
+  <text x="275" y="450" class="week-text">소프트웨어 공학</text>
+  <text x="275" y="465" class="week-text" style="font-size: 10px;">(SDLC, CI/CD)</text>
+  
+  <text x="400" y="435" class="week-text">Week 14:</text>
+  <text x="400" y="450" class="week-text">데이터베이스</text>
+  <text x="400" y="465" class="week-text" style="font-size: 10px;">(SQL, 모델링)</text>
+  
+  <text x="525" y="435" class="week-text">Week 15:</text>
+  <text x="525" y="450" class="week-text">클라우드</text>
+  <text x="525" y="465" class="week-text" style="font-size: 10px;">(AWS, Azure)</text>
+  
+  <text x="625" y="435" class="week-text">Week 16:</text>
+  <text x="625" y="450" class="week-text">네트워크</text>
+  <text x="625" y="465" class="week-text" style="font-size: 10px;">(OSI, TCP/IP)</text>
+  
+  <text x="450" y="500" class="week-text" style="font-size: 11px; font-style: italic;">IT 비전공자를 위한 필수 기술 이해</text>
+  
+  <!-- Learning Flow Indicators -->
+  <text x="100" y="560" style="font-family: Arial; font-size: 14px; font-weight: bold; fill: #34495E;">학습 흐름:</text>
+  
+  <rect x="100" y="570" width="15" height="15" class="phase1-box"/>
+  <text x="125" y="582" style="font-family: Arial; font-size: 12px; fill: #2C3E50;">기본 개념</text>
+  
+  <text x="215" y="582" style="font-family: Arial; font-size: 18px; fill: #95A5A6;">→</text>
+  
+  <rect x="240" y="570" width="15" height="15" class="phase2-box"/>
+  <text x="265" y="582" style="font-family: Arial; font-size: 12px; fill: #2C3E50;">실무 기법</text>
+  
+  <text x="345" y="582" style="font-family: Arial; font-size: 18px; fill: #95A5A6;">→</text>
+  
+  <rect x="370" y="570" width="15" height="15" class="phase3-box"/>
+  <text x="395" y="582" style="font-family: Arial; font-size: 12px; fill: #2C3E50;">실전 적용</text>
+  
+  <text x="475" y="582" style="font-family: Arial; font-size: 18px; fill: #95A5A6;">→</text>
+  
+  <rect x="500" y="570" width="15" height="15" class="phase4-box"/>
+  <text x="525" y="582" style="font-family: Arial; font-size: 12px; fill: #2C3E50;">기술 이해</text>
+  
+  <!-- Key Features -->
+  <text x="100" y="620" style="font-family: Arial; font-size: 14px; font-weight: bold; fill: #34495E;">프로그램 특징:</text>
+  
+  <circle cx="110" cy="640" r="4" fill="#27AE60"/>
+  <text x="125" y="644" style="font-family: Arial; font-size: 11px; fill: #2C3E50;">✓ PMBOK 6판 기반 + 7판 보충</text>
+  
+  <circle cx="110" cy="660" r="4" fill="#27AE60"/>
+  <text x="125" y="664" style="font-family: Arial; font-size: 11px; fill: #2C3E50;">✓ 이론(40%) + 실습(40%) + 프로젝트(20%)</text>
+  
+  <circle cx="390" cy="640" r="4" fill="#27AE60"/>
+  <text x="405" y="644" style="font-family: Arial; font-size: 11px; fill: #2C3E50;">✓ 6개 케이스 스터디 + 실무 템플릿</text>
+  
+  <circle cx="390" cy="660" r="4" fill="#27AE60"/>
+  <text x="405" y="664" style="font-family: Arial; font-size: 11px; fill: #2C3E50;">✓ PMP/CAPM 자격증 준비 가이드 제공</text>
+</svg>
