@@ -61,6 +61,8 @@
 
 ### 2. 스크럼 프레임워크
 
+![스크럼 프레임워크](./images/week09-agile-scrum_images_scrum-framework.svg)
+
 #### 2.1 스크럼 역할
 
 **Product Owner (PO):**

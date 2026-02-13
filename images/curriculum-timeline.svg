@@ -1,0 +1,164 @@
+<svg width="1200" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 26px; font-weight: bold; fill: #2C3E50; text-anchor: middle; }
+      .week-label { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; font-weight: bold; fill: white; text-anchor: middle; }
+      .week-topic { font-family: 'Segoe UI', Arial, sans-serif; font-size: 9px; fill: white; text-anchor: middle; }
+      .phase-label { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; font-weight: bold; fill: #2C3E50; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="600" y="35" class="title-text">PM 전문가 양성 프로그램 - 16주 커리큘럼 타임라인</text>
+  
+  <!-- Week 0 -->
+  <rect x="40" y="70" width="60" height="80" rx="6" fill="#9B59B6" stroke="#8E44AD" stroke-width="2"/>
+  <text x="70" y="95" class="week-label">Week 0</text>
+  <text x="70" y="110" class="week-topic">오리엔</text>
+  <text x="70" y="125" class="week-topic">테이션</text>
+  
+  <!-- Phase 1 Label -->
+  <text x="120" y="65" class="phase-label" style="fill: #3498DB;">▼ Phase 1: 기초</text>
+  
+  <!-- Weeks 1-3 -->
+  <rect x="120" y="70" width="60" height="80" rx="6" fill="#3498DB" stroke="#2980B9" stroke-width="2"/>
+  <text x="150" y="95" class="week-label">Week 1</text>
+  <text x="150" y="110" class="week-topic">PM 이해</text>
+  
+  <rect x="190" y="70" width="60" height="80" rx="6" fill="#3498DB" stroke="#2980B9" stroke-width="2"/>
+  <text x="220" y="95" class="week-label">Week 2</text>
+  <text x="220" y="110" class="week-topic">PM 기초</text>
+  <text x="220" y="124" class="week-topic" style="font-size: 8px;">5대 프로세스</text>
+  <text x="220" y="136" class="week-topic" style="font-size: 8px;">10대 지식영역</text>
+  
+  <rect x="260" y="70" width="60" height="80" rx="6" fill="#3498DB" stroke="#2980B9" stroke-width="2"/>
+  <text x="290" y="95" class="week-label">Week 3</text>
+  <text x="290" y="110" class="week-topic">이해관계자</text>
+  <text x="290" y="124" class="week-topic">관리</text>
+  
+  <!-- Phase 2 Label -->
+  <text x="340" y="65" class="phase-label" style="fill: #E67E22;">▼ Phase 2: 핵심 역량</text>
+  
+  <!-- Weeks 4-8 -->
+  <rect x="340" y="70" width="60" height="80" rx="6" fill="#E67E22" stroke="#D35400" stroke-width="2"/>
+  <text x="370" y="95" class="week-label">Week 4</text>
+  <text x="370" y="110" class="week-topic">범위</text>
+  <text x="370" y="124" class="week-topic">관리</text>
+  
+  <rect x="410" y="70" width="60" height="80" rx="6" fill="#E67E22" stroke="#D35400" stroke-width="2"/>
+  <text x="440" y="95" class="week-label">Week 5</text>
+  <text x="440" y="110" class="week-topic">일정</text>
+  <text x="440" y="124" class="week-topic">관리</text>
+  
+  <rect x="480" y="70" width="60" height="80" rx="6" fill="#E67E22" stroke="#D35400" stroke-width="2"/>
+  <text x="510" y="95" class="week-label">Week 6</text>
+  <text x="510" y="110" class="week-topic">원가</text>
+  <text x="510" y="124" class="week-topic">관리</text>
+  
+  <rect x="550" y="70" width="60" height="80" rx="6" fill="#E67E22" stroke="#D35400" stroke-width="2"/>
+  <text x="580" y="95" class="week-label">Week 7</text>
+  <text x="580" y="110" class="week-topic">품질/</text>
+  <text x="580" y="124" class="week-topic">리스크</text>
+  
+  <rect x="620" y="70" width="60" height="80" rx="6" fill="#E67E22" stroke="#D35400" stroke-width="2"/>
+  <text x="650" y="95" class="week-label">Week 8</text>
+  <text x="650" y="110" class="week-topic">자원/</text>
+  <text x="650" y="124" class="week-topic">조달</text>
+  
+  <!-- Phase 3 Label -->
+  <text x="700" y="65" class="phase-label" style="fill: #2ECC71;">▼ Phase 3: 실전</text>
+  
+  <!-- Weeks 9-12 -->
+  <rect x="700" y="70" width="60" height="80" rx="6" fill="#2ECC71" stroke="#27AE60" stroke-width="2"/>
+  <text x="730" y="95" class="week-label">Week 9</text>
+  <text x="730" y="110" class="week-topic">애자일/</text>
+  <text x="730" y="124" class="week-topic">스크럼</text>
+  
+  <rect x="770" y="70" width="60" height="80" rx="6" fill="#2ECC71" stroke="#27AE60" stroke-width="2"/>
+  <text x="800" y="95" class="week-label">Week 10</text>
+  <text x="800" y="110" class="week-topic">PM 도구</text>
+  <text x="800" y="124" class="week-topic" style="font-size: 8px;">Jira/Trello</text>
+  
+  <rect x="840" y="70" width="60" height="80" rx="6" fill="#2ECC71" stroke="#27AE60" stroke-width="2"/>
+  <text x="870" y="95" class="week-label">Week 11</text>
+  <text x="870" y="110" class="week-topic">모의</text>
+  <text x="870" y="124" class="week-topic">프로젝트</text>
+  
+  <rect x="910" y="70" width="60" height="80" rx="6" fill="#2ECC71" stroke="#27AE60" stroke-width="2"/>
+  <text x="940" y="95" class="week-label">Week 12</text>
+  <text x="940" y="110" class="week-topic">프로젝트</text>
+  <text x="940" y="124" class="week-topic">(계속)</text>
+  
+  <!-- Phase 4 Label -->
+  <text x="990" y="65" class="phase-label" style="fill: #E74C3C;">▼ Phase 4: IT 기술</text>
+  
+  <!-- Weeks 13-16 (Bottom Row) -->
+  <rect x="240" y="190" width="60" height="80" rx="6" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+  <text x="270" y="215" class="week-label">Week 13</text>
+  <text x="270" y="230" class="week-topic">소프트웨어</text>
+  <text x="270" y="244" class="week-topic">공학</text>
+  <text x="270" y="258" class="week-topic" style="font-size: 8px;">SDLC/CI/CD</text>
+  
+  <rect x="310" y="190" width="60" height="80" rx="6" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+  <text x="340" y="215" class="week-label">Week 14</text>
+  <text x="340" y="230" class="week-topic">데이터베이스</text>
+  <text x="340" y="244" class="week-topic" style="font-size: 8px;">SQL/ERD</text>
+  
+  <rect x="380" y="190" width="60" height="80" rx="6" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+  <text x="410" y="215" class="week-label">Week 15</text>
+  <text x="410" y="230" class="week-topic">클라우드</text>
+  <text x="410" y="244" class="week-topic" style="font-size: 8px;">AWS/Azure</text>
+  
+  <rect x="450" y="190" width="60" height="80" rx="6" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+  <text x="480" y="215" class="week-label">Week 16</text>
+  <text x="480" y="230" class="week-topic">네트워크</text>
+  <text x="480" y="244" class="week-topic" style="font-size: 8px;">OSI/TCP/IP</text>
+  
+  <!-- IT Knowledge Integration Arrow -->
+  <path d="M 350 170 L 350 190" stroke="#95A5A6" stroke-width="3" marker-end="url(#arrow)" fill="none"/>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+    <polygon points="0 0, 10 3, 0 6" fill="#95A5A6"/>
+  </marker>
+  
+  <!-- Legend and Key Info -->
+  <rect x="600" y="190" width="560" height="80" rx="8" fill="#ECF0F1" stroke="#BDC3C7" stroke-width="2"/>
+  
+  <text x="880" y="215" style="font-family: 'Segoe UI', Arial; font-size: 14px; font-weight: bold; fill: #2C3E50; text-anchor: middle;">프로그램 핵심 정보</text>
+  
+  <circle cx="620" cy="240" r="4" fill="#27AE60"/>
+  <text x="635" y="244" style="font-family: 'Segoe UI', Arial; font-size: 11px; fill: #2C3E50;">총 16주 (96시간) 과정</text>
+  
+  <circle cx="620" cy="258" r="4" fill="#27AE60"/>
+  <text x="635" y="262" style="font-family: 'Segoe UI', Arial; font-size: 11px; fill: #2C3E50;">주 2회, 각 3시간 수업</text>
+  
+  <circle cx="800" cy="240" r="4" fill="#27AE60"/>
+  <text x="815" y="244" style="font-family: 'Segoe UI', Arial; font-size: 11px; fill: #2C3E50;">이론 40% + 실습 40% + 프로젝트 20%</text>
+  
+  <circle cx="800" cy="258" r="4" fill="#27AE60"/>
+  <text x="815" y="262" style="font-family: 'Segoe UI', Arial; font-size: 11px; fill: #2C3E50;">PMBOK 6판 기반 + 7판 보충</text>
+  
+  <circle cx="1010" cy="240" r="4" fill="#27AE60"/>
+  <text x="1025" y="244" style="font-family: 'Segoe UI', Arial; font-size: 11px; fill: #2C3E50;">6개 케이스 스터디</text>
+  
+  <circle cx="1010" cy="258" r="4" fill="#27AE60"/>
+  <text x="1025" y="262" style="font-family: 'Segoe UI', Arial; font-size: 11px; fill: #2C3E50;">PMP/CAPM 자격증 대비</text>
+  
+  <!-- Milestones -->
+  <text x="40" y="320" style="font-family: 'Segoe UI', Arial; font-size: 13px; font-weight: bold; fill: #2C3E50;">주요 이정표:</text>
+  
+  <polygon points="290,335 300,355 280,355" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+  <text x="290" y="375" style="font-family: 'Segoe UI', Arial; font-size: 10px; fill: #2C3E50; text-anchor: middle;">Week 3</text>
+  <text x="290" y="390" style="font-family: 'Segoe UI', Arial; font-size: 9px; fill: #7F8C8D; text-anchor: middle;">기초 평가</text>
+  
+  <polygon points="650,335 660,355 640,355" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+  <text x="650" y="375" style="font-family: 'Segoe UI', Arial; font-size: 10px; fill: #2C3E50; text-anchor: middle;">Week 8</text>
+  <text x="650" y="390" style="font-family: 'Segoe UI', Arial; font-size: 9px; fill: #7F8C8D; text-anchor: middle;">중간 평가</text>
+  
+  <polygon points="940,335 950,355 930,355" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+  <text x="940" y="375" style="font-family: 'Segoe UI', Arial; font-size: 10px; fill: #2C3E50; text-anchor: middle;">Week 12</text>
+  <text x="940" y="390" style="font-family: 'Segoe UI', Arial; font-size: 9px; fill: #7F8C8D; text-anchor: middle;">프로젝트 발표</text>
+  
+  <polygon points="480,295 490,315 470,315" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+  <text x="480" y="335" style="font-family: 'Segoe UI', Arial; font-size: 10px; fill: #2C3E50; text-anchor: middle;">Week 16</text>
+  <text x="480" y="350" style="font-family: 'Segoe UI', Arial; font-size: 9px; fill: #7F8C8D; text-anchor: middle;">수료</text>
+</svg>

@@ -1,0 +1,89 @@
+<svg width="800" height="650" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title-text { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2C3E50; text-anchor: middle; }
+      .subtitle-text { font-family: Arial, sans-serif; font-size: 13px; fill: #7F8C8D; text-anchor: middle; }
+      .constraint-box { stroke-width: 3; }
+      .constraint-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: white; text-anchor: middle; }
+      .constraint-text { font-family: Arial, sans-serif; font-size: 11px; fill: white; }
+      .solution-text { font-family: Arial, sans-serif; font-size: 10px; fill: #2C3E50; }
+      .center-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #2C3E50; text-anchor: middle; }
+      .connector { stroke: #95A5A6; stroke-width: 2; stroke-dasharray: 3,3; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="35" class="title-text">프로젝트 4대 제약조건과 극복 전략</text>
+  <text x="400" y="58" class="subtitle-text">PMBOK 지식 + IT 기술 이해로 제약조건 관리</text>
+  
+  <!-- Center Circle -->
+  <circle cx="400" cy="300" r="80" fill="#ECF0F1" stroke="#BDC3C7" stroke-width="3"/>
+  <text x="400" y="290" class="center-text">프로젝트</text>
+  <text x="400" y="310" class="center-text">성공</text>
+  <text x="400" y="330" style="font-family: Arial; font-size: 11px; fill: #7F8C8D; text-anchor: middle;">Triple Constraint</text>
+  <text x="400" y="345" style="font-family: Arial; font-size: 11px; fill: #7F8C8D; text-anchor: middle;">균형 관리</text>
+  
+  <!-- Scope Constraint (Top) -->
+  <rect x="280" y="90" width="240" height="110" rx="8" fill="#3498DB" stroke="#2980B9" class="constraint-box"/>
+  <text x="400" y="115" class="constraint-title">📋 범위 (Scope)</text>
+  <text x="295" y="138" class="constraint-text" style="font-weight: bold;">제약:</text>
+  <text x="295" y="155" class="constraint-text">• 불명확한 요구사항</text>
+  <text x="295" y="170" class="constraint-text">• 범위 변경 (Scope Creep)</text>
+  <text x="295" y="185" class="constraint-text">• 기술 용어 이해 부족</text>
+  
+  <!-- Connector from Scope to Center -->
+  <line x1="400" y1="200" x2="400" y2="220" class="connector"/>
+  
+  <!-- Schedule Constraint (Left) -->
+  <rect x="50" y="300" width="240" height="110" rx="8" fill="#E67E22" stroke="#D35400" class="constraint-box"/>
+  <text x="170" y="325" class="constraint-title">⏱️ 일정 (Schedule)</text>
+  <text x="65" y="348" class="constraint-text" style="font-weight: bold;">제약:</text>
+  <text x="65" y="365" class="constraint-text">• 비현실적 일정 산정</text>
+  <text x="65" y="380" class="constraint-text">• 개발 소요 시간 과소평가</text>
+  <text x="65" y="395" class="constraint-text">• 기술 복잡도 미고려</text>
+  
+  <!-- Connector from Schedule to Center -->
+  <line x1="290" y1="355" x2="320" y2="300" class="connector"/>
+  
+  <!-- Cost Constraint (Right) -->
+  <rect x="510" y="300" width="240" height="110" rx="8" fill="#9B59B6" stroke="#8E44AD" class="constraint-box"/>
+  <text x="630" y="325" class="constraint-title">💰 원가 (Cost)</text>
+  <text x="525" y="348" class="constraint-text" style="font-weight: bold;">제약:</text>
+  <text x="525" y="365" class="constraint-text">• 클라우드 비용 예측 어려움</text>
+  <text x="525" y="380" class="constraint-text">• 기술 인프라 비용 미반영</text>
+  <text x="525" y="395" class="constraint-text">• 라이선스 비용 간과</text>
+  
+  <!-- Connector from Cost to Center -->
+  <line x1="510" y1="355" x2="480" y2="300" class="connector"/>
+  
+  <!-- Quality Constraint (Bottom) -->
+  <rect x="280" y="490" width="240" height="110" rx="8" fill="#E74C3C" stroke="#C0392B" class="constraint-box"/>
+  <text x="400" y="515" class="constraint-title">✨ 품질 (Quality)</text>
+  <text x="295" y="538" class="constraint-text" style="font-weight: bold;">제약:</text>
+  <text x="295" y="555" class="constraint-text">• 테스트 전략 부재</text>
+  <text x="295" y="570" class="constraint-text">• 보안 요구사항 누락</text>
+  <text x="295" y="585" class="constraint-text">• 성능 기준 불명확</text>
+  
+  <!-- Connector from Quality to Center -->
+  <line x1="400" y1="490" x2="400" y2="380" class="connector"/>
+  
+  <!-- Solutions (Left side) -->
+  <text x="50" y="460" style="font-family: Arial; font-size: 13px; font-weight: bold; fill: #2C3E50;">🎯 PMBOK으로 극복:</text>
+  <text x="50" y="480" class="solution-text">✓ 범위: WBS 작성, 요구사항 추적</text>
+  <text x="50" y="495" class="solution-text">✓ 일정: CPM, 간트 차트</text>
+  <text x="50" y="510" class="solution-text">✓ 원가: EVM, 예산 통제</text>
+  <text x="50" y="525" class="solution-text">✓ 품질: 품질 관리 계획</text>
+  
+  <!-- Solutions (Right side) -->
+  <text x="510" y="460" style="font-family: Arial; font-size: 13px; font-weight: bold; fill: #2C3E50;">💻 IT 기술로 극복:</text>
+  <text x="510" y="480" class="solution-text">✓ 범위: 기술 용어 이해, 요구사항 명확화</text>
+  <text x="510" y="495" class="solution-text">✓ 일정: SDLC 이해, 개발 프로세스 파악</text>
+  <text x="510" y="510" class="solution-text">✓ 원가: 클라우드 아키텍처, 비용 최적화</text>
+  <text x="510" y="525" class="solution-text">✓ 품질: 테스팅 전략, CI/CD 이해</text>
+  
+  <!-- Bottom Message -->
+  <rect x="100" y="610" width="600" height="35" rx="5" fill="#27AE60" stroke="#229954" stroke-width="2"/>
+  <text x="400" y="633" style="font-family: Arial; font-size: 13px; font-weight: bold; fill: white; text-anchor: middle;">
+    ✨ 통합 학습으로 4대 제약조건을 효과적으로 관리하는 PM이 되세요!
+  </text>
+</svg>
