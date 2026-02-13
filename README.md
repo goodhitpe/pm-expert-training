@@ -3,8 +3,8 @@
 IT 비전공자를 위한 실무 중심 프로젝트 매니저(PM) 교육 과정
 
 > **⭐ 최신 업데이트 (2025년 2월)**: 
-> - **커리큘럼 재평가 완료!** [종합 평가 보고서](./CURRICULUM_COMPREHENSIVE_EVALUATION_2025.md) | [보강 필요 영역 요약](./보강필요영역_요약.md)
-> - **PMBOK 버전 정책 수립!** [버전 정책](./PMBOK_VERSION_POLICY.md) | [분석 보고서](./PMP_VERSION_ALIGNMENT_ANALYSIS.md) | [실행 계획](./PMP_VERSION_IMPLEMENTATION_PLAN.md)
+> - **커리큘럼 재평가 완료!** [종합 평가 보고서](./docs/evaluations/CURRICULUM_COMPREHENSIVE_EVALUATION_2025.md) | [보강 필요 영역 요약](./docs/summaries/보강필요영역_요약.md)
+> - **PMBOK 버전 정책 수립!** [버전 정책](./docs/PMBOK_VERSION_POLICY.md) | [분석 보고서](./docs/evaluations/PMP_VERSION_ALIGNMENT_ANALYSIS.md) | [실행 계획](./docs/planning/PMP_VERSION_IMPLEMENTATION_PLAN.md)
 
 ---
 
@@ -33,7 +33,7 @@ IT 비전공자를 위한 실무 중심 프로젝트 매니저(PM) 교육 과정
 - **Week 9**: 애자일/스크럼 (7판의 적응형 접근 포함)
 - **자격증 준비**: 7판 기반 PMP 시험 대응 가이드 제공
 
-👉 **[상세 버전 정책 보기](./PMBOK_VERSION_POLICY.md)** | **[분석 보고서](./PMP_VERSION_ALIGNMENT_ANALYSIS.md)** | **[실행 계획](./PMP_VERSION_IMPLEMENTATION_PLAN.md)**
+👉 **[상세 버전 정책 보기](./docs/PMBOK_VERSION_POLICY.md)** | **[분석 보고서](./docs/evaluations/PMP_VERSION_ALIGNMENT_ANALYSIS.md)** | **[실행 계획](./docs/planning/PMP_VERSION_IMPLEMENTATION_PLAN.md)**
 
 ### 📊 전문가 평가 결과 (2025년 2월 종합 재평가)
 **현재 점수**: 87.5/100점 (B+등급) | **목표**: 93.0/100점 (A등급)
@@ -54,7 +54,7 @@ IT 비전공자를 위한 실무 중심 프로젝트 매니저(PM) 교육 과정
 
 **다음 단계**: 2주 집중 보강 → A등급 달성
 
-👉 **[종합 평가 보고서](./CURRICULUM_COMPREHENSIVE_EVALUATION_2025.md)** | **[보강 필요 영역 요약](./보강필요영역_요약.md)**
+👉 **[종합 평가 보고서](./docs/evaluations/CURRICULUM_COMPREHENSIVE_EVALUATION_2025.md)** | **[보강 필요 영역 요약](./docs/summaries/보강필요영역_요약.md)**
 
 ### 🎯 교육 목표
 - ✅ 프로젝트 관리 기본 개념부터 실전 적용까지
@@ -108,10 +108,12 @@ IT 비전공자를 위한 실무 중심 프로젝트 매니저(PM) 교육 과정
 
 ```
 pm-expert-training/
-├── README.md
-├── curriculum/                      # 주차별 커리큘럼
-│   ├── week01-pm-introduction/
-│   ├── week02-pm-fundamentals/
+├── README.md                        # 프로그램 소개 및 전체 안내
+│
+├── curriculum/                      # 📚 주차별 커리큘럼 (Week 0-16)
+│   ├── week00-pm-orientation/       # 프로그램 오리엔테이션
+│   ├── week01-pm-introduction/      # PM 소개
+│   ├── week02-pm-fundamentals/      # PM 기초
 │   ├── week03-stakeholder-management/
 │   ├── week04-scope-management/
 │   ├── week05-schedule-management/
@@ -125,27 +127,48 @@ pm-expert-training/
 │   ├── week14-database/
 │   ├── week15-cloud/
 │   └── week16-network/
-├── templates/                       # 실무 템플릿
-│   ├── project-charter.md
-│   ├── wbs-template.xlsx
-│   ├── gantt-chart-template.xlsx
-│   ├── risk-register.xlsx
-│   ├── meeting-minutes.md
-│   └── status-report.md
-├── guides/                          # 가이드북
-│   ├── pm-glossary.md              # PM 용어집
-│   ├── pmbok-summary.md            # PMBOK 요약
-│   └── checklists.md               # 체크리스트 모음
-├── case-studies/                    # 실습 프로젝트 시나리오
+│
+├── assessment/                      # 📝 평가 자료
+│   ├── quizzes/                     # 주차별 퀴즈
+│   └── rubrics/                     # 주차별 평가 기준
+│
+├── case-studies/                    # 💼 실습 케이스 스터디
 │   ├── case01-mobile-app-dev.md
 │   ├── case02-marketing-campaign.md
 │   ├── case03-office-relocation.md
 │   ├── case04-erp-implementation.md
-│   └── case05-product-launch.md
-└── resources/                       # 참고 자료
-    ├── recommended-books.md
-    ├── certification-guide.md
-    └── useful-links.md
+│   ├── case05-product-launch.md
+│   └── case06-ai-chatbot-project.md
+│
+├── templates/                       # 📋 실무 템플릿
+│   ├── project-charter.md
+│   ├── wbs-template.md
+│   ├── gantt-chart-template.md
+│   ├── risk-register.md
+│   ├── meeting-minutes.md
+│   └── status-report.md
+│
+├── guides/                          # 📖 실습 가이드
+│   ├── jira-setup-guide.md
+│   ├── github-setup-guide.md
+│   ├── aws-free-tier-guide.md
+│   ├── sql-practice-guide.md
+│   ├── pm-glossary.md
+│   ├── pmbok-summary.md
+│   ├── pmbok-6th-to-7th-mapping.md
+│   └── checklists.md
+│
+├── resources/                       # 🔗 참고 자료
+│   ├── recommended-books.md
+│   ├── certification-guide.md
+│   └── useful-links.md
+│
+└── docs/                            # 📄 프로그램 관리 문서
+    ├── PMBOK_VERSION_POLICY.md      # PMBOK 버전 정책
+    ├── PMP_버전_정렬_요약.md
+    ├── evaluations/                 # 커리큘럼 평가 보고서
+    ├── planning/                    # 개발 계획 및 로드맵
+    └── summaries/                   # 프로그램 요약 문서
 ```
 
 ---
@@ -199,21 +222,26 @@ pm-expert-training/
 
 ### 📚 주요 문서
 
-#### 최신 평가 보고서 (2025.02)
-- **[종합 평가 보고서](./CURRICULUM_COMPREHENSIVE_EVALUATION_2025.md)** ⭐⭐ 최신 - 전체 커리큘럼 상세 분석
-- **[보강 필요 영역 요약](./보강필요영역_요약.md)** ⭐⭐ 최신 - 핵심 보강사항 (한국어)
+#### PMBOK 버전 정책
+- **[PMBOK 버전 정책](./docs/PMBOK_VERSION_POLICY.md)** - 6판/7판 학습 전략
+- **[PMP 버전 정렬 요약](./docs/PMP_버전_정렬_요약.md)** - 한국어 요약
 
-#### 이전 평가 보고서
-- **[커리큘럼 재평가 2025](./CURRICULUM_RE-EVALUATION_2025.md)** - 충분성, 완전성, 이해성, 효율성 평가 (2025.01.31)
-- **[커리큘럼 재평가 요약 (한국어)](./커리큘럼_재평가_요약.md)** - 핵심 내용 한국어 요약
-- **[평가 비교 분석](./EVALUATION_COMPARISON.md)** - 초기 vs 재평가 비교
-- **[초기 평가 보고서](./CURRICULUM_EVALUATION.md)** - 전문가 평가 및 개선 제안 (2025.01 초)
+#### 평가 보고서
+- **[종합 평가 보고서](./docs/evaluations/CURRICULUM_COMPREHENSIVE_EVALUATION_2025.md)** ⭐ 최신 - 전체 커리큘럼 상세 분석
+- **[커리큘럼 재평가](./docs/evaluations/CURRICULUM_RE-EVALUATION_2025.md)** - 충분성, 완전성, 이해성, 효율성 평가
+- **[평가 비교 분석](./docs/evaluations/EVALUATION_COMPARISON.md)** - 초기 vs 재평가 비교
+- **[초기 평가 보고서](./docs/evaluations/CURRICULUM_EVALUATION.md)** - 전문가 평가 및 개선 제안
 
-#### 실행 계획
-- **[실행 로드맵](./IMPLEMENTATION_ROADMAP.md)** - 단계별 개선 계획
-- **[잔여 작업 현황](./잔여작업_요약.md)** - 남은 작업 요약 및 우선순위
-- **[잔여 작업 상세](./REMAINING_TASKS.md)** - 전체 작업 목록 및 실행 가이드
-- **[요약 보고서](./SUMMARY_REPORT.md)** - Executive Summary
+#### 개발 계획
+- **[실행 로드맵](./docs/planning/IMPLEMENTATION_ROADMAP.md)** - 단계별 개선 계획
+- **[잔여 작업 상세](./docs/planning/REMAINING_TASKS.md)** - 전체 작업 목록 및 실행 가이드
+- **[액션 플랜](./docs/planning/ACTION_PLAN_2025.md)** - 2025년 개선 계획
+
+#### 프로그램 요약
+- **[커리큘럼 전체 요약](./docs/summaries/커리큘럼_전체_요약.md)** - 16주 과정 전체 개요
+- **[보강 필요 영역](./docs/summaries/보강필요영역_요약.md)** - 핵심 보강사항
+- **[보강 현황 한눈에 보기](./docs/summaries/보강현황_한눈에보기.md)** - 진행 상황
+- **[요약 보고서](./docs/summaries/SUMMARY_REPORT.md)** - Executive Summary
 
 ### 🎓 샘플 콘텐츠
 - **[Week 5 상세 강의 자료](./curriculum/week05-schedule-management/detailed-lecture-materials.md)** - CPM, PERT, 간트 차트
