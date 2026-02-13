@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PM Lifecycle Simulator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>프로젝트 라이프사이클 시뮬레이터</h1>
+    <p>준비 → 실행 → 종료 단계에서 의사결정으로 프로젝트 성과를 관리하세요.</p>
+  </header>
+
+  <main>
+    <section class="panel" id="overviewPanel">
+      <h2>프로젝트 현황</h2>
+      <div class="metrics" id="metrics"></div>
+      <div class="progress-wrap">
+        <label for="phaseProgress">진행률</label>
+        <progress id="phaseProgress" max="100" value="0"></progress>
+      </div>
+      <div class="toolbar">
+        <button id="saveBtn">저장</button>
+        <button id="resetBtn" class="danger">초기화</button>
+      </div>
+      <p id="statusMessage" class="status"></p>
+    </section>
+
+    <section class="panel" id="phasePanel">
+      <h2 id="phaseTitle">1) 준비 단계</h2>
+      <p id="phaseDescription"></p>
+      <div id="phaseContent"></div>
+    </section>
+
+    <section class="panel" id="logPanel">
+      <h2>의사결정 로그</h2>
+      <ul id="decisionLog"></ul>
+    </section>
+  </main>
+
+  <template id="prepTemplate">
+    <div class="grid two-col">
+      <article>
+        <h3>이해관계자 커뮤니케이션</h3>
+        <p>다양한 이해관계자와 대화해 요구사항과 우려사항을 수집하세요.</p>
+        <div id="stakeholderList" class="option-list"></div>
+      </article>
+      <article>
+        <h3>문서 완성도</h3>
+        <ul class="checklist">
+          <li>RFP 작성률: <strong id="rfpValue"></strong></li>
+          <li>사업 추진안 작성률: <strong id="businessValue"></strong></li>
+          <li>정렬 지수(공감대): <strong id="alignmentValue"></strong></li>
+        </ul>
+      </article>
+    </div>
+    <button id="toExecutionBtn" disabled>실행 단계로 전환</button>
+  </template>
+
+  <template id="executionTemplate">
+    <div id="executionConfig"></div>
+    <div id="weeklyEvent"></div>
+  </template>
+
+  <template id="closureTemplate">
+    <div id="closureSummary"></div>
+    <button id="restartBtn">새 시뮬레이션 시작</button>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
