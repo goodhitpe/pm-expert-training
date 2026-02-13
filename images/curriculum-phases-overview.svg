@@ -88,18 +88,6 @@
   <text x="435" y="488" class="week-text" style="font-size: 10px;">• SQL, ERD</text>
   <text x="435" y="502" class="week-text" style="font-size: 10px;">• RDBMS vs NoSQL</text>
   
-  <rect x="250" y="430" width="155" height="80" rx="6" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
-  <text x="327" y="452" class="week-text">💻 Week 13:</text>
-  <text x="327" y="468" class="highlight-text">소프트웨어 공학</text>
-  <text x="260" y="488" class="week-text" style="font-size: 10px;">• SDLC, CI/CD</text>
-  <text x="260" y="502" class="week-text" style="font-size: 10px;">• 테스팅 전략</text>
-  
-  <rect x="425" y="430" width="155" height="80" rx="6" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1"/>
-  <text x="502" y="452" class="week-text">💾 Week 14:</text>
-  <text x="502" y="468" class="highlight-text">데이터베이스</text>
-  <text x="435" y="488" class="week-text" style="font-size: 10px;">• SQL, ERD</text>
-  <text x="435" y="502" class="week-text" style="font-size: 10px;">• RDBMS vs NoSQL</text>
-  
   <!-- Bottom two weeks in a separate row -->
   <text x="327" y="535" class="week-text">☁️ Week 15: 클라우드 (AWS, Azure)</text>
   <text x="502" y="535" class="week-text">🌐 Week 16: 네트워크 (OSI, TCP/IP)</text>
